@@ -1,0 +1,13 @@
+{
+  "name": "wavenode-html-template",
+  "version": "1.0.0",
+  "description": "WaveNode — AI-Powered Video & Audio Streaming Platform HTML Template (Tailwind CSS + Vanilla JS)",
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,215 @@
+/*
+ * WaveNode — AI Video & Audio Streaming Platform Template
+ * Tailwind CSS source file.
+ *
+ * Rebuild after editing:  npm run build   (or  npm run dev  for watch mode)
+ * Brand colors live in tailwind.config.js (theme.extend.colors).
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --grid-line: rgb(15 23 42 / 0.06);
+  }
+
+  .dark {
+    --grid-line: rgb(148 163 184 / 0.07);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white font-sans text-slate-600 antialiased dark:bg-slate-950 dark:text-slate-400;
+  }
+
+  ::selection {
+    @apply bg-primary-500/30 text-slate-900 dark:text-white;
+  }
+
+  /* Consistent, visible keyboard focus everywhere */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-slate-950;
+  }
+
+  /* Slim scrollbar for embedded scroll areas (chat mockups, code blocks) */
+  .scrollbar-slim::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-300 dark:bg-slate-700;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Components
+------------------------------------------------------------------ */
+@layer components {
+  /* Buttons ------------------------------------------------------ */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white shadow-glow-sm hover:bg-primary-500 hover:shadow-glow;
+  }
+
+  .btn-secondary {
+    @apply btn border border-slate-300 bg-white text-slate-700 hover:border-slate-400 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800/60 dark:hover:text-white;
+  }
+
+  /* Cards -------------------------------------------------------- */
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/60;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-primary-500/40 hover:shadow-glow-sm;
+  }
+
+  /* Frosted glass surface (navbar, floating chips) ---------------- */
+  .glass {
+    @apply border border-slate-200/80 bg-white/80 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/75;
+  }
+
+  /* Section header helpers ---------------------------------------- */
+  .section-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl;
+  }
+
+  .section-lead {
+    @apply text-lg leading-relaxed text-slate-600 dark:text-slate-400;
+  }
+
+  /* Navigation links ---------------------------------------------- */
+  .nav-link {
+    @apply rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white;
+  }
+
+  .footer-link {
+    @apply text-sm text-slate-500 transition-colors hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400;
+  }
+
+  /* Feature icon tile ---------------------------------------------- */
+  .icon-tile {
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-xl border border-primary-500/25 bg-primary-500/10 text-primary-600 dark:text-primary-400;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Utilities
+------------------------------------------------------------------ */
+@layer utilities {
+  /* Brand gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 via-violet-500 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  /* Faint blueprint grid backdrop */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* Radial glow spot — position with absolute + inset utilities */
+  .bg-glow {
+    background: radial-gradient(closest-side, rgb(99 102 241 / 0.22), transparent);
+  }
+
+  .bg-glow-accent {
+    background: radial-gradient(closest-side, rgb(6 182 212 / 0.16), transparent);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Scroll-reveal animation
+   Elements with [data-reveal] fade/slide in when they enter the
+   viewport (see main.js). Styles only apply when JS is available
+   (html.js), so content is never hidden without JavaScript.
+------------------------------------------------------------------ */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Optional stagger for sibling cards */
+.js [data-reveal][data-reveal-delay='1'] { transition-delay: 0.1s; }
+.js [data-reveal][data-reveal-delay='2'] { transition-delay: 0.2s; }
+.js [data-reveal][data-reveal-delay='3'] { transition-delay: 0.3s; }
+
+/* ------------------------------------------------------------------
+   Accordion (FAQ) — animated with CSS grid rows, toggled in main.js
+------------------------------------------------------------------ */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.accordion-panel > div {
+  overflow: hidden;
+}
+
+.accordion-panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+/* ------------------------------------------------------------------
+   Sticky header state (class added on scroll in main.js)
+------------------------------------------------------------------ */
+.site-header {
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.is-scrolled {
+  @apply glass shadow-lg shadow-slate-900/5 dark:shadow-black/20;
+}
+
+/* ------------------------------------------------------------------
+   Reduced motion — respect user preference
+------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
