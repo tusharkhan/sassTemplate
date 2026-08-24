@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify"
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
+    "pages": "python3 tools/build.py",
+    "pages:check": "python3 tools/build.py --check"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
