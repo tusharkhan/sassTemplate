@@ -85,3 +85,86 @@ register(
     'Reset your WaveNode password.',
     shell='auth',
 )
+
+# ---------------------------------------------------------------------------
+# Footer-linked pages (not in the main navbar)
+# ---------------------------------------------------------------------------
+
+register(
+    'index-creator.html',
+    'For Creators — WaveNode Live Streaming, Clips &amp; Monetization',
+    'WaveNode for creators and influencers: 4K live streaming, automatic vertical highlight clips, AI captions in 42 languages, and subscriptions, tickets and tips with payouts in 38 currencies.',
+    'Go live, get clips, get paid — a flat 3% platform fee and payouts in two business days.',
+)
+
+register(
+    'index-enterprise.html',
+    'For Enterprise — WaveNode Compliant Live Video Infrastructure',
+    'WaveNode for business and enterprise: SOC 2 Type II, EU/US/APAC data residency, SSO and SCIM, audit logs, bring-your-own storage and a 99.99% uptime SLA with financial credits.',
+    'Live infrastructure that passes procurement — SOC 2, data residency, SSO and a 99.99% SLA.',
+)
+
+register(
+    'integrations.html',
+    'Integrations — WaveNode Streaming Platform',
+    'Connect WaveNode to the stack you already run: Datadog, Grafana, PagerDuty, Amazon S3, Cloudflare R2, Stripe, Adyen, Okta, Microsoft Entra ID, Slack, Zapier and more.',
+    'Thirty-one first-party integrations, all configured from the dashboard without glue code.',
+)
+
+register(
+    'changelog.html',
+    'Changelog — WaveNode Streaming API',
+    'Every WaveNode release, including breaking changes and deprecations. Breaking changes get 90 days of notice and a migration guide before enforcement.',
+    'Everything we shipped, including the boring parts. Deprecations listed before they are enforced.',
+)
+
+register(
+    'about.html',
+    'About — WaveNode AI Video &amp; Audio Streaming Platform',
+    'WaveNode is 84 people across Berlin, Singapore and Austin building low-latency streaming infrastructure. Our story, how we work, and the team accountable for the network.',
+    'Building the future of real-time communication — because latency is a product decision.',
+)
+
+register(
+    'careers.html',
+    'Careers — Work at WaveNode',
+    'Eleven open roles across infrastructure, machine learning, developer experience and go-to-market. Remote across 14 countries, compensated on-call, paid interview exercises.',
+    'Work on infrastructure that cannot be rolled back. Eleven roles open across four teams.',
+)
+
+register(
+    'testimonials.html',
+    'Customers — WaveNode Case Studies &amp; Testimonials',
+    'How 4,000+ teams use WaveNode, with the numbers they let us publish: latency, delivery cost, engineering headcount and peak concurrency across streaming, education, health and commerce.',
+    'Live infrastructure gets judged on the bad day. These customers let us quote the specifics.',
+)
+
+register(
+    'help-center.html',
+    'Help Center — WaveNode Support &amp; Guides',
+    'Guides, troubleshooting and answers for the WaveNode streaming platform, written by the team that maintains it. Search the knowledge base or contact support directly.',
+    'Guides and troubleshooting written by the people who maintain the platform.',
+)
+
+register(
+    'faq.html',
+    'FAQ — WaveNode Frequently Asked Questions',
+    'Twenty answers on getting started, streaming quality and latency, the AI captioning and highlights toolkit, billing and overage rates, and security and compliance.',
+    'Questions answered properly — where a number is involved, we give the number.',
+)
+
+register(
+    'terms.html',
+    'Terms of Service — WaveNode',
+    'The agreement between you and WaveNode covering platform use, accounts and API keys, acceptable use, plans and payment, service levels, content rights, termination and liability.',
+    'The agreement covering platform use, payment, acceptable use and responsibilities.',
+    cta=False,
+)
+
+register(
+    'privacy.html',
+    'Privacy Policy — WaveNode',
+    'What WaveNode collects, why, where it is stored, how long it is kept and what you can ask us to do with it — including our position on AI processing and model training.',
+    'What we collect, why, where it lives and what you can ask us to do with it.',
+    cta=False,
+)

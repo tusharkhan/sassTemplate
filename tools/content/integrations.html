@@ -1,0 +1,314 @@
+  <main id="main-content">
+
+    <!-- ================================================================
+         Page Header Start
+    ================================================================ -->
+    <section class="bg-grid relative overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16" aria-labelledby="page-heading">
+      <!-- Decorative glows -->
+      <div class="bg-glow pointer-events-none absolute -top-32 left-1/2 h-[32rem] w-[52rem] -translate-x-1/2" aria-hidden="true"></div>
+
+      <div class="container relative">
+        <!-- Breadcrumb -->
+        <nav class="flex justify-center" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm text-slate-500">
+            <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300">Integrations</span></li>
+          </ol>
+        </nav>
+
+        <div class="mx-auto mt-8 max-w-3xl text-center">
+          <p class="section-badge" data-reveal>Integrations</p>
+          <h1 id="page-heading" class="section-title mt-5" data-reveal>Connects to the stack <span class="text-gradient">you already run</span></h1>
+          <p class="section-lead mt-6" data-reveal data-reveal-delay="1">Thirty-one first-party integrations, all configured from the dashboard without writing glue code. Anything not listed here is a webhook away.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Page Header End -->
+
+    <!-- ================================================================
+         Category Filter Start
+    ================================================================ -->
+    <section class="pb-12" aria-labelledby="categories-heading">
+      <div class="container">
+        <h2 id="categories-heading" class="sr-only">Browse integrations by category</h2>
+        <nav aria-label="Integration categories">
+          <ul class="flex flex-wrap justify-center gap-2.5" data-reveal>
+            <li><a href="integrations.html" class="inline-flex rounded-full border border-primary-500/40 bg-primary-500/10 px-4 py-2 text-sm font-semibold text-primary-600 transition-colors dark:text-primary-400" aria-current="page">All</a></li>
+            <li><a href="#observability" class="inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-primary-400">Observability</a></li>
+            <li><a href="#storage" class="inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-primary-400">Storage</a></li>
+            <li><a href="#payments" class="inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-primary-400">Payments</a></li>
+            <li><a href="#identity" class="inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-primary-400">Identity</a></li>
+            <li><a href="#workflow" class="inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:border-primary-500 hover:text-primary-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-primary-400">Workflow</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <!-- Category Filter End -->
+
+    <!-- ================================================================
+         Observability Start
+    ================================================================ -->
+    <section id="observability" class="pb-14" aria-labelledby="observability-heading">
+      <div class="container">
+        <h2 id="observability-heading" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Observability</h2>
+        <p class="mt-2 max-w-2xl text-sm leading-relaxed" data-reveal>Stream the same metrics we show you — concurrency, rebuffer ratio, join time, buffer depth — into the dashboards your on-call already watches.</p>
+
+        <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="card card-hover p-6" data-reveal>
+            <div class="flex items-start justify-between gap-3">
+              <span class="icon-tile !h-10 !w-10">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 8-4-16-3 8H2"/></svg>
+              </span>
+              <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">Native</span>
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Datadog</h3>
+            <p class="mt-2 text-sm leading-relaxed">Metrics and traces pushed every 10 seconds, with a prebuilt streaming-quality dashboard.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="1">
+            <div class="flex items-start justify-between gap-3">
+              <span class="icon-tile !h-10 !w-10">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M7 21V10M12 21V4M17 21v-7"/></svg>
+              </span>
+              <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">Native</span>
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Grafana Cloud</h3>
+            <p class="mt-2 text-sm leading-relaxed">A Prometheus-compatible scrape endpoint plus an importable dashboard JSON.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="2">
+            <div class="flex items-start justify-between gap-3">
+              <span class="icon-tile !h-10 !w-10">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+              </span>
+              <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">Native</span>
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">PagerDuty</h3>
+            <p class="mt-2 text-sm leading-relaxed">Route stream-health alerts to a service, with severity mapped from your own thresholds.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal>
+            <div class="flex items-start justify-between gap-3">
+              <span class="icon-tile !h-10 !w-10">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v6H4zM4 14h16v6H4z"/></svg>
+              </span>
+              <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">Native</span>
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">OpenTelemetry</h3>
+            <p class="mt-2 text-sm leading-relaxed">OTLP export to any collector, so nothing here has to be vendor-specific.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="1">
+            <div class="flex items-start justify-between gap-3">
+              <span class="icon-tile !h-10 !w-10">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <span class="rounded-full bg-slate-500/10 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:text-slate-400">Webhook</span>
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Sentry</h3>
+            <p class="mt-2 text-sm leading-relaxed">Forward client-side playback failures with the room and track context attached.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="2">
+            <div class="flex items-start justify-between gap-3">
+              <span class="icon-tile !h-10 !w-10">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg>
+              </span>
+              <span class="rounded-full bg-slate-500/10 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:text-slate-400">Webhook</span>
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Better Stack</h3>
+            <p class="mt-2 text-sm leading-relaxed">Uptime and incident timelines built from the same events our status page uses.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Observability End -->
+
+    <!-- ================================================================
+         Storage Start
+    ================================================================ -->
+    <section id="storage" class="pb-14" aria-labelledby="storage-heading">
+      <div class="container">
+        <h2 id="storage-heading" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Storage &amp; delivery</h2>
+        <p class="mt-2 max-w-2xl text-sm leading-relaxed" data-reveal>Keep recordings in your own bucket if you would rather we never held the media. We write the manifest and hand you the files.</p>
+
+        <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="card card-hover p-6" data-reveal>
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Amazon S3</h3>
+            <p class="mt-2 text-sm leading-relaxed">Bring your own bucket with a scoped IAM role. Lifecycle rules are yours to set.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="1">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10a6 6 0 0 0-11.3-2A4.5 4.5 0 0 0 7 17h11a4 4 0 0 0 0-7z"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Cloudflare R2</h3>
+            <p class="mt-2 text-sm leading-relaxed">Zero egress fees, which usually makes it the cheapest home for a large archive.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="2">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 4v16"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Google Cloud Storage</h3>
+            <p class="mt-2 text-sm leading-relaxed">Workload identity federation, so no long-lived service-account keys change hands.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal>
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Azure Blob Storage</h3>
+            <p class="mt-2 text-sm leading-relaxed">Immutable containers supported for customers with retention obligations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Storage End -->
+
+    <!-- ================================================================
+         Payments Start
+    ================================================================ -->
+    <section id="payments" class="pb-14" aria-labelledby="payments-heading">
+      <div class="container">
+        <h2 id="payments-heading" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Payments &amp; monetization</h2>
+        <p class="mt-2 max-w-2xl text-sm leading-relaxed" data-reveal>Sell subscriptions, tickets and tips through a processor you already have a relationship with. We handle entitlement checks at playback time.</p>
+
+        <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="card card-hover p-6" data-reveal>
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5.5A4 4 0 0 0 13 3h-2a3.5 3.5 0 0 0 0 7h2.5a3.5 3.5 0 0 1 0 7H11a4 4 0 0 1-4-2.5"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Stripe</h3>
+            <p class="mt-2 text-sm leading-relaxed">Subscriptions, one-off tickets and Connect payouts in 38 currencies.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="1">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Adyen</h3>
+            <p class="mt-2 text-sm leading-relaxed">Preferred by customers who need local payment methods across Europe and APAC.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="2">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M8 10h8M8 14h5"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Paddle</h3>
+            <p class="mt-2 text-sm leading-relaxed">Merchant of record, so sales-tax registration stays off your plate.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal>
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12 9v6"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">RevenueCat</h3>
+            <p class="mt-2 text-sm leading-relaxed">Mobile entitlements from the App Store and Play Store, reconciled with web plans.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Payments End -->
+
+    <!-- ================================================================
+         Identity Start
+    ================================================================ -->
+    <section id="identity" class="pb-14" aria-labelledby="identity-heading">
+      <div class="container">
+        <h2 id="identity-heading" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Identity &amp; access</h2>
+        <p class="mt-2 max-w-2xl text-sm leading-relaxed" data-reveal>SSO and directory sync are included on Business plans. Room tokens can carry claims from your own identity provider.</p>
+
+        <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="card card-hover p-6" data-reveal>
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Okta</h3>
+            <p class="mt-2 text-sm leading-relaxed">SAML 2.0 single sign-on plus SCIM 2.0 provisioning and de-provisioning.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="1">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Microsoft Entra ID</h3>
+            <p class="mt-2 text-sm leading-relaxed">Group-based role mapping, conditional access and audit-log export.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="2">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Auth0</h3>
+            <p class="mt-2 text-sm leading-relaxed">Mint room tokens from an Auth0 action without a backend of your own.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal>
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Google Workspace</h3>
+            <p class="mt-2 text-sm leading-relaxed">OIDC sign-in with domain restriction, suitable for internal-only deployments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Identity End -->
+
+    <!-- ================================================================
+         Workflow Start
+    ================================================================ -->
+    <section id="workflow" class="pb-16 sm:pb-20" aria-labelledby="workflow-heading">
+      <div class="container">
+        <h2 id="workflow-heading" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Workflow &amp; notifications</h2>
+        <p class="mt-2 max-w-2xl text-sm leading-relaxed" data-reveal>Get told when a stream starts, a recording is ready or a clip is generated — in the place your team already looks.</p>
+
+        <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="card card-hover p-6" data-reveal>
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Slack</h3>
+            <p class="mt-2 text-sm leading-relaxed">Stream events, clip previews and spend alerts posted to the channels you choose.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="1">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">Zapier</h3>
+            <p class="mt-2 text-sm leading-relaxed">Every webhook exposed as a trigger, for the automations we have not thought of.</p>
+          </article>
+
+          <article class="card card-hover p-6" data-reveal data-reveal-delay="2">
+            <span class="icon-tile !h-10 !w-10">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-slate-900 dark:text-white">GitHub Actions</h3>
+            <p class="mt-2 text-sm leading-relaxed">Provision rooms and rotate keys from CI using our published action.</p>
+          </article>
+        </div>
+
+        <!-- Build your own -->
+        <div class="mt-14" data-reveal>
+          <div class="card border-primary-500/30 p-7 sm:p-9">
+            <div class="grid items-center gap-7 lg:grid-cols-[1fr_auto]">
+              <div>
+                <h2 class="text-lg font-bold text-slate-900 dark:text-white">Not on the list?</h2>
+                <p class="mt-3 max-w-2xl text-sm leading-relaxed">Every platform event is available as a signed webhook, and the control-plane API covers everything the dashboard can do. Most teams wire up a missing tool in an afternoon — and if it is one we should support natively, tell us and it goes on the roadmap.</p>
+              </div>
+              <div class="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+                <a href="docs.html" class="btn-primary">Read the webhook docs</a>
+                <a href="contact.html" class="btn-secondary">Request an integration</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Workflow End -->
