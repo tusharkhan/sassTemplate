@@ -85,7 +85,7 @@ cp package.json tailwind.config.js "$D/"
 mkdir -p "$D/documentation" && cp documentation/index.html "$D/documentation/"
 
 # Verify nothing developer-only slipped in
-for x in node_modules package-lock.json .git dist SUBMISSION.md; do
+for x in node_modules package-lock.json .git dist SUBMISSION.md CLAUDE.md; do
   find "$D" -name "$x" -print -quit | grep -q . && echo "LEAKED: $x"
 done
 
@@ -98,7 +98,7 @@ Expected result: roughly 444 KB, 24 `.html` files, a single root folder named
 `wavenode-html-template`.
 
 **Deliberately excluded:** `node_modules/`, `package-lock.json`, `.git/`,
-`SUBMISSION.md`. **Deliberately included:** `src/input.css`, `package.json` and
+`SUBMISSION.md`, `CLAUDE.md`. **Deliberately included:** `src/input.css`, `package.json` and
 `tailwind.config.js`, because buyers legitimately need them to recompile.
 
 ---
@@ -237,7 +237,7 @@ rejection on aesthetics and needs design work, not fixes to the code.
 | `package.json`, `tailwind.config.js` | yes | no |
 | `package-lock.json` | no | no |
 | `node_modules/` | no | no |
-| `SUBMISSION.md` | no | no |
+| `SUBMISSION.md`, `CLAUDE.md` | no | no |
 
 Rebuilding the CSS needs `npm install` first — `node_modules/` is not committed.
 Only necessary if you edit `src/input.css` or `tailwind.config.js`; the compiled
