@@ -132,21 +132,23 @@
         </div>
 
         <!-- Credentials form -->
+        <p class="mb-5 text-xs text-slate-500 dark:text-slate-400">Fields marked <span class="text-primary-500" aria-hidden="true">*</span> are required.</p>
         <form action="#" method="post">
           <div class="space-y-5">
             <!-- Email -->
             <div>
-              <label for="login-email" class="block text-sm font-semibold text-slate-900 dark:text-white">Email address</label>
+              <label for="login-email" class="block text-sm font-semibold text-slate-900 dark:text-white">Email address <span class="text-primary-500" aria-hidden="true">*</span></label>
               <input type="email" id="login-email" name="email" required autocomplete="email" placeholder="you@company.com" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
             </div>
 
             <!-- Password -->
             <div>
               <div class="flex items-baseline justify-between gap-4">
-                <label for="login-password" class="block text-sm font-semibold text-slate-900 dark:text-white">Password</label>
+                <label for="login-password" class="block text-sm font-semibold text-slate-900 dark:text-white">Password <span class="text-primary-500" aria-hidden="true">*</span></label>
                 <a href="forgot-password.html" class="text-xs font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">Forgot password?</a>
               </div>
-              <input type="password" id="login-password" name="password" required autocomplete="current-password" placeholder="At least 12 characters" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
+              <input type="password" id="login-password" name="password" required autocomplete="current-password" minlength="12" aria-describedby="login-password-hint" placeholder="Your password" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
+              <p id="login-password-hint" class="mt-2 text-xs text-slate-500 dark:text-slate-400">Twelve characters minimum.</p>
             </div>
 
             <!-- Remember me -->

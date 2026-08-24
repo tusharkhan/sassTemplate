@@ -318,12 +318,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-1">
+              <button type="button" id="faq-panel-1-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-1">
                 What counts as a streaming minute?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="faq-panel-1" class="accordion-panel" data-accordion-panel>
+            <div id="faq-panel-1" class="accordion-panel" role="region" aria-labelledby="faq-panel-1-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">One minute of media published to the platform, measured per stream rather than per viewer. A 60-minute broadcast with 5,000 people watching costs 60 streaming minutes plus the bandwidth those viewers pulled from the edge.</p>
               </div>
@@ -332,12 +332,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-2">
+              <button type="button" id="faq-panel-2-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-2">
                 What happens if I go over my plan allowance?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="faq-panel-2" class="accordion-panel" data-accordion-panel>
+            <div id="faq-panel-2" class="accordion-panel" role="region" aria-labelledby="faq-panel-2-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Nothing stops. We keep your streams running and bill the extra usage at the metered rates above on your next invoice. You can set a hard spend cap in the dashboard if you would rather be throttled than charged.</p>
               </div>
@@ -346,12 +346,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-3">
+              <button type="button" id="faq-panel-3-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-3">
                 Can I switch plans in the middle of a billing period?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="faq-panel-3" class="accordion-panel" data-accordion-panel>
+            <div id="faq-panel-3" class="accordion-panel" role="region" aria-labelledby="faq-panel-3-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Yes. Upgrades take effect immediately and we prorate the difference. Downgrades apply at the start of your next cycle so you keep the higher limits for everything you have already paid for.</p>
               </div>
@@ -360,12 +360,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-4">
+              <button type="button" id="faq-panel-4-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-4">
                 Do you take a cut of creator earnings?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="faq-panel-4" class="accordion-panel" data-accordion-panel>
+            <div id="faq-panel-4" class="accordion-panel" role="region" aria-labelledby="faq-panel-4-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">WaveNode charges a flat 3% platform fee on subscriptions, tickets and tips, on top of the payment processor&rsquo;s own fee. There is no revenue share beyond that, and payouts land in your account within two business days.</p>
               </div>
@@ -374,12 +374,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-5">
+              <button type="button" id="faq-panel-5-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-5">
                 Which payment methods do you accept?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="faq-panel-5" class="accordion-panel" data-accordion-panel>
+            <div id="faq-panel-5" class="accordion-panel" role="region" aria-labelledby="faq-panel-5-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">All major credit and debit cards, plus SEPA direct debit and ACH. Business plans can pay by invoice on net-30 terms and settle in USD, EUR or GBP.</p>
               </div>
@@ -388,12 +388,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-6">
+              <button type="button" id="faq-panel-6-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-6">
                 Is there a discount for annual billing?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="faq-panel-6" class="accordion-panel" data-accordion-panel>
+            <div id="faq-panel-6" class="accordion-panel" role="region" aria-labelledby="faq-panel-6-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Annual billing saves 20% against the monthly rate on every paid plan — use the toggle above to compare. Committed-use contracts on Business can go further; talk to sales for the numbers.</p>
               </div>
@@ -511,9 +511,9 @@
           <ul class="mt-5 space-y-3">
             <li><a href="index-creator.html" class="footer-link">For Creators</a></li>
             <li><a href="index-enterprise.html" class="footer-link">For Enterprise</a></li>
-            <li><a href="features.html" class="footer-link">Live Events</a></li>
-            <li><a href="features.html" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
-            <li><a href="features.html" class="footer-link">Webinars</a></li>
+            <li><a href="features.html#live-events" class="footer-link">Live Events</a></li>
+            <li><a href="features.html#audio-rooms" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
+            <li><a href="features.html#webinars" class="footer-link">Webinars</a></li>
           </ul>
         </nav>
 

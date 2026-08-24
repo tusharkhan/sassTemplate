@@ -78,7 +78,7 @@
         <!-- ============================================================
              Sidebar
         ============================================================ -->
-        <aside aria-labelledby="doc-nav-heading">
+        <aside>
           <div class="lg:sticky lg:top-10">
             <h2 id="doc-nav-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Contents</h2>
             <nav class="mt-5" aria-label="Documentation sections">
@@ -131,7 +131,8 @@
               <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0" role="region" aria-label="File structure listing">
 <pre class="font-mono text-xs leading-relaxed text-slate-300"><code>wavenode/
 ├── index.html                 <span class="text-slate-500">← main landing page</span>
-├── features.html  pricing.html  blog.html  blog-single.html
+├── features.html  feature-single.html  pricing.html
+├── blog.html      blog-single.html
 ├── docs.html      contact.html  about.html  careers.html
 ├── testimonials.html  integrations.html  changelog.html
 ├── help-center.html   faq.html   terms.html   privacy.html
@@ -148,7 +149,8 @@
 │   │   └── main.js            <span class="text-slate-500">← all interactivity, no dependencies</span>
 │   ├── fonts/                 <span class="text-slate-500">← 4 woff2 files + OFL.txt licence</span>
 │   └── images/
-│       ├── logo.svg  favicon.svg
+│       ├── logo.svg          <span class="text-slate-500">← standalone mark (pages use inline SVG)</span>
+│       ├── favicon.svg
 │       └── og-preview.png     <span class="text-slate-500">← social share card, 1200×630</span>
 │
 ├── src/
@@ -172,7 +174,7 @@
           <!-- 3 -->
           <section id="pages" class="mt-14" aria-labelledby="pages-heading">
             <h2 id="pages-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">3. Page list</h2>
-            <p class="mt-4 leading-relaxed">Twenty-three pages, all sharing one header and footer.</p>
+            <p class="mt-4 leading-relaxed">Twenty-four pages, all sharing one header and footer.</p>
 
             <div class="scrollbar-slim mt-6 overflow-x-auto" tabindex="0" role="region" aria-label="Page list table">
               <table class="w-full min-w-[34rem] text-left text-sm">
@@ -188,6 +190,7 @@
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">index-creator.html</th><td class="py-3 pl-4 text-xs">Landing page aimed at creators</td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">index-enterprise.html</th><td class="py-3 pl-4 text-xs">Landing page aimed at business buyers</td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">features.html</th><td class="py-3 pl-4 text-xs">Capability grid, deep dives, comparison table</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">feature-single.html</th><td class="py-3 pl-4 text-xs">Single-feature deep dive with code sample and data table</td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">pricing.html</th><td class="py-3 pl-4 text-xs">Three tiers, billing toggle, FAQ accordion</td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">integrations.html</th><td class="py-3 pl-4 text-xs">Integration directory in five categories</td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">changelog.html</th><td class="py-3 pl-4 text-xs">Release timeline</td></tr>
@@ -290,6 +293,7 @@
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-billing-toggle<br>data-price-monthly<br>data-price-annual</th><td class="py-3 pl-4 text-xs">Pricing switch. Defaults to annual</td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-copy<br>data-copy-target="#id"</th><td class="py-3 pl-4 text-xs">Copies the target's text to the clipboard</td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-back-to-top</th><td class="py-3 pl-4 text-xs">Appears past 600px; scrolls to top</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-toc</th><td class="py-3 pl-4 text-xs">On a nav of <code class="font-mono">#id</code> links: marks the section currently in view with <code class="font-mono">aria-current</code></td></tr>
                   <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-year</th><td class="py-3 pl-4 text-xs">Fills in the current year (footer copyright)</td></tr>
                 </tbody>
               </table>
@@ -361,13 +365,13 @@
           <!-- 8 -->
           <section id="generator" class="mt-14" aria-labelledby="generator-heading">
             <h2 id="generator-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">8. Editing shared markup</h2>
-            <p class="mt-4 leading-relaxed">The header and footer are physically duplicated into all 23 pages, which is what makes the template work with no server. The trade-off is that changing a navigation link by hand means editing 23 files identically.</p>
+            <p class="mt-4 leading-relaxed">The header and footer are physically duplicated into all 24 pages, which is what makes the template work with no server. The trade-off is that changing a navigation link by hand means editing 24 files identically.</p>
             <p class="mt-4 leading-relaxed">The optional <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tools/</code> folder solves that. It is a small Python script (no packages needed) that assembles each page from shared parts:</p>
 
             <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
               <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0" role="region" aria-label="Generator commands">
 <pre class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-slate-500"># edit tools/partials/header.html once, then:</span>
-<span class="text-emerald-400">$</span> python3 tools/build.py       <span class="text-slate-500"># rewrite all 23 pages</span>
+<span class="text-emerald-400">$</span> python3 tools/build.py       <span class="text-slate-500"># rewrite all 24 pages</span>
 <span class="text-emerald-400">$</span> npm run build               <span class="text-slate-500"># recompile the CSS</span>
 
 <span class="text-slate-500"># check nothing has drifted out of sync</span>
@@ -436,12 +440,19 @@
               <li class="card flex gap-4 p-5">
                 <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">7</span>
                 <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Wire up or remove the placeholder navigation</p>
+                  <p class="mt-1.5 text-sm leading-relaxed">Three things look interactive but are not: the pagination on <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">blog.html</code> (pages 2, 3, 9 and Next all return to page 1), the category chips on <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">blog.html</code> and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">integrations.html</code>, and the &ldquo;All systems operational&rdquo; line in every footer, which is static text rather than a link to a status page. Point them at real destinations or remove them.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">8</span>
+                <div>
                   <p class="text-sm font-bold text-slate-900 dark:text-white">Configure your 404</p>
                   <p class="mt-1.5 text-sm leading-relaxed"><code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">404.html</code> exists but your server must be told to serve it. On Apache add <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">ErrorDocument 404 /404.html</code> to <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">.htaccess</code>; on Nginx use <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">error_page 404 /404.html;</code>.</p>
                 </div>
               </li>
               <li class="card flex gap-4 p-5">
-                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">8</span>
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">9</span>
                 <div>
                   <p class="text-sm font-bold text-slate-900 dark:text-white">Delete what you do not ship</p>
                   <p class="mt-1.5 text-sm leading-relaxed">Upload the HTML files and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">assets/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">robots.txt</code> and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">sitemap.xml</code>. Leave <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">tools/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">src/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">documentation/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">node_modules/</code> and the config files behind. Keep <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">assets/fonts/OFL.txt</code> &mdash; the font licence requires it.</p>

@@ -201,6 +201,27 @@
 
           <div class="mx-auto mt-14 grid max-w-6xl gap-12 lg:grid-cols-[1fr_16rem]">
 
+            <!-- Sidebar: table of contents -->
+            <aside class="hidden lg:order-last lg:block">
+              <div class="sticky top-28">
+                <h2 id="toc-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">On this page</h2>
+                <nav class="mt-5" aria-labelledby="toc-heading" data-toc>
+                  <ul class="space-y-3 border-l border-slate-200 dark:border-slate-800">
+                    <li><a href="#measure-the-path" class="-ml-px block border-l-2 border-primary-500 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400">Measure the whole path</a></li>
+                    <li><a href="#where-it-went" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Where the 163ms went</a></li>
+                    <li><a href="#adaptive-buffer" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Adaptive jitter buffer</a></li>
+                    <li><a href="#results" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Results</a></li>
+                  </ul>
+                </nav>
+
+                <div class="card mt-10 p-5">
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Try it yourself</p>
+                  <p class="mt-2 text-xs leading-relaxed">Spin up a room on the free tier and watch the latency panel live.</p>
+                  <a href="register.html" class="btn-primary mt-4 w-full !px-3 !py-2 !text-xs">Start free</a>
+                </div>
+              </div>
+            </aside>
+
             <!-- Prose column -->
             <div class="min-w-0 max-w-3xl">
               <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300" data-reveal>When we published our first latency number in 2024 it was 210 milliseconds, measured from the moment light hit a camera sensor to the moment the matching frame lit up a viewer&rsquo;s screen. That was competitive at the time. It was also, we discovered, mostly buffer.</p>
@@ -285,26 +306,6 @@
               </ul>
             </div>
 
-            <!-- Sidebar: table of contents -->
-            <aside class="hidden lg:block" aria-labelledby="toc-heading">
-              <div class="sticky top-28">
-                <h2 id="toc-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">On this page</h2>
-                <nav class="mt-5" aria-labelledby="toc-heading" data-toc>
-                  <ul class="space-y-3 border-l border-slate-200 dark:border-slate-800">
-                    <li><a href="#measure-the-path" class="-ml-px block border-l-2 border-primary-500 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400">Measure the whole path</a></li>
-                    <li><a href="#where-it-went" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Where the 163ms went</a></li>
-                    <li><a href="#adaptive-buffer" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Adaptive jitter buffer</a></li>
-                    <li><a href="#results" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Results</a></li>
-                  </ul>
-                </nav>
-
-                <div class="card mt-10 p-5">
-                  <p class="text-sm font-bold text-slate-900 dark:text-white">Try it yourself</p>
-                  <p class="mt-2 text-xs leading-relaxed">Spin up a room on the free tier and watch the latency panel live.</p>
-                  <a href="register.html" class="btn-primary mt-4 w-full !px-3 !py-2 !text-xs">Start free</a>
-                </div>
-              </div>
-            </aside>
           </div>
         </div>
       </div>
@@ -460,9 +461,9 @@
           <ul class="mt-5 space-y-3">
             <li><a href="index-creator.html" class="footer-link">For Creators</a></li>
             <li><a href="index-enterprise.html" class="footer-link">For Enterprise</a></li>
-            <li><a href="features.html" class="footer-link">Live Events</a></li>
-            <li><a href="features.html" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
-            <li><a href="features.html" class="footer-link">Webinars</a></li>
+            <li><a href="features.html#live-events" class="footer-link">Live Events</a></li>
+            <li><a href="features.html#audio-rooms" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
+            <li><a href="features.html#webinars" class="footer-link">Webinars</a></li>
           </ul>
         </nav>
 

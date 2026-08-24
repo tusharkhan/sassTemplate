@@ -7,11 +7,12 @@ This project follows [Semantic Versioning](https://semver.org).
 
 Initial release.
 
-- 23 static HTML pages: 3 landing variants, features, pricing, integrations,
+- 24 static HTML pages: 3 landing variants, features + feature detail,
+  pricing, integrations,
   changelog, API docs, blog index + article, about, careers, customers,
   help centre, FAQ, terms, privacy, contact, 3 auth screens, dashboard, 404.
 - Tailwind CSS 3.4, compiled and minified — no build step required to use.
-- Dependency-free vanilla JavaScript (~290 lines): theme toggle with
+- Dependency-free vanilla JavaScript (~399 lines): theme toggle with
   persistence, sticky header, mobile drawer, scroll reveal, accordions,
   pricing toggle, copy-to-clipboard, back-to-top.
 - Dark and light themes, dark by default, remembered per visitor.
@@ -26,4 +27,4 @@ Initial release.
 - SEO: unique titles and meta descriptions, canonical URLs, Open Graph and
   Twitter cards with a 1200×630 share image, `robots.txt`, `sitemap.xml`.
 - Optional Python page generator in `tools/` keeps the duplicated header and
-  footer in sync across all 23 pages.
+  footer in sync across all 24 pages.

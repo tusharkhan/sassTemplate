@@ -51,6 +51,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://wavenode.io/feature-single.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wavenode.io/features.html</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>

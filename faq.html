@@ -193,12 +193,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-1">
+                <button type="button" id="faq-panel-1-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-1">
                   How long does it take to go live for the first time?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-1" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-1" class="accordion-panel" role="region" aria-labelledby="faq-panel-1-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">About ten minutes if you already have an API key. Install the SDK, create a room server-side, mint a publisher token and call <code class="font-mono text-xs">joinRoom</code> in the browser. The quickstart in our documentation is three snippets long and there is no signalling server for you to run.</p>
                 </div>
@@ -207,12 +207,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-2">
+                <button type="button" id="faq-panel-2-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-2">
                   Do I need to run any infrastructure of my own?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-2" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-2" class="accordion-panel" role="region" aria-labelledby="faq-panel-2-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Only your own application backend, and only to keep your secret key off the client. Everything else &mdash; ingest, transcoding, delivery, recording, the AI pipeline &mdash; runs on our side. Many customers ship with a single serverless function that mints tokens.</p>
                 </div>
@@ -221,12 +221,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-3">
+                <button type="button" id="faq-panel-3-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-3">
                   Which browsers and devices are supported?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-3" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-3" class="accordion-panel" role="region" aria-labelledby="faq-panel-3-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Every evergreen browser on desktop and mobile: Chrome, Edge, Firefox and Safari, plus WebViews on iOS 16+ and Android API 26+. Native SDKs exist for Swift and Kotlin when you want camera control the web cannot give you.</p>
                 </div>
@@ -235,12 +235,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-4">
+                <button type="button" id="faq-panel-4-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-4">
                   Can I try it without giving you a card?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-4" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-4" class="accordion-panel" role="region" aria-labelledby="faq-panel-4-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Yes. The free tier includes 1,000 streaming minutes a month, the full global network and every endpoint, and it does not expire. We ask for a card only when you cross into a paid plan.</p>
                 </div>
@@ -265,12 +265,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-5">
+                <button type="button" id="faq-panel-5-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-5">
                   What latency should I actually expect?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-5" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-5" class="accordion-panel" role="region" aria-labelledby="faq-panel-5-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Median glass-to-glass latency across the fleet is 47ms, with the 95th percentile at 91ms. Those are measured end to end by synthetic publishers and subscribers in every region, not from the moment a frame enters our servers. Live figures are on the status page.</p>
                 </div>
@@ -279,12 +279,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-6">
+                <button type="button" id="faq-panel-6-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-6">
                   How many viewers can watch one stream?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-6" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-6" class="accordion-panel" role="region" aria-labelledby="faq-panel-6-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">There is no architectural ceiling &mdash; delivery is pull-based from the edge, so viewers scale independently of the publisher. The largest single broadcast we have carried peaked at 1.4 million concurrent viewers. Your plan sets a soft limit you can raise by asking.</p>
                 </div>
@@ -293,12 +293,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-7">
+                <button type="button" id="faq-panel-7-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-7">
                   What happens on a bad network?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-7" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-7" class="accordion-panel" role="region" aria-labelledby="faq-panel-7-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">The jitter buffer adapts per connection, targeting one frame of headroom above observed p99 jitter, and the bitrate ladder drops resolution before it drops frames. On genuinely poor connections the buffer grows &mdash; viewers get slightly more delay instead of a stall.</p>
                 </div>
@@ -307,12 +307,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-8">
+                <button type="button" id="faq-panel-8-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-8">
                   Can I stream from OBS or hardware encoders?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-8" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-8" class="accordion-panel" role="region" aria-labelledby="faq-panel-8-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Yes. Publish RTMP or SRT to <code class="font-mono text-xs">ingest.wavenode.io</code> with your stream key. WebRTC gets you the lowest latency, but RTMP is fully supported and is what most hardware encoders speak.</p>
                 </div>
@@ -337,12 +337,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-9">
+                <button type="button" id="faq-panel-9-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-9">
                   How accurate are the live captions?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-9" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-9" class="accordion-panel" role="region" aria-labelledby="faq-panel-9-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Word error rate is typically 4&ndash;7% on clear audio in a supported language, which is competitive with offline transcription. Accuracy on proper nouns improves substantially if you upload a custom vocabulary &mdash; product names and rosters are where generic models struggle.</p>
                 </div>
@@ -351,12 +351,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-10">
+                <button type="button" id="faq-panel-10-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-10">
                   Which languages are available?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-10" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-10" class="accordion-panel" role="region" aria-labelledby="faq-panel-10-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Captions in 42 languages and real-time translation between any supported pair. The free tier includes five languages; paid plans include all of them. The current list is in the documentation and grows a few times a year.</p>
                 </div>
@@ -365,12 +365,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-11">
+                <button type="button" id="faq-panel-11-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-11">
                   How are highlight clips chosen?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-11" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-11" class="accordion-panel" role="region" aria-labelledby="faq-panel-11-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">The models look for laughter, applause, sustained chat activity and topic changes, then cut around the detected moment with a configurable lead-in. You get candidates with confidence scores rather than a single answer, so you can filter or let creators pick.</p>
                 </div>
@@ -379,12 +379,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-12">
+                <button type="button" id="faq-panel-12-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-12">
                   Is my media used to train your models?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-12" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-12" class="accordion-panel" role="region" aria-labelledby="faq-panel-12-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">No. Customer media is never used for training, by default or by opt-in. Recordings and transcripts exist only to serve your API calls and are deleted on the retention schedule you set.</p>
                 </div>
@@ -409,56 +409,56 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-13">
-                  What exactly is a streaming minute?
+                <button type="button" id="faq-panel-13-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-13">
+                  Can I cap what I spend?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-13" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-13" class="accordion-panel" role="region" aria-labelledby="faq-panel-13-trigger" data-accordion-panel>
                 <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed">One minute of media published to the platform, measured per stream rather than per viewer. A 60-minute broadcast watched by 5,000 people costs 60 streaming minutes, plus the bandwidth those viewers pulled from the edge.</p>
+                  <p class="px-6 pb-6 text-sm leading-relaxed">Yes. Set a hard monthly ceiling per project in the dashboard and choose whether to throttle or keep streaming when it is reached. Alerts fire at 50%, 80% and 100% over webhook and email, so nobody finds out from the invoice.</p>
                 </div>
               </div>
             </div>
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-14">
-                  What happens if I exceed my plan allowance?
+                <button type="button" id="faq-panel-14-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-14">
+                  Is storage billed separately from streaming?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-14" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-14" class="accordion-panel" role="region" aria-labelledby="faq-panel-14-trigger" data-accordion-panel>
                 <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed">Nothing stops. Streams keep running and the extra usage appears on your next invoice at the published metered rates. If you would rather be throttled than charged, set a hard spend cap in the dashboard.</p>
+                  <p class="px-6 pb-6 text-sm leading-relaxed">Yes, and they are metered independently &mdash; you are charged for what you keep as well as what you send. Recordings move to a colder tier automatically as they age, and pointing us at your own S3 bucket removes our storage line from the invoice entirely.</p>
                 </div>
               </div>
             </div>
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-15">
-                  Can I change plans mid-cycle?
+                <button type="button" id="faq-panel-15-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-15">
+                  What happens to my recordings if I cancel?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-15" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-15" class="accordion-panel" role="region" aria-labelledby="faq-panel-15-trigger" data-accordion-panel>
                 <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed">Yes. Upgrades apply immediately and are prorated. Downgrades take effect at the start of your next billing period, so you keep the higher limits for everything you have already paid for.</p>
+                  <p class="px-6 pb-6 text-sm leading-relaxed">They stay downloadable through the API for 30 days after the account closes, then they are deleted along with the backups. Export before you go, or ask support to extend the window &mdash; we would rather you left with your media than without it.</p>
                 </div>
               </div>
             </div>
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-16">
-                  Do you offer discounts?
+                <button type="button" id="faq-panel-16-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-16">
+                  Can I get a VAT invoice, and are the prices tax-inclusive?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-16" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-16" class="accordion-panel" role="region" aria-labelledby="faq-panel-16-trigger" data-accordion-panel>
                 <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed">Annual billing saves 20% on every paid plan. Committed-use contracts on Business go further, and we have education and registered-non-profit rates &mdash; ask and we will tell you honestly whether you qualify.</p>
+                  <p class="px-6 pb-6 text-sm leading-relaxed">Prices exclude VAT and sales tax, which are added at checkout based on your billing country. Every invoice carries your VAT registration number, a purchase-order reference if you supply one, and is downloadable as both PDF and CSV.</p>
                 </div>
               </div>
             </div>
@@ -481,12 +481,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-17">
+                <button type="button" id="faq-panel-17-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-17">
                   Which certifications do you hold?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-17" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-17" class="accordion-panel" role="region" aria-labelledby="faq-panel-17-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">SOC 2 Type II, renewed annually, with the report available under NDA. The platform is GDPR-compliant and HIPAA-ready, and we sign BAAs on Business plans. Penetration test summaries are shared on request.</p>
                 </div>
@@ -495,12 +495,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-18">
+                <button type="button" id="faq-panel-18-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-18">
                   Can I keep data in a specific region?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-18" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-18" class="accordion-panel" role="region" aria-labelledby="faq-panel-18-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Yes. Business plans can pin every workload &mdash; ingest, processing, storage and AI inference &mdash; to the EU, US or APAC. Region-pinned ingest hostnames bypass anycast routing so media never leaves the jurisdiction.</p>
                 </div>
@@ -509,12 +509,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-19">
+                <button type="button" id="faq-panel-19-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-19">
                   How do you protect playback?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-19" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-19" class="accordion-panel" role="region" aria-labelledby="faq-panel-19-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Signed, expiring playback URLs by default, with optional DRM and per-room encryption keys. Room tokens are short-lived JWTs scoped to a single room and role, so a leaked token is useless within the hour.</p>
                 </div>
@@ -523,12 +523,12 @@
 
             <div class="card" data-accordion data-reveal>
               <h3>
-                <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-20">
+                <button type="button" id="faq-panel-20-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-20">
                   Where do I report a vulnerability?
                   <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               </h3>
-              <div id="faq-panel-20" class="accordion-panel" data-accordion-panel>
+              <div id="faq-panel-20" class="accordion-panel" role="region" aria-labelledby="faq-panel-20-trigger" data-accordion-panel>
                 <div>
                   <p class="px-6 pb-6 text-sm leading-relaxed">Email <a href="mailto:security@wavenode.io" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">security@wavenode.io</a> rather than using the contact form. We acknowledge within one business day and run a paid disclosure programme.</p>
                 </div>
@@ -662,9 +662,9 @@
           <ul class="mt-5 space-y-3">
             <li><a href="index-creator.html" class="footer-link">For Creators</a></li>
             <li><a href="index-enterprise.html" class="footer-link">For Enterprise</a></li>
-            <li><a href="features.html" class="footer-link">Live Events</a></li>
-            <li><a href="features.html" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
-            <li><a href="features.html" class="footer-link">Webinars</a></li>
+            <li><a href="features.html#live-events" class="footer-link">Live Events</a></li>
+            <li><a href="features.html#audio-rooms" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
+            <li><a href="features.html#webinars" class="footer-link">Webinars</a></li>
           </ul>
         </nav>
 

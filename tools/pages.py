@@ -169,6 +169,14 @@ register(
     cta=False,
 )
 
+register(
+    'feature-single.html',
+    'AI Captions &amp; Live Translation — WaveNode',
+    'How WaveNode live captions and translation work: 42 languages at roughly 300ms, speaker labels, custom vocabulary, region-pinned inference, and measured word error rates by audio condition.',
+    'Captions in 42 languages at ~300ms, with translation on the same socket.',
+    active='features.html',
+)
+
 # ---------------------------------------------------------------------------
 # Utility and app-UI pages
 # ---------------------------------------------------------------------------

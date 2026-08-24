@@ -42,9 +42,9 @@
           <div class="relative" data-reveal data-reveal-delay="1">
             <div class="bg-glow pointer-events-none absolute -right-16 -top-16 h-72 w-72" aria-hidden="true"></div>
 
-            <div class="card relative overflow-hidden p-6 shadow-glow-sm">
+            <div aria-hidden="true" class="card relative overflow-hidden p-6 shadow-glow-sm">
               <div class="flex items-center justify-between">
-                <h2 class="text-sm font-bold text-slate-900 dark:text-white">Security posture</h2>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Security posture</p>
                 <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                   <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
                   Current
@@ -247,12 +247,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-1">
+              <button type="button" id="ent-panel-1-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-1">
                 Can we see your SOC 2 report and pen test summary?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="ent-panel-1" class="accordion-panel" data-accordion-panel>
+            <div id="ent-panel-1" class="accordion-panel" role="region" aria-labelledby="ent-panel-1-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Yes. The SOC 2 Type II report is available under NDA, renewed annually, and we share the external penetration test summary on request. Our sub-processor list, retention schedule and incident history are published without an NDA.</p>
               </div>
@@ -261,12 +261,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-2">
+              <button type="button" id="ent-panel-2-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-2">
                 Is customer media used to train your models?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="ent-panel-2" class="accordion-panel" data-accordion-panel>
+            <div id="ent-panel-2" class="accordion-panel" role="region" aria-labelledby="ent-panel-2-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">No &mdash; not by default and not by opt-in. Media is held in memory for the duration of processing and written to storage only where you have enabled recording. Inference runs inside the region you selected.</p>
               </div>
@@ -275,12 +275,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-3">
+              <button type="button" id="ent-panel-3-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-3">
                 How is the SLA measured, and what are the credits?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="ent-panel-3" class="accordion-panel" data-accordion-panel>
+            <div id="ent-panel-3" class="accordion-panel" role="region" aria-labelledby="ent-panel-3-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Uptime is measured per region against synthetic publishers and subscribers, not against our own internal health checks. The credit schedule is published in the documentation and applies automatically &mdash; you do not have to file a claim to receive it.</p>
               </div>
@@ -289,12 +289,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-4">
+              <button type="button" id="ent-panel-4-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-4">
                 What happens to our data if we leave?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="ent-panel-4" class="accordion-panel" data-accordion-panel>
+            <div id="ent-panel-4" class="accordion-panel" role="region" aria-labelledby="ent-panel-4-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Recordings, transcripts and metadata are exportable at any time through the API. On termination we delete media within 24 hours of your request and purge backups within 30 days, and we will help you move to another provider without charge.</p>
               </div>
@@ -303,12 +303,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-5">
+              <button type="button" id="ent-panel-5-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="ent-panel-5">
                 Can we pay by invoice with net-30 terms?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="ent-panel-5" class="accordion-panel" data-accordion-panel>
+            <div id="ent-panel-5" class="accordion-panel" role="region" aria-labelledby="ent-panel-5-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Yes. Business plans can settle by invoice on net-30 terms in USD, EUR or GBP, with purchase-order references carried onto every invoice. Committed-use contracts attract volume discounts.</p>
               </div>

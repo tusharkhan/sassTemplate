@@ -191,7 +191,7 @@
                 <path d="m22 8-6 4 6 4V8z"/>
               </svg>
             </span>
-            <h3 class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Live video streaming</h3>
+            <h3 id="live-events" class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Live video streaming</h3>
             <p class="mt-3 text-sm leading-relaxed">Push RTMP or WebRTC and we handle transcoding, adaptive bitrate ladders and HLS delivery. Streams start in under two seconds and scale from ten viewers to a million without a config change.</p>
           </article>
 
@@ -203,7 +203,7 @@
                 <path d="M19 11a7 7 0 0 1-14 0M12 18v4"/>
               </svg>
             </span>
-            <h3 class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Audio rooms &amp; podcasts</h3>
+            <h3 id="audio-rooms" class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Audio rooms &amp; podcasts</h3>
             <p class="mt-3 text-sm leading-relaxed">Opus-encoded spatial audio with echo cancellation and noise suppression on by default. Record every speaker to a separate track so your editor never has to un-mix a conversation.</p>
           </article>
 
@@ -216,7 +216,7 @@
                 <path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>
               </svg>
             </span>
-            <h3 class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Meetings &amp; webinars</h3>
+            <h3 id="webinars" class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Meetings &amp; webinars</h3>
             <p class="mt-3 text-sm leading-relaxed">Host up to 10,000 participants with active-speaker layouts, screen share, breakout rooms and raise-hand. Moderator controls are exposed as API calls, so you can build your own stage.</p>
           </article>
 
@@ -228,7 +228,7 @@
                 <path d="M7 15h4M14 15h3M7 11h2M12 11h5"/>
               </svg>
             </span>
-            <h3 class="mt-5 text-lg font-bold text-slate-900 dark:text-white">AI captions &amp; translation</h3>
+            <h3 class="mt-5 text-lg font-bold text-slate-900 dark:text-white"><a href="feature-single.html" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">AI captions &amp; translation</a></h3>
             <p class="mt-3 text-sm leading-relaxed">Live captions in 42 languages at roughly 300ms behind the speaker, with real-time translation on the same socket. Finished transcripts land in your webhook as soon as the stream ends.</p>
           </article>
 
@@ -431,6 +431,7 @@
             <p class="section-badge">AI toolkit</p>
             <h2 id="ai-heading" class="section-title mt-5">Post-production that finishes itself</h2>
             <p class="section-lead mt-5">The same models that caption your stream also chapter it, clip it and summarise it. Everything is available over the API the moment a session ends, so your editors start from a rough cut instead of a raw file.</p>
+            <p class="mt-5 text-sm"><a href="feature-single.html" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">See how captions and translation work &rarr;</a></p>
 
             <dl class="mt-8 grid gap-6 sm:grid-cols-2">
               <div>
@@ -645,9 +646,9 @@
           <ul class="mt-5 space-y-3">
             <li><a href="index-creator.html" class="footer-link">For Creators</a></li>
             <li><a href="index-enterprise.html" class="footer-link">For Enterprise</a></li>
-            <li><a href="features.html" class="footer-link">Live Events</a></li>
-            <li><a href="features.html" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
-            <li><a href="features.html" class="footer-link">Webinars</a></li>
+            <li><a href="features.html#live-events" class="footer-link">Live Events</a></li>
+            <li><a href="features.html#audio-rooms" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
+            <li><a href="features.html#webinars" class="footer-link">Webinars</a></li>
           </ul>
         </nav>
 

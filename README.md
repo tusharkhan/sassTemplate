@@ -1,6 +1,6 @@
 # WaveNode — AI SaaS HTML Template
 
-A 23-page HTML template for an AI-powered video and audio streaming platform.
+A 24-page HTML template for an AI-powered video and audio streaming platform.
 Tailwind CSS and dependency-free vanilla JavaScript. Dark and light themes.
 No framework, no server, no build step required to use it.
 
@@ -34,9 +34,9 @@ Edit `src/input.css`, never `assets/css/style.css` — the latter is generated.
 
 ## Optional page generator
 
-The header and footer are physically duplicated into all 23 pages, which is
+The header and footer are physically duplicated into all 24 pages, which is
 what lets the template work with no server. A small Python script (no packages
-needed) keeps those copies in sync so a nav change is one edit, not 23:
+needed) keeps those copies in sync so a nav change is one edit, not 24:
 
 ```bash
 npm run pages         # regenerate all pages from tools/partials + tools/content
@@ -51,9 +51,9 @@ shipped site depends on it. See [`tools/README.md`](tools/README.md).
 
 | | |
 | --- | --- |
-| **Pages** | 23 — 3 landing variants, features, pricing, integrations, changelog, API docs, blog + article, about, careers, customers, help centre, FAQ, terms, privacy, contact, 3 auth screens, dashboard, 404 |
-| **CSS** | Tailwind CSS 3.4, compiled to a single 52 KB minified file |
-| **JavaScript** | ~290 lines, no dependencies, all driven by `data-*` attributes |
+| **Pages** | 24 — 3 landing variants, features + feature detail, pricing, integrations, changelog, API docs, blog + article, about, careers, customers, help centre, FAQ, terms, privacy, contact, 3 auth screens, dashboard, 404 |
+| **CSS** | Tailwind CSS 3.4, compiled to a single 56 KB minified file |
+| **JavaScript** | ~399 lines, no dependencies, all driven by `data-*` attributes |
 | **Fonts** | Plus Jakarta Sans + JetBrains Mono, self-hosted variable woff2 |
 | **Icons** | Original inline SVG — no icon library, no image files |
 | **Themes** | Dark and light, dark by default, remembered per visitor |

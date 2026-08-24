@@ -40,23 +40,23 @@
             <h2 id="form-heading" class="text-xl font-bold text-slate-900 dark:text-white">Send us a message</h2>
             <p class="mt-2 text-sm">Fields marked with an asterisk are required.</p>
 
-            <form class="mt-8" action="#" method="post" novalidate>
+            <form class="mt-8" action="#" method="post">
               <div class="grid gap-5 sm:grid-cols-2">
                 <!-- First name -->
                 <div>
-                  <label for="contact-first-name" class="block text-sm font-semibold text-slate-900 dark:text-white">First name <abbr title="required" class="text-primary-500 no-underline">*</abbr></label>
+                  <label for="contact-first-name" class="block text-sm font-semibold text-slate-900 dark:text-white">First name <span class="text-primary-500" aria-hidden="true">*</span></label>
                   <input type="text" id="contact-first-name" name="first-name" required autocomplete="given-name" placeholder="Rina" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
                 </div>
 
                 <!-- Last name -->
                 <div>
-                  <label for="contact-last-name" class="block text-sm font-semibold text-slate-900 dark:text-white">Last name <abbr title="required" class="text-primary-500 no-underline">*</abbr></label>
+                  <label for="contact-last-name" class="block text-sm font-semibold text-slate-900 dark:text-white">Last name <span class="text-primary-500" aria-hidden="true">*</span></label>
                   <input type="text" id="contact-last-name" name="last-name" required autocomplete="family-name" placeholder="Nakamura" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
                 </div>
 
                 <!-- Email -->
                 <div>
-                  <label for="contact-email" class="block text-sm font-semibold text-slate-900 dark:text-white">Work email <abbr title="required" class="text-primary-500 no-underline">*</abbr></label>
+                  <label for="contact-email" class="block text-sm font-semibold text-slate-900 dark:text-white">Work email <span class="text-primary-500" aria-hidden="true">*</span></label>
                   <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="you@company.com" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
                 </div>
 
@@ -68,7 +68,7 @@
 
                 <!-- Topic -->
                 <div class="sm:col-span-2">
-                  <label for="contact-topic" class="block text-sm font-semibold text-slate-900 dark:text-white">What is this about? <abbr title="required" class="text-primary-500 no-underline">*</abbr></label>
+                  <label for="contact-topic" class="block text-sm font-semibold text-slate-900 dark:text-white">What is this about? <span class="text-primary-500" aria-hidden="true">*</span></label>
                   <select id="contact-topic" name="topic" required class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white">
                     <option value="">Choose a topic&hellip;</option>
                     <option value="sales">Pricing and plans</option>
@@ -106,7 +106,7 @@
 
                 <!-- Message -->
                 <div class="sm:col-span-2">
-                  <label for="contact-message" class="block text-sm font-semibold text-slate-900 dark:text-white">Message <abbr title="required" class="text-primary-500 no-underline">*</abbr></label>
+                  <label for="contact-message" class="block text-sm font-semibold text-slate-900 dark:text-white">Message <span class="text-primary-500" aria-hidden="true">*</span></label>
                   <textarea id="contact-message" name="message" rows="5" required placeholder="A sentence or two about your use case is plenty — we will ask for the rest." class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400"></textarea>
                 </div>
 
@@ -114,7 +114,7 @@
                 <div class="sm:col-span-2">
                   <div class="flex gap-3">
                     <input type="checkbox" id="contact-consent" name="consent" required class="mt-0.5 h-4 w-4 rounded border-slate-400 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
-                    <label for="contact-consent" class="text-sm leading-relaxed">I agree to the <a href="privacy.html" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">privacy policy</a> and to being contacted about my enquiry. <abbr title="required" class="text-primary-500 no-underline">*</abbr></label>
+                    <label for="contact-consent" class="text-sm leading-relaxed">I agree to the <a href="privacy.html" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">privacy policy</a> and to being contacted about my enquiry. <span class="text-primary-500" aria-hidden="true">*</span></label>
                   </div>
                 </div>
               </div>
@@ -137,7 +137,7 @@
                   <path d="m2 7 10 6 10-6"/>
                 </svg>
               </span>
-              <h2 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Sales</h2>
+              <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Sales</h3>
               <p class="mt-2 text-sm leading-relaxed">Plans, quotas, procurement paperwork and security questionnaires.</p>
               <p class="mt-3"><a href="mailto:sales@wavenode.io" class="text-sm font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">sales@wavenode.io</a></p>
             </div>
@@ -149,7 +149,7 @@
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                 </svg>
               </span>
-              <h2 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Technical support</h2>
+              <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Technical support</h3>
               <p class="mt-2 text-sm leading-relaxed">Include your room ID and a rough timestamp — it saves a round trip.</p>
               <p class="mt-3"><a href="mailto:support@wavenode.io" class="text-sm font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">support@wavenode.io</a></p>
             </div>
@@ -161,7 +161,7 @@
                   <path d="M22 12h-4l-3 8-4-16-3 8H2"/>
                 </svg>
               </span>
-              <h2 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Incident in progress?</h2>
+              <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Incident in progress?</h3>
               <p class="mt-2 text-sm leading-relaxed">Check the status page first — we post updates there before anywhere else.</p>
               <p class="mt-3 flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
                 <span class="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
@@ -171,7 +171,7 @@
 
             <!-- Offices -->
             <div class="card p-6" data-reveal>
-              <h2 class="text-base font-bold text-slate-900 dark:text-white">Offices</h2>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Offices</h3>
               <ul class="mt-5 space-y-5">
                 <li>
                   <p class="text-sm font-semibold text-slate-900 dark:text-white">Berlin <span class="text-xs font-normal text-slate-500 dark:text-slate-400">&mdash; HQ</span></p>
@@ -208,12 +208,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-1">
+              <button type="button" id="contact-panel-1-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-1">
                 How fast do you actually reply?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="contact-panel-1" class="accordion-panel" data-accordion-panel>
+            <div id="contact-panel-1" class="accordion-panel" role="region" aria-labelledby="contact-panel-1-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Median first response is under three hours between 08:00 and 20:00 CET on weekdays. Business plans have a contractual one-hour target and a shared Slack channel that is monitored around the clock.</p>
               </div>
@@ -222,12 +222,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-2">
+              <button type="button" id="contact-panel-2-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-2">
                 Can I get a demo with an engineer rather than a sales rep?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="contact-panel-2" class="accordion-panel" data-accordion-panel>
+            <div id="contact-panel-2" class="accordion-panel" role="region" aria-labelledby="contact-panel-2-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Yes, and it is the default for technical enquiries. Pick &ldquo;Technical or integration question&rdquo; above and describe your architecture; a solutions engineer joins the first call.</p>
               </div>
@@ -236,12 +236,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-3">
+              <button type="button" id="contact-panel-3-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-3">
                 Do you help with migrations from another provider?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="contact-panel-3" class="accordion-panel" data-accordion-panel>
+            <div id="contact-panel-3" class="accordion-panel" role="region" aria-labelledby="contact-panel-3-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">We run the migration with you at no charge on Business plans, including a dual-publish period so you can compare quality metrics side by side before cutting over.</p>
               </div>
@@ -250,12 +250,12 @@
 
           <div class="card" data-accordion data-reveal>
             <h3>
-              <button type="button" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-4">
+              <button type="button" id="contact-panel-4-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-4">
                 Where do I report a security issue?
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </button>
             </h3>
-            <div id="contact-panel-4" class="accordion-panel" data-accordion-panel>
+            <div id="contact-panel-4" class="accordion-panel" role="region" aria-labelledby="contact-panel-4-trigger" data-accordion-panel>
               <div>
                 <p class="px-6 pb-6 text-sm leading-relaxed">Email <a href="mailto:security@wavenode.io" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">security@wavenode.io</a> rather than using this form. We acknowledge reports within one business day and run a paid disclosure programme.</p>
               </div>
