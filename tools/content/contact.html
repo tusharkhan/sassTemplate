@@ -1,0 +1,267 @@
+  <main id="main-content">
+
+    <!-- ================================================================
+         Page Header Start
+    ================================================================ -->
+    <section class="bg-grid relative overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16" aria-labelledby="page-heading">
+      <!-- Decorative glow -->
+      <div class="bg-glow pointer-events-none absolute -top-32 left-1/2 h-[32rem] w-[52rem] -translate-x-1/2" aria-hidden="true"></div>
+
+      <div class="container relative">
+        <!-- Breadcrumb -->
+        <nav class="flex justify-center" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+            <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300" aria-current="page">Contact</span></li>
+          </ol>
+        </nav>
+
+        <div class="mx-auto mt-8 max-w-3xl text-center">
+          <p class="section-badge" data-reveal>Contact</p>
+          <h1 id="page-heading" class="section-title mt-5" data-reveal>Tell us what you are <span class="text-gradient">building</span></h1>
+          <p class="section-lead mt-6" data-reveal data-reveal-delay="1">Sales questions, architecture reviews, migration help or a bug you cannot reproduce — it all reaches a human. Median first reply is under three hours on weekdays.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Page Header End -->
+
+    <!-- ================================================================
+         Contact Form &amp; Details Start
+    ================================================================ -->
+    <section class="pb-16 sm:pb-20" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-14">
+
+          <!-- ============================================================
+               Form
+          ============================================================ -->
+          <div class="card p-7 sm:p-9" data-reveal>
+            <h2 id="form-heading" class="text-xl font-bold text-slate-900 dark:text-white">Send us a message</h2>
+            <p class="mt-2 text-sm">Fields marked with an asterisk are required.</p>
+
+            <form class="mt-8" action="#" method="post">
+              <div class="grid gap-5 sm:grid-cols-2">
+                <!-- First name -->
+                <div>
+                  <label for="contact-first-name" class="block text-sm font-semibold text-slate-900 dark:text-white">First name <span class="text-primary-500" aria-hidden="true">*</span></label>
+                  <input type="text" id="contact-first-name" name="first-name" required autocomplete="given-name" placeholder="Rina" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
+                </div>
+
+                <!-- Last name -->
+                <div>
+                  <label for="contact-last-name" class="block text-sm font-semibold text-slate-900 dark:text-white">Last name <span class="text-primary-500" aria-hidden="true">*</span></label>
+                  <input type="text" id="contact-last-name" name="last-name" required autocomplete="family-name" placeholder="Nakamura" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label for="contact-email" class="block text-sm font-semibold text-slate-900 dark:text-white">Work email <span class="text-primary-500" aria-hidden="true">*</span></label>
+                  <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="you@company.com" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
+                </div>
+
+                <!-- Company -->
+                <div>
+                  <label for="contact-company" class="block text-sm font-semibold text-slate-900 dark:text-white">Company</label>
+                  <input type="text" id="contact-company" name="company" autocomplete="organization" placeholder="Optional" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
+                </div>
+
+                <!-- Topic -->
+                <div class="sm:col-span-2">
+                  <label for="contact-topic" class="block text-sm font-semibold text-slate-900 dark:text-white">What is this about? <span class="text-primary-500" aria-hidden="true">*</span></label>
+                  <select id="contact-topic" name="topic" required class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white">
+                    <option value="">Choose a topic&hellip;</option>
+                    <option value="sales">Pricing and plans</option>
+                    <option value="technical">Technical or integration question</option>
+                    <option value="enterprise">Enterprise, SLA or procurement</option>
+                    <option value="support">Something is broken</option>
+                    <option value="partnership">Partnership or press</option>
+                  </select>
+                </div>
+
+                <!-- Expected volume -->
+                <div class="sm:col-span-2">
+                  <fieldset>
+                    <legend class="block text-sm font-semibold text-slate-900 dark:text-white">Expected monthly streaming volume</legend>
+                    <div class="mt-3 flex flex-wrap gap-x-6 gap-y-3">
+                      <div class="flex items-center gap-2.5">
+                        <input type="radio" id="volume-small" name="volume" value="under-10k" class="h-4 w-4 border-slate-400 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
+                        <label for="volume-small" class="text-sm">Under 10k minutes</label>
+                      </div>
+                      <div class="flex items-center gap-2.5">
+                        <input type="radio" id="volume-medium" name="volume" value="10k-100k" class="h-4 w-4 border-slate-400 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
+                        <label for="volume-medium" class="text-sm">10k&ndash;100k minutes</label>
+                      </div>
+                      <div class="flex items-center gap-2.5">
+                        <input type="radio" id="volume-large" name="volume" value="over-100k" class="h-4 w-4 border-slate-400 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
+                        <label for="volume-large" class="text-sm">Over 100k minutes</label>
+                      </div>
+                      <div class="flex items-center gap-2.5">
+                        <input type="radio" id="volume-unknown" name="volume" value="unknown" class="h-4 w-4 border-slate-400 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
+                        <label for="volume-unknown" class="text-sm">Not sure yet</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <!-- Message -->
+                <div class="sm:col-span-2">
+                  <label for="contact-message" class="block text-sm font-semibold text-slate-900 dark:text-white">Message <span class="text-primary-500" aria-hidden="true">*</span></label>
+                  <textarea id="contact-message" name="message" rows="5" required placeholder="A sentence or two about your use case is plenty — we will ask for the rest." class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400"></textarea>
+                </div>
+
+                <!-- Consent -->
+                <div class="sm:col-span-2">
+                  <div class="flex gap-3">
+                    <input type="checkbox" id="contact-consent" name="consent" required class="mt-0.5 h-4 w-4 rounded border-slate-400 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
+                    <label for="contact-consent" class="text-sm leading-relaxed">I agree to the <a href="privacy.html" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">privacy policy</a> and to being contacted about my enquiry. <span class="text-primary-500" aria-hidden="true">*</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary mt-8 w-full py-3.5 text-base sm:w-auto sm:px-8">Send message</button>
+              <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">This is a static demo form. Wire the <code class="font-mono">action</code> attribute to your own handler before going live.</p>
+            </form>
+          </div>
+
+          <!-- ============================================================
+               Contact details
+          ============================================================ -->
+          <div class="space-y-5">
+
+            <!-- Sales -->
+            <div class="card card-hover p-6" data-reveal>
+              <span class="icon-tile">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m2 7 10 6 10-6"/>
+                </svg>
+              </span>
+              <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Sales</h3>
+              <p class="mt-2 text-sm leading-relaxed">Plans, quotas, procurement paperwork and security questionnaires.</p>
+              <p class="mt-3"><a href="mailto:sales@wavenode.io" class="text-sm font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">sales@wavenode.io</a></p>
+            </div>
+
+            <!-- Support -->
+            <div class="card card-hover p-6" data-reveal data-reveal-delay="1">
+              <span class="icon-tile">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </span>
+              <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Technical support</h3>
+              <p class="mt-2 text-sm leading-relaxed">Include your room ID and a rough timestamp — it saves a round trip.</p>
+              <p class="mt-3"><a href="mailto:support@wavenode.io" class="text-sm font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">support@wavenode.io</a></p>
+            </div>
+
+            <!-- Status -->
+            <div class="card card-hover p-6" data-reveal data-reveal-delay="2">
+              <span class="icon-tile">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 12h-4l-3 8-4-16-3 8H2"/>
+                </svg>
+              </span>
+              <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Incident in progress?</h3>
+              <p class="mt-2 text-sm leading-relaxed">Check the status page first — we post updates there before anywhere else.</p>
+              <p class="mt-3 flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                <span class="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
+                All systems operational
+              </p>
+            </div>
+
+            <!-- Offices -->
+            <div class="card p-6" data-reveal>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Offices</h3>
+              <ul class="mt-5 space-y-5">
+                <li>
+                  <p class="text-sm font-semibold text-slate-900 dark:text-white">Berlin <span class="text-xs font-normal text-slate-500 dark:text-slate-400">&mdash; HQ</span></p>
+                  <address class="mt-1 text-sm not-italic leading-relaxed">Chausseestraße 112<br>10115 Berlin, Germany</address>
+                </li>
+                <li>
+                  <p class="text-sm font-semibold text-slate-900 dark:text-white">Singapore</p>
+                  <address class="mt-1 text-sm not-italic leading-relaxed">71 Robinson Road, Level 14<br>Singapore 068895</address>
+                </li>
+                <li>
+                  <p class="text-sm font-semibold text-slate-900 dark:text-white">Austin</p>
+                  <address class="mt-1 text-sm not-italic leading-relaxed">600 Congress Avenue, Suite 1400<br>Austin, TX 78701, USA</address>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Form &amp; Details End -->
+
+    <!-- ================================================================
+         Contact FAQ Start
+    ================================================================ -->
+    <section class="pb-16 sm:pb-20" aria-labelledby="contact-faq-heading">
+      <div class="container">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="section-badge" data-reveal>Before you write</p>
+          <h2 id="contact-faq-heading" class="section-title mt-5" data-reveal>Answers that save you an email</h2>
+        </div>
+
+        <!-- data-accordion-group keeps only one panel open at a time -->
+        <div class="mx-auto mt-12 max-w-3xl space-y-4" data-accordion-group>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="contact-panel-1-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-1">
+                How fast do you actually reply?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="contact-panel-1" class="accordion-panel" role="region" aria-labelledby="contact-panel-1-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">Median first response is under three hours between 08:00 and 20:00 CET on weekdays. Business plans have a contractual one-hour target and a shared Slack channel that is monitored around the clock.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="contact-panel-2-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-2">
+                Can I get a demo with an engineer rather than a sales rep?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="contact-panel-2" class="accordion-panel" role="region" aria-labelledby="contact-panel-2-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">Yes, and it is the default for technical enquiries. Pick &ldquo;Technical or integration question&rdquo; above and describe your architecture; a solutions engineer joins the first call.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="contact-panel-3-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-3">
+                Do you help with migrations from another provider?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="contact-panel-3" class="accordion-panel" role="region" aria-labelledby="contact-panel-3-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">We run the migration with you at no charge on Business plans, including a dual-publish period so you can compare quality metrics side by side before cutting over.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="contact-panel-4-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="contact-panel-4">
+                Where do I report a security issue?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="contact-panel-4" class="accordion-panel" role="region" aria-labelledby="contact-panel-4-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">Email <a href="mailto:security@wavenode.io" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">security@wavenode.io</a> rather than using this form. We acknowledge reports within one business day and run a paid disclosure programme.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact FAQ End -->

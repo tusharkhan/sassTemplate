@@ -1,0 +1,11 @@
+# Dependencies — reinstall with `npm install`
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Build artefacts that are not part of the distribution
+dist/
+*.zip

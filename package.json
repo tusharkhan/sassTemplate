@@ -4,8 +4,13 @@
   "description": "WaveNode — AI-Powered Video & Audio Streaming Platform HTML Template (Tailwind CSS + Vanilla JS)",
   "private": true,
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify"
+    "dev": "npm run pages && tailwindcss -i ./src/input.css -o ./assets/css/style.css --watch",
+    "build": "npm run pages && tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify",
+    "pages": "python3 tools/build.py",
+    "pages:check": "python3 tools/build.py --check",
+    "sitemap": "python3 tools/make-sitemap.py",
+    "package": "bash tools/package.sh",
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/css/style.css --minify"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"

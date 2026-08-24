@@ -1,0 +1,267 @@
+  <main id="main-content">
+
+    <!-- ================================================================
+         Page Header Start
+    ================================================================ -->
+    <section class="bg-grid relative overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-16" aria-labelledby="page-heading">
+      <!-- Decorative glows -->
+      <div class="bg-glow pointer-events-none absolute -top-32 left-1/2 h-[32rem] w-[52rem] -translate-x-1/2" aria-hidden="true"></div>
+
+      <div class="container relative">
+        <!-- Breadcrumb -->
+        <nav class="flex justify-center" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+            <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300" aria-current="page">Pricing</span></li>
+          </ol>
+        </nav>
+
+        <div class="mx-auto mt-8 max-w-3xl text-center">
+          <p class="section-badge" data-reveal>Pricing</p>
+          <h1 id="page-heading" class="section-title mt-5" data-reveal>Pay for what you stream, <span class="text-gradient">nothing else</span></h1>
+          <p class="section-lead mt-6" data-reveal data-reveal-delay="1">Three plans built around how people actually use the platform — hobby projects, working creators, and businesses with compliance requirements. No setup fees and no per-seat charges.</p>
+
+          <!-- Billing toggle -->
+          <div class="mt-10 flex items-center justify-center gap-4" data-reveal data-reveal-delay="2">
+            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Monthly</span>
+            <button type="button" class="relative inline-flex h-7 w-12 shrink-0 items-center rounded-full bg-primary-600 transition-colors" role="switch" aria-checked="true" aria-label="Toggle annual billing" data-billing-toggle>
+              <span class="inline-block h-5 w-5 translate-x-5 transform rounded-full bg-white shadow transition-transform" data-toggle-knob></span>
+            </button>
+            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">
+              Annual
+              <span class="ml-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">Save 20%</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Page Header End -->
+
+    <!-- ================================================================
+         Pricing Tiers Start
+    ================================================================ -->
+    <section class="pb-16 sm:pb-20" aria-labelledby="tiers-heading">
+      <div class="container">
+        <h2 id="tiers-heading" class="sr-only">Plans and prices</h2>
+
+        <div class="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
+
+          <!-- Plan: Starter -->
+          <article class="card flex flex-col p-7" data-reveal>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Starter</h3>
+            <p class="mt-1.5 text-sm">For hobbyists, students and side projects.</p>
+            <p class="mt-6">
+              <span class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">$0</span>
+              <span class="text-sm font-medium text-slate-500 dark:text-slate-400">/month, forever</span>
+            </p>
+            <a href="register.html" class="btn-secondary mt-7 w-full">Start for free</a>
+            <p class="mt-4 text-center text-xs text-slate-500 dark:text-slate-400">No credit card required</p>
+            <ul class="mt-7 space-y-3 border-t border-slate-200 pt-7 text-sm dark:border-slate-800">
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>1,000 streaming minutes / month</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>720p adaptive streaming</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>10 GB recording storage</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>AI captions in 5 languages</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Up to 3 concurrent streams</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Community support</li>
+            </ul>
+          </article>
+
+          <!-- Plan: Creator (highlighted) -->
+          <article class="card relative flex flex-col border-primary-500/60 p-7 shadow-glow dark:border-primary-500/60" data-reveal data-reveal-delay="1">
+            <p class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary-500 to-violet-500 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">Most popular</p>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Creator</h3>
+            <p class="mt-1.5 text-sm">For streamers, podcasters and influencers.</p>
+            <p class="mt-6">
+              <span class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                <span data-price-monthly class="hidden">$29</span><span data-price-annual>$23</span>
+              </span>
+              <span class="text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span data-price-monthly class="hidden">/month</span><span data-price-annual>/month, billed annually</span>
+              </span>
+            </p>
+            <a href="register.html" class="btn-primary mt-7 w-full">Start 14-day trial</a>
+            <p class="mt-4 text-center text-xs text-slate-500 dark:text-slate-400">Cancel any time, keep your recordings</p>
+            <ul class="mt-7 space-y-3 border-t border-slate-200 pt-7 text-sm dark:border-slate-800">
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>20,000 streaming minutes / month</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>4K streaming and recording</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>1 TB recording storage</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>AI captions in 42 languages</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Automatic highlight clips</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Monetisation &amp; payouts in 38 currencies</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Email support within 24 hours</li>
+            </ul>
+          </article>
+
+          <!-- Plan: Business -->
+          <article class="card flex flex-col p-7" data-reveal data-reveal-delay="2">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Business</h3>
+            <p class="mt-1.5 text-sm">For product teams and enterprises.</p>
+            <p class="mt-6">
+              <span class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                <span data-price-monthly class="hidden">$249</span><span data-price-annual>$199</span>
+              </span>
+              <span class="text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span data-price-monthly class="hidden">/month</span><span data-price-annual>/month, billed annually</span>
+              </span>
+            </p>
+            <a href="contact.html" class="btn-secondary mt-7 w-full">Talk to sales</a>
+            <p class="mt-4 text-center text-xs text-slate-500 dark:text-slate-400">Volume and committed-use discounts available</p>
+            <ul class="mt-7 space-y-3 border-t border-slate-200 pt-7 text-sm dark:border-slate-800">
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Unlimited streaming minutes</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>4K HDR and custom bitrate ladders</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Bring your own S3 bucket</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>SSO, SCIM and audit logs</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>EU, US or APAC data residency</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>99.99% uptime SLA with credits</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Shared Slack channel, 1-hour response</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="mt-10 text-center text-sm" data-reveal>
+          Building something for a non-profit or classroom?
+          <a href="contact.html" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">Ask about our education discount</a>.
+        </p>
+      </div>
+    </section>
+    <!-- Pricing Tiers End -->
+
+    <!-- ================================================================
+         Usage Pricing Start
+    ================================================================ -->
+    <section class="py-16 sm:py-20" aria-labelledby="usage-heading">
+      <div class="container">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="section-badge" data-reveal>Overages</p>
+          <h2 id="usage-heading" class="section-title mt-5" data-reveal>Metered rates, published up front</h2>
+          <p class="section-lead mt-5" data-reveal data-reveal-delay="1">Go past your plan allowance and you are billed at these rates — the same numbers whether you are on Creator or Business.</p>
+        </div>
+
+        <div class="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+          <div class="card p-6 text-center">
+            <p class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">$0.004</p>
+            <p class="mt-2 text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">per streamed minute</p>
+          </div>
+          <div class="card p-6 text-center">
+            <p class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">$0.012</p>
+            <p class="mt-2 text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">per AI caption minute</p>
+          </div>
+          <div class="card p-6 text-center">
+            <p class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">$0.021</p>
+            <p class="mt-2 text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">per GB delivered</p>
+          </div>
+          <div class="card p-6 text-center">
+            <p class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">$0.018</p>
+            <p class="mt-2 text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">per GB stored / month</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Usage Pricing End -->
+
+    <!-- ================================================================
+         FAQ Accordion Start
+    ================================================================ -->
+    <section class="py-16 sm:py-20" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="section-badge" data-reveal>Questions</p>
+          <h2 id="faq-heading" class="section-title mt-5" data-reveal>Billing, limits and the fine print</h2>
+        </div>
+
+        <!-- data-accordion-group keeps only one panel open at a time -->
+        <div class="mx-auto mt-12 max-w-3xl space-y-4" data-accordion-group>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="faq-panel-1-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-1">
+                What counts as a streaming minute?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="faq-panel-1" class="accordion-panel" role="region" aria-labelledby="faq-panel-1-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">One minute of media published to the platform, measured per stream rather than per viewer. A 60-minute broadcast with 5,000 people watching costs 60 streaming minutes plus the bandwidth those viewers pulled from the edge.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="faq-panel-2-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-2">
+                What happens if I go over my plan allowance?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="faq-panel-2" class="accordion-panel" role="region" aria-labelledby="faq-panel-2-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">Nothing stops. We keep your streams running and bill the extra usage at the metered rates above on your next invoice. You can set a hard spend cap in the dashboard if you would rather be throttled than charged.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="faq-panel-3-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-3">
+                Can I switch plans in the middle of a billing period?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="faq-panel-3" class="accordion-panel" role="region" aria-labelledby="faq-panel-3-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">Yes. Upgrades take effect immediately and we prorate the difference. Downgrades apply at the start of your next cycle so you keep the higher limits for everything you have already paid for.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="faq-panel-4-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-4">
+                Do you take a cut of creator earnings?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="faq-panel-4" class="accordion-panel" role="region" aria-labelledby="faq-panel-4-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">WaveNode charges a flat 3% platform fee on subscriptions, tickets and tips, on top of the payment processor&rsquo;s own fee. There is no revenue share beyond that, and payouts land in your account within two business days.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="faq-panel-5-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-5">
+                Which payment methods do you accept?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="faq-panel-5" class="accordion-panel" role="region" aria-labelledby="faq-panel-5-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">All major credit and debit cards, plus SEPA direct debit and ACH. Business plans can pay by invoice on net-30 terms and settle in USD, EUR or GBP.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-accordion data-reveal>
+            <h3>
+              <button type="button" id="faq-panel-6-trigger" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-base font-semibold text-slate-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400" data-accordion-trigger aria-expanded="false" aria-controls="faq-panel-6">
+                Is there a discount for annual billing?
+                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </h3>
+            <div id="faq-panel-6" class="accordion-panel" role="region" aria-labelledby="faq-panel-6-trigger" data-accordion-panel>
+              <div>
+                <p class="px-6 pb-6 text-sm leading-relaxed">Annual billing saves 20% against the monthly rate on every paid plan — use the toggle above to compare. Committed-use contracts on Business can go further; talk to sales for the numbers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-10 text-center text-sm" data-reveal>
+          Still unsure which plan fits?
+          <a href="contact.html" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">Send us your use case</a> and we will tell you honestly.
+        </p>
+      </div>
+    </section>
+    <!-- FAQ Accordion End -->

@@ -1,0 +1,367 @@
+  <main id="main-content">
+
+    <!-- ================================================================
+         Docs Header Start
+    ================================================================ -->
+    <section class="bg-grid relative overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-14" aria-labelledby="page-heading">
+      <!-- Decorative glow -->
+      <div class="bg-glow pointer-events-none absolute -top-32 left-1/2 h-[28rem] w-[48rem] -translate-x-1/2" aria-hidden="true"></div>
+
+      <div class="container relative">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+            <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300" aria-current="page">Documentation</span></li>
+          </ol>
+        </nav>
+
+        <div class="mt-8 max-w-3xl">
+          <p class="section-badge" data-reveal>API v3</p>
+          <h1 id="page-heading" class="section-title mt-5" data-reveal>Documentation</h1>
+          <p class="section-lead mt-5" data-reveal data-reveal-delay="1">Create a room, publish a track, subscribe a viewer. Three calls and you are live — everything after that is refinement.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Docs Header End -->
+
+    <!-- ================================================================
+         Docs Layout Start
+    ================================================================ -->
+    <div class="pb-16 sm:pb-20">
+      <div class="container">
+        <div class="grid gap-10 lg:grid-cols-[15rem_1fr] lg:gap-14">
+
+          <!-- ============================================================
+               Sidebar navigation
+          ============================================================ -->
+          <aside>
+            <div class="lg:sticky lg:top-28">
+              <h2 id="docs-nav-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Reference</h2>
+
+              <nav class="mt-5" aria-labelledby="docs-nav-heading" data-toc>
+                <ul class="space-y-6">
+                  <li>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Getting started</p>
+                    <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
+                      <li><a href="#quickstart" class="-ml-px block border-l-2 border-primary-500 py-1.5 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400">Quickstart</a></li>
+                      <li><a href="#authentication" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Authentication</a></li>
+                      <li><a href="#sdks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Client SDKs</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Core API</p>
+                    <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
+                      <li><a href="#rooms" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Rooms</a></li>
+                      <li><a href="#tracks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Tracks</a></li>
+                      <li><a href="#recordings" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Recordings</a></li>
+                      <li><a href="#webhooks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Webhooks</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Operations</p>
+                    <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
+                      <li><a href="#errors" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Errors</a></li>
+                      <li><a href="#rate-limits" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Rate limits</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="card mt-10 p-5">
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Need a hand?</p>
+                <p class="mt-2 text-xs leading-relaxed">Paid plans get a shared Slack channel with the engineers who wrote these endpoints.</p>
+                <a href="contact.html" class="btn-secondary mt-4 w-full !px-3 !py-2 !text-xs">Contact support</a>
+              </div>
+            </div>
+          </aside>
+
+          <!-- ============================================================
+               Docs content
+          ============================================================ -->
+          <div class="min-w-0 max-w-3xl">
+
+            <!-- Quickstart -->
+            <section id="quickstart" aria-labelledby="quickstart-heading">
+              <h2 id="quickstart-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Quickstart</h2>
+              <p class="mt-4 leading-relaxed">Install the SDK, create a room server-side and join it from the browser. The snippet below is the whole integration — there is no separate signalling server to run.</p>
+
+              <div class="card mt-7 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">Terminal</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the Terminal snippet" data-copy-target="#snippet-install">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><span class="select-none text-emerald-400" aria-hidden="true">$ </span><code id="snippet-install">npm install @wavenode/sdk</code></pre>
+                </div>
+              </div>
+
+              <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">server/create-room.js</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the server/create-room.js snippet" data-copy-target="#snippet-room">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre id="snippet-room" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-violet-400">import</span> { <span class="text-accent-300">WaveNode</span> } <span class="text-violet-400">from</span> <span class="text-emerald-300">'@wavenode/sdk'</span>;
+
+<span class="text-violet-400">const</span> <span class="text-accent-300">wave</span> = <span class="text-violet-400">new</span> <span class="text-primary-300">WaveNode</span>(<span class="text-accent-300">process</span>.<span class="text-accent-300">env</span>.<span class="text-accent-300">WAVENODE_SECRET_KEY</span>);
+
+<span class="text-slate-500 dark:text-slate-400">// Rooms are cheap — create one per broadcast.</span>
+<span class="text-violet-400">const</span> <span class="text-accent-300">room</span> = <span class="text-violet-400">await</span> <span class="text-accent-300">wave</span>.<span class="text-accent-300">rooms</span>.<span class="text-primary-300">create</span>({
+  <span class="text-accent-300">name</span>: <span class="text-emerald-300">'launch-event-2026'</span>,
+  <span class="text-accent-300">mode</span>: <span class="text-emerald-300">'broadcast'</span>,
+  <span class="text-accent-300">maxParticipants</span>: <span class="text-amber-300">10000</span>,
+  <span class="text-accent-300">ai</span>: { <span class="text-accent-300">captions</span>: <span class="text-emerald-300">'en'</span>, <span class="text-accent-300">highlights</span>: <span class="text-violet-400">true</span> },
+  <span class="text-accent-300">recording</span>: { <span class="text-accent-300">enabled</span>: <span class="text-violet-400">true</span>, <span class="text-accent-300">layout</span>: <span class="text-emerald-300">'active-speaker'</span> }
+});
+
+<span class="text-slate-500 dark:text-slate-400">// Hand this token to the browser. It expires in 60 minutes.</span>
+<span class="text-violet-400">const</span> <span class="text-accent-300">token</span> = <span class="text-violet-400">await</span> <span class="text-accent-300">wave</span>.<span class="text-accent-300">tokens</span>.<span class="text-primary-300">publisher</span>(<span class="text-accent-300">room</span>.<span class="text-accent-300">id</span>, {
+  <span class="text-accent-300">identity</span>: <span class="text-emerald-300">'host-rina'</span>,
+  <span class="text-accent-300">ttlSeconds</span>: <span class="text-amber-300">3600</span>
+});</code></pre>
+                </div>
+              </div>
+
+              <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">client/join.js</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the client/join.js snippet" data-copy-target="#snippet-join">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre id="snippet-join" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-violet-400">import</span> { <span class="text-primary-300">joinRoom</span> } <span class="text-violet-400">from</span> <span class="text-emerald-300">'@wavenode/sdk/web'</span>;
+
+<span class="text-violet-400">const</span> <span class="text-accent-300">session</span> = <span class="text-violet-400">await</span> <span class="text-primary-300">joinRoom</span>({ <span class="text-accent-300">token</span> });
+
+<span class="text-violet-400">await</span> <span class="text-accent-300">session</span>.<span class="text-primary-300">publishCamera</span>({ <span class="text-accent-300">resolution</span>: <span class="text-emerald-300">'1080p'</span> });
+<span class="text-violet-400">await</span> <span class="text-accent-300">session</span>.<span class="text-primary-300">publishMicrophone</span>({ <span class="text-accent-300">noiseSuppression</span>: <span class="text-violet-400">true</span> });
+
+<span class="text-accent-300">session</span>.<span class="text-primary-300">on</span>(<span class="text-emerald-300">'caption'</span>, (<span class="text-accent-300">line</span>) =&gt; {
+  <span class="text-accent-300">captionEl</span>.<span class="text-accent-300">textContent</span> = <span class="text-accent-300">line</span>.<span class="text-accent-300">text</span>;
+});</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- Authentication -->
+            <section id="authentication" class="mt-16" aria-labelledby="auth-heading">
+              <h2 id="auth-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Authentication</h2>
+              <p class="mt-4 leading-relaxed">Server-side calls use your secret key as a bearer token. Browsers never see it — they get a short-lived, room-scoped JWT minted by your backend instead.</p>
+
+              <div class="card mt-7 border-amber-500/40 bg-amber-500/5 p-5 dark:border-amber-500/30">
+                <p class="flex gap-3 text-sm leading-relaxed">
+                  <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                  <span><strong class="font-semibold text-slate-900 dark:text-white">Never ship your secret key to the client.</strong> Keys are scoped to a project and can be rotated from the dashboard without downtime — old keys stay valid for one hour after rotation.</span>
+                </p>
+              </div>
+
+              <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">cURL</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the cURL snippet" data-copy-target="#snippet-auth">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><span class="select-none text-emerald-400" aria-hidden="true">$ </span><code id="snippet-auth">curl https://api.wavenode.io/v3/rooms \
+    -H <span class="text-emerald-300">"Authorization: Bearer $WAVENODE_SECRET_KEY"</span> \
+    -H <span class="text-emerald-300">"Content-Type: application/json"</span> \
+    -d <span class="text-emerald-300">'{"name":"launch-event-2026","mode":"broadcast"}'</span></code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- SDKs -->
+            <section id="sdks" class="mt-16" aria-labelledby="sdks-heading">
+              <h2 id="sdks-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Client SDKs</h2>
+              <p class="mt-4 leading-relaxed">All SDKs share the same method names, so the quickstart translates line for line.</p>
+
+              <div class="mt-7 grid gap-4 sm:grid-cols-2">
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">@wavenode/sdk</p>
+                  <p class="mt-2 text-xs">JavaScript &amp; TypeScript &mdash; Node 18+, Deno, Bun and every evergreen browser.</p>
+                </div>
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">wavenode-python</p>
+                  <p class="mt-2 text-xs">Python 3.10+ with async support and typed response models.</p>
+                </div>
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">WaveNodeKit</p>
+                  <p class="mt-2 text-xs">Swift package for iOS 16+ and macOS 13+, with SwiftUI view helpers.</p>
+                </div>
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">wavenode-android</p>
+                  <p class="mt-2 text-xs">Kotlin SDK targeting API level 26 and above, Compose-friendly.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Rooms endpoint -->
+            <section id="rooms" class="mt-16" aria-labelledby="rooms-heading">
+              <h2 id="rooms-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Rooms</h2>
+              <p class="mt-4 leading-relaxed">A room is the container for a broadcast, meeting or audio session. Rooms are free until media flows through them.</p>
+
+              <!-- Endpoint list -->
+              <ul class="mt-7 space-y-3">
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-emerald-500/10 px-2.5 py-1 font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">POST</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms</code>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Create a room</span>
+                </li>
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-primary-500/10 px-2.5 py-1 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">GET</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Fetch a room and its participants</span>
+                </li>
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-amber-500/10 px-2.5 py-1 font-mono text-xs font-bold text-amber-600 dark:text-amber-400">PATCH</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Update AI or recording settings mid-session</span>
+                </li>
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-rose-500/10 px-2.5 py-1 font-mono text-xs font-bold text-rose-600 dark:text-rose-400">DELETE</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">End the session and disconnect everyone</span>
+                </li>
+              </ul>
+
+              <h3 class="mt-10 text-lg font-bold text-slate-900 dark:text-white">Request parameters</h3>
+              <div class="scrollbar-slim mt-5 overflow-x-auto" tabindex="0">
+                <table class="w-full min-w-[34rem] border-collapse text-left text-sm">
+                  <caption class="sr-only">Parameters accepted when creating a room</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 dark:border-slate-800">
+                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Field</th>
+                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Type</th>
+                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">name</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">string</td>
+                      <td class="pl-4 py-3 text-xs">Human-readable identifier, unique within the project.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">mode</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">enum</td>
+                      <td class="pl-4 py-3 text-xs">One of <code class="font-mono">broadcast</code>, <code class="font-mono">meeting</code> or <code class="font-mono">audio</code>.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">maxParticipants</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">integer</td>
+                      <td class="pl-4 py-3 text-xs">Hard cap on concurrent joins. Defaults to your plan limit.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">ai</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">object</td>
+                      <td class="pl-4 py-3 text-xs">Caption language, translation targets and highlight generation.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">recording</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">object</td>
+                      <td class="pl-4 py-3 text-xs">Enable recording and pick a composition layout.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Tracks -->
+            <section id="tracks" class="mt-16" aria-labelledby="tracks-heading">
+              <h2 id="tracks-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Tracks</h2>
+              <p class="mt-4 leading-relaxed">Each published camera, microphone or screen share is a track. Subscribers choose which tracks to pull, so a viewer on a phone can take audio only without a separate stream.</p>
+              <p class="mt-4 leading-relaxed">Track events arrive on the same session socket as captions: <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">trackPublished</code>, <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">trackUnpublished</code> and <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">trackQualityChanged</code>.</p>
+            </section>
+
+            <!-- Recordings -->
+            <section id="recordings" class="mt-16" aria-labelledby="recordings-heading">
+              <h2 id="recordings-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Recordings</h2>
+              <p class="mt-4 leading-relaxed">Recordings are written as they happen, so a session that ends abruptly still leaves a playable file. Composed MP4s and per-participant tracks are produced in parallel — request either or both.</p>
+              <p class="mt-4 leading-relaxed">Point <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">storage.bucket</code> at your own S3-compatible bucket to keep media entirely inside your infrastructure. We only store the manifest.</p>
+            </section>
+
+            <!-- Webhooks -->
+            <section id="webhooks" class="mt-16" aria-labelledby="webhooks-heading">
+              <h2 id="webhooks-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Webhooks</h2>
+              <p class="mt-4 leading-relaxed">Every state change is delivered to your endpoint with an HMAC-SHA256 signature in the <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">Wave-Signature</code> header. Retries back off for up to 24 hours.</p>
+
+              <div class="card mt-7 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">recording.ready</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the recording.ready snippet" data-copy-target="#snippet-webhook">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre id="snippet-webhook" class="font-mono text-xs leading-relaxed text-slate-300"><code>{
+  <span class="text-primary-300">"event"</span>: <span class="text-emerald-300">"recording.ready"</span>,
+  <span class="text-primary-300">"roomId"</span>: <span class="text-emerald-300">"rm_8Kd2mQ4xLp"</span>,
+  <span class="text-primary-300">"durationSeconds"</span>: <span class="text-amber-300">4360</span>,
+  <span class="text-primary-300">"assets"</span>: {
+    <span class="text-primary-300">"composed"</span>: <span class="text-emerald-300">"https://cdn.wavenode.io/rec/8Kd2mQ4xLp.mp4"</span>,
+    <span class="text-primary-300">"transcript"</span>: <span class="text-emerald-300">"https://cdn.wavenode.io/rec/8Kd2mQ4xLp.vtt"</span>,
+    <span class="text-primary-300">"highlights"</span>: <span class="text-amber-300">7</span>
+  }
+}</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- Errors -->
+            <section id="errors" class="mt-16" aria-labelledby="errors-heading">
+              <h2 id="errors-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Errors</h2>
+              <p class="mt-4 leading-relaxed">Errors use conventional HTTP status codes and always include a machine-readable <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">code</code> alongside the message.</p>
+
+              <div class="scrollbar-slim mt-7 overflow-x-auto" tabindex="0">
+                <table class="w-full min-w-[30rem] border-collapse text-left text-sm">
+                  <caption class="sr-only">Common API error codes</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 dark:border-slate-800">
+                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Status</th>
+                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Code</th>
+                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">401</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">invalid_key</td>
+                      <td class="pl-4 py-3 text-xs">Secret key missing, malformed or rotated out.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">403</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">token_expired</td>
+                      <td class="pl-4 py-3 text-xs">The room JWT is past its TTL. Mint a new one.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">409</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">room_name_taken</td>
+                      <td class="pl-4 py-3 text-xs">Another active room in this project uses that name.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">429</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">rate_limited</td>
+                      <td class="pl-4 py-3 text-xs">Back off and retry after the <code class="font-mono">Retry-After</code> header.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Rate limits -->
+            <section id="rate-limits" class="mt-16" aria-labelledby="limits-heading">
+              <h2 id="limits-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Rate limits</h2>
+              <p class="mt-4 leading-relaxed">Control-plane calls are limited to 100 requests per second per project, burstable to 300. Media itself is never rate limited — publishing and subscribing are governed by your plan allowance, not by request counts.</p>
+
+              <div class="card mt-7 p-6">
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Ready to build?</p>
+                <p class="mt-2 text-sm leading-relaxed">Create a free project and your first key takes about thirty seconds.</p>
+                <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+                  <a href="register.html" class="btn-primary">Get an API key</a>
+                  <a href="pricing.html" class="btn-secondary">See plan limits</a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Docs Layout End -->

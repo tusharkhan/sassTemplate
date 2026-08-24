@@ -12,7 +12,8 @@
  *   6. Pricing billing toggle (monthly / annual)
  *   7. Copy-to-clipboard for code blocks
  *   8. Back-to-top button
- *   9. Current year stamp
+ *   9. Table-of-contents scrollspy
+ *  10. Current year stamp
  */
 (function () {
   'use strict';
@@ -28,6 +29,11 @@
   function initThemeToggle() {
     var root = document.documentElement;
     var buttons = document.querySelectorAll('[data-theme-toggle]');
+
+    // Sync with the theme the inline <head> bootstrap actually applied.
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(root.classList.contains('dark')));
+    });
 
     buttons.forEach(function (button) {
       button.addEventListener('click', function () {
@@ -81,7 +87,29 @@
     }
 
     toggle.addEventListener('click', function () {
-      setState(menu.classList.contains('hidden'));
+      var opening = menu.classList.contains('hidden');
+      setState(opening);
+      if (opening) {
+        var first = menu.querySelector('a, button');
+        if (first) first.focus();
+      }
+    });
+
+    // Keep Tab inside the drawer while it is open — the page behind it is
+    // scroll-locked and partly covered, so focus must not escape into it.
+    menu.addEventListener('keydown', function (event) {
+      if (event.key !== 'Tab') return;
+      var items = menu.querySelectorAll('a, button');
+      if (!items.length) return;
+      var first = items[0];
+      var last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     });
 
     // Close when a navigation link inside the drawer is used
@@ -214,19 +242,41 @@
      <button data-copy data-copy-target="#snippet-id">
   ---------------------------------------------------------------- */
   function initCopyButtons() {
+    var status = document.querySelector('[data-copy-status]');
+
     document.querySelectorAll('[data-copy]').forEach(function (button) {
+      // Captured once, before any click can overwrite it.
+      var original = button.innerHTML;
+      var timer = null;
+
+      function flash(message) {
+        button.innerHTML = message;
+        if (status) status.textContent = message;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          button.innerHTML = original;
+          if (status) status.textContent = '';
+        }, 1600);
+      }
+
       button.addEventListener('click', function () {
         var selector = button.getAttribute('data-copy-target');
         var target = selector ? document.querySelector(selector) : null;
-        if (!target || !navigator.clipboard) return;
+        if (!target) return;
 
-        navigator.clipboard.writeText(target.innerText).then(function () {
-          var original = button.innerHTML;
-          button.innerHTML = 'Copied!';
-          window.setTimeout(function () {
-            button.innerHTML = original;
-          }, 1600);
-        });
+        if (!navigator.clipboard) {
+          flash('Press Ctrl+C');
+          return;
+        }
+
+        navigator.clipboard.writeText(target.innerText).then(
+          function () {
+            flash('Copied!');
+          },
+          function () {
+            flash('Copy failed');
+          }
+        );
       });
     });
   }
@@ -242,6 +292,11 @@
       var visible = window.scrollY > 600;
       button.classList.toggle('opacity-0', !visible);
       button.classList.toggle('pointer-events-none', !visible);
+      // Keep it out of the tab order and the a11y tree while invisible.
+      // Using tabindex/aria-hidden rather than `hidden` preserves the fade,
+      // which display:none would cancel.
+      button.setAttribute('tabindex', visible ? '0' : '-1');
+      button.setAttribute('aria-hidden', String(!visible));
     };
 
     update();
@@ -249,11 +304,70 @@
 
     button.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      // The button is about to hide itself — do not leave focus on it.
+      var main = document.getElementById('main-content');
+      if (main) {
+        main.setAttribute('tabindex', '-1');
+        main.focus({ preventScroll: true });
+      }
     });
   }
 
   /* ----------------------------------------------------------------
-     9. Current year stamp — <span data-year></span>
+     9. Table-of-contents scrollspy
+     <nav data-toc> containing links to #ids on the page. The link for
+     the heading currently in view gets aria-current and the active
+     styling; without this the "current" item was hard-coded and wrong
+     as soon as the reader scrolled.
+  ---------------------------------------------------------------- */
+  var TOC_ON = ['border-primary-500', 'font-medium', 'text-primary-600', 'dark:text-primary-400'];
+  var TOC_OFF = ['border-transparent', 'text-slate-500', 'dark:text-slate-400'];
+
+  function initTocSpy() {
+    var navs = document.querySelectorAll('[data-toc]');
+    if (!navs.length || !('IntersectionObserver' in window)) return;
+
+    navs.forEach(function (nav) {
+      var links = [].slice.call(nav.querySelectorAll('a[href^="#"]'));
+      var targets = links
+        .map(function (link) {
+          return document.getElementById(link.getAttribute('href').slice(1));
+        })
+        .filter(Boolean);
+      if (targets.length < 2) return;
+
+      function activate(id) {
+        links.forEach(function (link) {
+          var on = link.getAttribute('href') === '#' + id;
+          if (on) {
+            link.setAttribute('aria-current', 'true');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+          TOC_ON.forEach(function (c) { link.classList.toggle(c, on); });
+          TOC_OFF.forEach(function (c) { link.classList.toggle(c, !on); });
+        });
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          var visible = entries.filter(function (e) { return e.isIntersecting; });
+          if (!visible.length) return;
+          visible.sort(function (a, b) {
+            return a.boundingClientRect.top - b.boundingClientRect.top;
+          });
+          activate(visible[0].target.id);
+        },
+        { rootMargin: '-96px 0px -70% 0px', threshold: 0 }
+      );
+
+      targets.forEach(function (target) { observer.observe(target); });
+      activate(targets[0].id);
+    });
+  }
+
+  /* ----------------------------------------------------------------
+     10. Current year stamp — <span data-year></span>
   ---------------------------------------------------------------- */
   function initYear() {
     document.querySelectorAll('[data-year]').forEach(function (el) {
@@ -273,6 +387,7 @@
     initBillingToggle();
     initCopyButtons();
     initBackToTop();
+    initTocSpy();
     initYear();
   }
 
