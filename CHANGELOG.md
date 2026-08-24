@@ -18,9 +18,9 @@ Initial release.
 - Dark and light themes, dark by default, remembered per visitor.
 - Two self-hosted variable fonts (Plus Jakarta Sans, JetBrains Mono) with
   the SIL OFL licence included. No CDN, no external requests.
-- All artwork is original inline SVG or CSS gradient — no image licensing.
-- Every page validates against the W3C Nu checker with zero errors and
-  zero warnings.
+- All artwork is original inline SVG or CSS gradient, apart from the
+  social share card — no third-party image licensing.
+- Every page validates against the W3C Nu checker with zero errors.
 - Accessibility: semantic landmarks, one `<h1>` per page, labelled forms,
   visible focus rings, `prefers-reduced-motion` support, keyboard-reachable
   scroll regions, WCAG AA text contrast in both themes.

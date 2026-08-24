@@ -178,8 +178,8 @@ aspirational:
 - Dependency-free vanilla JavaScript, ~400 lines, driven by `data-*` attributes.
 - Dark and light themes, remembered per visitor.
 - Self-hosted variable fonts with the SIL OFL licence included.
-- All icons and illustrations are original inline SVG — no icon library, no
-  bitmap images, nothing to license.
+- All icons and illustrations are original inline SVG — no icon library and
+  no third-party image licensing. The only bitmap is the social share card.
 - Accessibility: semantic landmarks, one `<h1>` per page, labelled form
   controls, visible focus rings, `prefers-reduced-motion` support, WCAG AA text
   contrast in both themes.

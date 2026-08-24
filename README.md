@@ -36,16 +36,16 @@ Edit `src/input.css`, never `assets/css/style.css` — the latter is generated.
 
 | | |
 | --- | --- |
-| **Pages** | 24 — 3 landing variants, features + feature detail, pricing, integrations, changelog, API docs, blog + article, about, careers, customers, help centre, FAQ, terms, privacy, contact, 3 auth screens, dashboard, 404 |
+| **Pages** | 24 — 3 landing variants, features + feature detail, pricing, integrations, changelog, API docs, blog + article, about, careers, customers, help center, FAQ, terms, privacy, contact, 3 auth screens, dashboard, 404 |
 | **CSS** | Tailwind CSS 3.4, compiled to a single 56 KB minified file |
 | **JavaScript** | ~399 lines, no dependencies, all driven by `data-*` attributes |
 | **Fonts** | Plus Jakarta Sans + JetBrains Mono, self-hosted variable woff2 |
-| **Icons** | Original inline SVG — no icon library, no image files |
+| **Icons** | Original inline SVG — no icon library. The only bitmap in the template is the social share card |
 | **Themes** | Dark and light, dark by default, remembered per visitor |
 
 ## Standards
 
-- Every page passes the W3C Nu validator with zero errors and zero warnings.
+- Every page passes the W3C Nu validator with zero errors.
 - Semantic landmarks, one `<h1>` per page, labelled form controls, visible
   focus rings, `prefers-reduced-motion` support, WCAG AA text contrast in both
   themes.
@@ -61,7 +61,7 @@ forms (all use `action="#"`), replace `terms.html` and `privacy.html` with real
 legal text, remove the visible template notices, and replace the `wavenode.io`
 domain in each page's canonical and Open Graph tags.
 
-Section 9 of the documentation is a complete checklist.
+Section 8 of the documentation is a complete checklist.
 
 ## Licence
 
