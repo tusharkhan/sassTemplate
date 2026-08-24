@@ -178,13 +178,19 @@
   overflow: hidden;
   /* visibility:hidden also removes collapsed content from the accessibility
      tree and the tab order — grid-template-rows:0fr alone does not, which
-     left links inside closed panels reachable by Tab. */
+     left links inside closed panels reachable by Tab.
+
+     visibility is discrete, so a plain `transition: visibility 0.3s` flips it
+     at the halfway point and an opening panel stays invisible for 150ms. The
+     delay here applies on close only — it keeps the content readable while
+     the row collapses — and `transition: none` below makes opening instant. */
   visibility: hidden;
-  transition: visibility 0.3s;
+  transition: visibility 0s linear 0.3s;
 }
 
 .accordion-panel.is-open > div {
   visibility: visible;
+  transition: none;
 }
 
 .accordion-panel.is-open {
