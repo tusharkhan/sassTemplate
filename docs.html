@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — WaveNode Streaming API v3</title>
+  <meta name="description" content="WaveNode API v3 documentation: quickstart, authentication, client SDKs, rooms, tracks, recordings, webhooks, error codes and rate limits.">
+  <meta name="author" content="WaveNode">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Documentation — WaveNode Streaming API v3">
+  <meta property="og:description" content="Create a room, publish a track, subscribe a viewer. Three calls and you are live.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#030712">
+
+  <!-- Styles (self-hosted fonts + compiled Tailwind CSS) -->
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Theme bootstrap: applies the saved theme before first paint to avoid a flash -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('wavenode-theme') === 'light') {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch (err) { /* localStorage unavailable — keep default dark theme */ }
+  </script>
+</head>
+
+
+<body class="overflow-x-hidden">
+
+  <!-- Skip link (accessibility) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-primary-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to main content</a>
+
+  <!-- ================================================================
+       Header / Navbar Start
+  ================================================================ -->
+  <header class="site-header fixed inset-x-0 top-0 z-50" data-header>
+    <div class="container">
+      <nav class="flex h-16 items-center justify-between lg:h-20" aria-label="Main navigation">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="WaveNode home">
+          <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="logo-grad-nav" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366F1"/>
+                <stop offset="0.55" stop-color="#8B5CF6"/>
+                <stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+            </defs>
+            <rect width="32" height="32" rx="9" fill="url(#logo-grad-nav)"/>
+            <rect x="7" y="13" width="3" height="6" rx="1.5" fill="white"/>
+            <rect x="12" y="9" width="3" height="14" rx="1.5" fill="white"/>
+            <rect x="17" y="5" width="3" height="22" rx="1.5" fill="white"/>
+            <rect x="22" y="11" width="3" height="10" rx="1.5" fill="white"/>
+          </svg>
+          <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">WaveNode</span>
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden items-center gap-1 lg:flex">
+          <a href="features.html" class="nav-link">Features</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="docs.html" class="nav-link !text-slate-900 dark:!text-white" aria-current="page">Docs</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Desktop actions -->
+        <div class="hidden items-center gap-2 lg:flex">
+          <!-- Theme toggle -->
+          <button type="button" class="btn-ghost !p-2.5" data-theme-toggle aria-pressed="true" aria-label="Toggle dark mode">
+            <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+            </svg>
+            <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+            </svg>
+          </button>
+          <a href="login.html" class="btn-ghost">Sign in</a>
+          <a href="register.html" class="btn-primary">Start Building Free</a>
+        </div>
+
+        <!-- Mobile actions -->
+        <div class="flex items-center gap-1 lg:hidden">
+          <button type="button" class="btn-ghost !p-2.5" data-theme-toggle aria-pressed="true" aria-label="Toggle dark mode">
+            <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+            </svg>
+            <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+            </svg>
+          </button>
+          <button type="button" class="btn-ghost !p-2.5" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-icon-open aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+            <svg class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-icon-close aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile menu drawer -->
+    <div id="mobile-menu" class="glass hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t lg:hidden" data-mobile-menu>
+      <div class="container flex flex-col gap-1 py-5">
+        <a href="features.html" class="nav-link py-3 text-base">Features</a>
+        <a href="pricing.html" class="nav-link py-3 text-base">Pricing</a>
+        <a href="blog.html" class="nav-link py-3 text-base">Blog</a>
+        <a href="docs.html" class="nav-link py-3 text-base !text-slate-900 dark:!text-white" aria-current="page">Docs</a>
+        <a href="contact.html" class="nav-link py-3 text-base">Contact</a>
+        <div class="mt-3 flex flex-col gap-2 border-t border-slate-200 pt-4 dark:border-slate-800">
+          <a href="login.html" class="btn-secondary w-full">Sign in</a>
+          <a href="register.html" class="btn-primary w-full">Start Building Free</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header / Navbar End -->
+
+  <main id="main-content">
+
+    <!-- ================================================================
+         Docs Header Start
+    ================================================================ -->
+    <section class="bg-grid relative overflow-hidden pt-32 pb-12 sm:pt-40 sm:pb-14" aria-labelledby="page-heading">
+      <!-- Decorative glow -->
+      <div class="bg-glow pointer-events-none absolute -top-32 left-1/2 h-[28rem] w-[48rem] -translate-x-1/2" aria-hidden="true"></div>
+
+      <div class="container relative">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm text-slate-500">
+            <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300">Documentation</span></li>
+          </ol>
+        </nav>
+
+        <div class="mt-8 max-w-3xl">
+          <p class="section-badge" data-reveal>API v3</p>
+          <h1 id="page-heading" class="section-title mt-5" data-reveal>Documentation</h1>
+          <p class="section-lead mt-5" data-reveal data-reveal-delay="1">Create a room, publish a track, subscribe a viewer. Three calls and you are live — everything after that is refinement.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Docs Header End -->
+
+    <!-- ================================================================
+         Docs Layout Start
+    ================================================================ -->
+    <div class="pb-16 sm:pb-20">
+      <div class="container">
+        <div class="grid gap-10 lg:grid-cols-[15rem_1fr] lg:gap-14">
+
+          <!-- ============================================================
+               Sidebar navigation
+          ============================================================ -->
+          <aside aria-labelledby="docs-nav-heading">
+            <div class="lg:sticky lg:top-28">
+              <h2 id="docs-nav-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Reference</h2>
+
+              <nav class="mt-5" aria-labelledby="docs-nav-heading">
+                <ul class="space-y-6">
+                  <li>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Getting started</p>
+                    <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
+                      <li><a href="#quickstart" class="-ml-px block border-l-2 border-primary-500 py-1.5 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400" aria-current="true">Quickstart</a></li>
+                      <li><a href="#authentication" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Authentication</a></li>
+                      <li><a href="#sdks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Client SDKs</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Core API</p>
+                    <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
+                      <li><a href="#rooms" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Rooms</a></li>
+                      <li><a href="#tracks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Tracks</a></li>
+                      <li><a href="#recordings" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Recordings</a></li>
+                      <li><a href="#webhooks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Webhooks</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Operations</p>
+                    <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
+                      <li><a href="#errors" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Errors</a></li>
+                      <li><a href="#rate-limits" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Rate limits</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="card mt-10 p-5">
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Need a hand?</p>
+                <p class="mt-2 text-xs leading-relaxed">Paid plans get a shared Slack channel with the engineers who wrote these endpoints.</p>
+                <a href="contact.html" class="btn-secondary mt-4 w-full !px-3 !py-2 !text-xs">Contact support</a>
+              </div>
+            </div>
+          </aside>
+
+          <!-- ============================================================
+               Docs content
+          ============================================================ -->
+          <div class="min-w-0 max-w-3xl">
+
+            <!-- Quickstart -->
+            <section id="quickstart" aria-labelledby="quickstart-heading">
+              <h2 id="quickstart-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Quickstart</h2>
+              <p class="mt-4 leading-relaxed">Install the SDK, create a room server-side and join it from the browser. The snippet below is the whole integration — there is no separate signalling server to run.</p>
+
+              <div class="card mt-7 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">Terminal</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-install">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5">
+<pre id="snippet-install" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-emerald-400">$</span> npm install @wavenode/sdk</code></pre>
+                </div>
+              </div>
+
+              <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">server/create-room.js</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-room">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5">
+<pre id="snippet-room" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-violet-400">import</span> { <span class="text-accent-300">WaveNode</span> } <span class="text-violet-400">from</span> <span class="text-emerald-300">'@wavenode/sdk'</span>;
+
+<span class="text-violet-400">const</span> <span class="text-accent-300">wave</span> = <span class="text-violet-400">new</span> <span class="text-primary-300">WaveNode</span>(<span class="text-accent-300">process</span>.<span class="text-accent-300">env</span>.<span class="text-accent-300">WAVENODE_SECRET_KEY</span>);
+
+<span class="text-slate-500">// Rooms are cheap — create one per broadcast.</span>
+<span class="text-violet-400">const</span> <span class="text-accent-300">room</span> = <span class="text-violet-400">await</span> <span class="text-accent-300">wave</span>.<span class="text-accent-300">rooms</span>.<span class="text-primary-300">create</span>({
+  <span class="text-accent-300">name</span>: <span class="text-emerald-300">'launch-event-2026'</span>,
+  <span class="text-accent-300">mode</span>: <span class="text-emerald-300">'broadcast'</span>,
+  <span class="text-accent-300">maxParticipants</span>: <span class="text-amber-300">10000</span>,
+  <span class="text-accent-300">ai</span>: { <span class="text-accent-300">captions</span>: <span class="text-emerald-300">'en'</span>, <span class="text-accent-300">highlights</span>: <span class="text-violet-400">true</span> },
+  <span class="text-accent-300">recording</span>: { <span class="text-accent-300">enabled</span>: <span class="text-violet-400">true</span>, <span class="text-accent-300">layout</span>: <span class="text-emerald-300">'active-speaker'</span> }
+});
+
+<span class="text-slate-500">// Hand this token to the browser. It expires in 60 minutes.</span>
+<span class="text-violet-400">const</span> <span class="text-accent-300">token</span> = <span class="text-violet-400">await</span> <span class="text-accent-300">wave</span>.<span class="text-accent-300">tokens</span>.<span class="text-primary-300">publisher</span>(<span class="text-accent-300">room</span>.<span class="text-accent-300">id</span>, {
+  <span class="text-accent-300">identity</span>: <span class="text-emerald-300">'host-rina'</span>,
+  <span class="text-accent-300">ttlSeconds</span>: <span class="text-amber-300">3600</span>
+});</code></pre>
+                </div>
+              </div>
+
+              <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">client/join.js</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-join">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5">
+<pre id="snippet-join" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-violet-400">import</span> { <span class="text-primary-300">joinRoom</span> } <span class="text-violet-400">from</span> <span class="text-emerald-300">'@wavenode/sdk/web'</span>;
+
+<span class="text-violet-400">const</span> <span class="text-accent-300">session</span> = <span class="text-violet-400">await</span> <span class="text-primary-300">joinRoom</span>({ <span class="text-accent-300">token</span> });
+
+<span class="text-violet-400">await</span> <span class="text-accent-300">session</span>.<span class="text-primary-300">publishCamera</span>({ <span class="text-accent-300">resolution</span>: <span class="text-emerald-300">'1080p'</span> });
+<span class="text-violet-400">await</span> <span class="text-accent-300">session</span>.<span class="text-primary-300">publishMicrophone</span>({ <span class="text-accent-300">noiseSuppression</span>: <span class="text-violet-400">true</span> });
+
+<span class="text-accent-300">session</span>.<span class="text-primary-300">on</span>(<span class="text-emerald-300">'caption'</span>, (<span class="text-accent-300">line</span>) =&gt; {
+  <span class="text-accent-300">captionEl</span>.<span class="text-accent-300">textContent</span> = <span class="text-accent-300">line</span>.<span class="text-accent-300">text</span>;
+});</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- Authentication -->
+            <section id="authentication" class="mt-16" aria-labelledby="auth-heading">
+              <h2 id="auth-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Authentication</h2>
+              <p class="mt-4 leading-relaxed">Server-side calls use your secret key as a bearer token. Browsers never see it — they get a short-lived, room-scoped JWT minted by your backend instead.</p>
+
+              <div class="card mt-7 border-amber-500/40 bg-amber-500/5 p-5 dark:border-amber-500/30">
+                <p class="flex gap-3 text-sm leading-relaxed">
+                  <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                  <span><strong class="font-semibold text-slate-900 dark:text-white">Never ship your secret key to the client.</strong> Keys are scoped to a project and can be rotated from the dashboard without downtime — old keys stay valid for one hour after rotation.</span>
+                </p>
+              </div>
+
+              <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">cURL</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-auth">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5">
+<pre id="snippet-auth" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-emerald-400">$</span> curl https://api.wavenode.io/v3/rooms \
+    -H <span class="text-emerald-300">"Authorization: Bearer $WAVENODE_SECRET_KEY"</span> \
+    -H <span class="text-emerald-300">"Content-Type: application/json"</span> \
+    -d <span class="text-emerald-300">'{"name":"launch-event-2026","mode":"broadcast"}'</span></code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- SDKs -->
+            <section id="sdks" class="mt-16" aria-labelledby="sdks-heading">
+              <h2 id="sdks-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Client SDKs</h2>
+              <p class="mt-4 leading-relaxed">All SDKs share the same method names, so the quickstart translates line for line.</p>
+
+              <div class="mt-7 grid gap-4 sm:grid-cols-2">
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">@wavenode/sdk</p>
+                  <p class="mt-2 text-xs">JavaScript &amp; TypeScript &mdash; Node 18+, Deno, Bun and every evergreen browser.</p>
+                </div>
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">wavenode-python</p>
+                  <p class="mt-2 text-xs">Python 3.10+ with async support and typed response models.</p>
+                </div>
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">WaveNodeKit</p>
+                  <p class="mt-2 text-xs">Swift package for iOS 16+ and macOS 13+, with SwiftUI view helpers.</p>
+                </div>
+                <div class="card card-hover p-5">
+                  <p class="font-mono text-sm font-semibold text-slate-900 dark:text-white">wavenode-android</p>
+                  <p class="mt-2 text-xs">Kotlin SDK targeting API level 26 and above, Compose-friendly.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Rooms endpoint -->
+            <section id="rooms" class="mt-16" aria-labelledby="rooms-heading">
+              <h2 id="rooms-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Rooms</h2>
+              <p class="mt-4 leading-relaxed">A room is the container for a broadcast, meeting or audio session. Rooms are free until media flows through them.</p>
+
+              <!-- Endpoint list -->
+              <ul class="mt-7 space-y-3">
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-emerald-500/10 px-2.5 py-1 font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">POST</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms</code>
+                  <span class="text-xs text-slate-500">Create a room</span>
+                </li>
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-primary-500/10 px-2.5 py-1 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">GET</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
+                  <span class="text-xs text-slate-500">Fetch a room and its participants</span>
+                </li>
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-amber-500/10 px-2.5 py-1 font-mono text-xs font-bold text-amber-600 dark:text-amber-400">PATCH</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
+                  <span class="text-xs text-slate-500">Update AI or recording settings mid-session</span>
+                </li>
+                <li class="card flex flex-wrap items-center gap-3 p-4">
+                  <span class="rounded-md bg-rose-500/10 px-2.5 py-1 font-mono text-xs font-bold text-rose-600 dark:text-rose-400">DELETE</span>
+                  <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
+                  <span class="text-xs text-slate-500">End the session and disconnect everyone</span>
+                </li>
+              </ul>
+
+              <h3 class="mt-10 text-lg font-bold text-slate-900 dark:text-white">Request parameters</h3>
+              <div class="scrollbar-slim mt-5 overflow-x-auto">
+                <table class="w-full min-w-[34rem] border-collapse text-left text-sm">
+                  <caption class="sr-only">Parameters accepted when creating a room</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 dark:border-slate-800">
+                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500">Field</th>
+                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Type</th>
+                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">name</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">string</td>
+                      <td class="pl-4 py-3 text-xs">Human-readable identifier, unique within the project.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">mode</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">enum</td>
+                      <td class="pl-4 py-3 text-xs">One of <code class="font-mono">broadcast</code>, <code class="font-mono">meeting</code> or <code class="font-mono">audio</code>.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">maxParticipants</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">integer</td>
+                      <td class="pl-4 py-3 text-xs">Hard cap on concurrent joins. Defaults to your plan limit.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">ai</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">object</td>
+                      <td class="pl-4 py-3 text-xs">Caption language, translation targets and highlight generation.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">recording</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">object</td>
+                      <td class="pl-4 py-3 text-xs">Enable recording and pick a composition layout.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Tracks -->
+            <section id="tracks" class="mt-16" aria-labelledby="tracks-heading">
+              <h2 id="tracks-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Tracks</h2>
+              <p class="mt-4 leading-relaxed">Each published camera, microphone or screen share is a track. Subscribers choose which tracks to pull, so a viewer on a phone can take audio only without a separate stream.</p>
+              <p class="mt-4 leading-relaxed">Track events arrive on the same session socket as captions: <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">trackPublished</code>, <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">trackUnpublished</code> and <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">trackQualityChanged</code>.</p>
+            </section>
+
+            <!-- Recordings -->
+            <section id="recordings" class="mt-16" aria-labelledby="recordings-heading">
+              <h2 id="recordings-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Recordings</h2>
+              <p class="mt-4 leading-relaxed">Recordings are written as they happen, so a session that ends abruptly still leaves a playable file. Composed MP4s and per-participant tracks are produced in parallel — request either or both.</p>
+              <p class="mt-4 leading-relaxed">Point <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">storage.bucket</code> at your own S3-compatible bucket to keep media entirely inside your infrastructure. We only store the manifest.</p>
+            </section>
+
+            <!-- Webhooks -->
+            <section id="webhooks" class="mt-16" aria-labelledby="webhooks-heading">
+              <h2 id="webhooks-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Webhooks</h2>
+              <p class="mt-4 leading-relaxed">Every state change is delivered to your endpoint with an HMAC-SHA256 signature in the <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">Wave-Signature</code> header. Retries back off for up to 24 hours.</p>
+
+              <div class="card mt-7 overflow-hidden bg-slate-950 dark:bg-slate-950">
+                <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
+                  <p class="font-mono text-xs text-slate-400">recording.ready</p>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-webhook">Copy</button>
+                </div>
+                <div class="scrollbar-slim overflow-x-auto p-5">
+<pre id="snippet-webhook" class="font-mono text-xs leading-relaxed text-slate-300"><code>{
+  <span class="text-primary-300">"event"</span>: <span class="text-emerald-300">"recording.ready"</span>,
+  <span class="text-primary-300">"roomId"</span>: <span class="text-emerald-300">"rm_8Kd2mQ4xLp"</span>,
+  <span class="text-primary-300">"durationSeconds"</span>: <span class="text-amber-300">4360</span>,
+  <span class="text-primary-300">"assets"</span>: {
+    <span class="text-primary-300">"composed"</span>: <span class="text-emerald-300">"https://cdn.wavenode.io/rec/8Kd2mQ4xLp.mp4"</span>,
+    <span class="text-primary-300">"transcript"</span>: <span class="text-emerald-300">"https://cdn.wavenode.io/rec/8Kd2mQ4xLp.vtt"</span>,
+    <span class="text-primary-300">"highlights"</span>: <span class="text-amber-300">7</span>
+  }
+}</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <!-- Errors -->
+            <section id="errors" class="mt-16" aria-labelledby="errors-heading">
+              <h2 id="errors-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Errors</h2>
+              <p class="mt-4 leading-relaxed">Errors use conventional HTTP status codes and always include a machine-readable <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">code</code> alongside the message.</p>
+
+              <div class="scrollbar-slim mt-7 overflow-x-auto">
+                <table class="w-full min-w-[30rem] border-collapse text-left text-sm">
+                  <caption class="sr-only">Common API error codes</caption>
+                  <thead>
+                    <tr class="border-b border-slate-200 dark:border-slate-800">
+                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500">Status</th>
+                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Code</th>
+                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Meaning</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">401</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">invalid_key</td>
+                      <td class="pl-4 py-3 text-xs">Secret key missing, malformed or rotated out.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">403</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">token_expired</td>
+                      <td class="pl-4 py-3 text-xs">The room JWT is past its TTL. Mint a new one.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">409</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">room_name_taken</td>
+                      <td class="pl-4 py-3 text-xs">Another active room in this project uses that name.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="py-3 pr-4 font-mono text-xs font-medium text-slate-900 dark:text-white">429</th>
+                      <td class="px-4 py-3 font-mono text-xs text-accent-500">rate_limited</td>
+                      <td class="pl-4 py-3 text-xs">Back off and retry after the <code class="font-mono">Retry-After</code> header.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Rate limits -->
+            <section id="rate-limits" class="mt-16" aria-labelledby="limits-heading">
+              <h2 id="limits-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Rate limits</h2>
+              <p class="mt-4 leading-relaxed">Control-plane calls are limited to 100 requests per second per project, burstable to 300. Media itself is never rate limited — publishing and subscribing are governed by your plan allowance, not by request counts.</p>
+
+              <div class="card mt-7 p-6">
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Ready to build?</p>
+                <p class="mt-2 text-sm leading-relaxed">Create a free project and your first key takes about thirty seconds.</p>
+                <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+                  <a href="register.html" class="btn-primary">Get an API key</a>
+                  <a href="pricing.html" class="btn-secondary">See plan limits</a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Docs Layout End -->
+
+    <!-- ================================================================
+         CTA Banner Start
+    ================================================================ -->
+    <section class="pb-20 sm:pb-28" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="bg-grid relative overflow-hidden rounded-3xl border border-primary-500/30 bg-gradient-to-br from-primary-600/10 via-violet-600/10 to-accent-500/10 px-6 py-16 text-center dark:from-primary-600/20 dark:via-violet-600/15 dark:to-accent-500/10 sm:px-16" data-reveal>
+          <div class="bg-glow pointer-events-none absolute -top-24 left-1/2 h-64 w-[36rem] -translate-x-1/2" aria-hidden="true"></div>
+          <div class="relative mx-auto max-w-2xl">
+            <h2 id="cta-heading" class="section-title">Start streaming in minutes, <span class="text-gradient">not months</span></h2>
+            <p class="section-lead mt-5">Join 4,000+ teams building live experiences on WaveNode. The free tier never expires — and your first AI-captioned stream is one API call away.</p>
+            <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a href="register.html" class="btn-primary w-full px-7 py-3.5 text-base sm:w-auto">Start Building Free</a>
+              <a href="contact.html" class="btn-secondary w-full px-7 py-3.5 text-base sm:w-auto">Book a demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Banner End -->
+
+  </main>
+
+  <!-- ================================================================
+       Footer Start
+  ================================================================ -->
+  <footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800/70 dark:bg-slate-900/40">
+    <div class="container py-16">
+      <div class="grid gap-12 lg:grid-cols-6">
+        <!-- Brand column -->
+        <div class="lg:col-span-2">
+          <a href="index.html" class="flex items-center gap-2.5" aria-label="WaveNode home">
+            <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="logo-grad-footer" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#6366F1"/>
+                  <stop offset="0.55" stop-color="#8B5CF6"/>
+                  <stop offset="1" stop-color="#06B6D4"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="9" fill="url(#logo-grad-footer)"/>
+              <rect x="7" y="13" width="3" height="6" rx="1.5" fill="white"/>
+              <rect x="12" y="9" width="3" height="14" rx="1.5" fill="white"/>
+              <rect x="17" y="5" width="3" height="22" rx="1.5" fill="white"/>
+              <rect x="22" y="11" width="3" height="10" rx="1.5" fill="white"/>
+            </svg>
+            <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">WaveNode</span>
+          </a>
+          <p class="mt-5 max-w-xs text-sm leading-relaxed">The AI-powered video &amp; audio streaming platform for creators, developers and enterprises.</p>
+
+          <!-- Newsletter -->
+          <form class="mt-7" action="#" method="post">
+            <label for="newsletter-email" class="text-sm font-semibold text-slate-900 dark:text-white">Product updates, monthly</label>
+            <div class="mt-3 flex max-w-sm gap-2">
+              <input type="email" id="newsletter-email" name="email" required placeholder="you@company.com" autocomplete="email" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+              <button type="submit" class="btn-primary shrink-0 !px-4">Subscribe</button>
+            </div>
+          </form>
+
+          <!-- Social links -->
+          <ul class="mt-7 flex gap-3">
+            <li>
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on X (Twitter)">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.1 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.8H5.7L17.8 20z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on GitHub">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on LinkedIn">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.5H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1v7.8h-4.6v-6.9c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7v7H7.8V8z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on YouTube">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.5A3 3 0 0 0 .5 6.6 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2C4.5 20 12 20 12 20s7.5 0 9.4-.5a3 3 0 0 0 2.1-2A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Product column -->
+        <nav aria-label="Product links">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Product</h2>
+          <ul class="mt-5 space-y-3">
+            <li><a href="features.html" class="footer-link">Features</a></li>
+            <li><a href="integrations.html" class="footer-link">Integrations</a></li>
+            <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+            <li><a href="changelog.html" class="footer-link">Changelog</a></li>
+            <li><a href="docs.html" class="footer-link">API Documentation</a></li>
+          </ul>
+        </nav>
+
+        <!-- Use cases column -->
+        <nav aria-label="Use case links">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Use Cases</h2>
+          <ul class="mt-5 space-y-3">
+            <li><a href="index-creator.html" class="footer-link">For Creators</a></li>
+            <li><a href="index-enterprise.html" class="footer-link">For Enterprise</a></li>
+            <li><a href="features.html" class="footer-link">Live Events</a></li>
+            <li><a href="features.html" class="footer-link">Podcasts &amp; Audio Rooms</a></li>
+            <li><a href="features.html" class="footer-link">Webinars</a></li>
+          </ul>
+        </nav>
+
+        <!-- Company column -->
+        <nav aria-label="Company links">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+          <ul class="mt-5 space-y-3">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="careers.html" class="footer-link">Careers</a></li>
+            <li><a href="testimonials.html" class="footer-link">Customers</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Resources column -->
+        <nav aria-label="Resources and legal links">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Resources</h2>
+          <ul class="mt-5 space-y-3">
+            <li><a href="help-center.html" class="footer-link">Help Center</a></li>
+            <li><a href="faq.html" class="footer-link">FAQ</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-slate-200 py-6 dark:border-slate-800/70">
+      <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row">
+        <p>&copy; <span data-year>2026</span> WaveNode Inc. All rights reserved.</p>
+        <p class="flex items-center gap-1.5">
+          <span class="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
+          All systems operational
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Back to top button -->
+  <button type="button" class="pointer-events-none fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-600 text-white opacity-0 shadow-glow-sm transition-opacity duration-300 hover:bg-primary-500" data-back-to-top aria-label="Back to top">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
