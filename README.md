@@ -16,8 +16,8 @@ Unzip and double-click `index.html`. That is the whole installation — it runs
 offline, straight from the filesystem.
 
 To deploy, upload the `.html` files plus `assets/`, `robots.txt` and
-`sitemap.xml` to your web root. Leave `tools/`, `src/`, `documentation/`,
-`node_modules/` and the config files behind; they are for development only.
+`sitemap.xml` to your web root. Leave `src/`, `documentation/`, `node_modules/`
+and the config files behind; they are for development only.
 
 ## Recompiling the CSS
 
@@ -31,21 +31,6 @@ npm run dev       # or watch while you work
 ```
 
 Edit `src/input.css`, never `assets/css/style.css` — the latter is generated.
-
-## Optional page generator
-
-The header and footer are physically duplicated into all 24 pages, which is
-what lets the template work with no server. A small Python script (no packages
-needed) keeps those copies in sync so a nav change is one edit, not 24:
-
-```bash
-npm run pages         # regenerate all pages from tools/partials + tools/content
-npm run pages:check   # verify nothing has drifted out of sync
-npm run build         # then recompile the CSS
-```
-
-Delete `tools/` if you would rather edit the HTML by hand. Nothing in the
-shipped site depends on it. See [`tools/README.md`](tools/README.md).
 
 ## What's inside
 
@@ -73,8 +58,8 @@ shipped site depends on it. See [`tools/README.md`](tools/README.md).
 
 The demo content is realistic but entirely fictional. At minimum: wire up the
 forms (all use `action="#"`), replace `terms.html` and `privacy.html` with real
-legal text, remove the visible template notices, and set your own domain in
-`SITE_URL` (`tools/build.py`).
+legal text, remove the visible template notices, and replace the `wavenode.io`
+domain in each page's canonical and Open Graph tags.
 
 Section 9 of the documentation is a complete checklist.
 

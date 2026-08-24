@@ -26,5 +26,3 @@ Initial release.
   scroll regions, WCAG AA text contrast in both themes.
 - SEO: unique titles and meta descriptions, canonical URLs, Open Graph and
   Twitter cards with a 1200×630 share image, `robots.txt`, `sitemap.xml`.
-- Optional Python page generator in `tools/` keeps the duplicated header and
-  footer in sync across all 24 pages.
