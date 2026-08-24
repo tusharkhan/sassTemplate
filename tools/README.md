@@ -2,14 +2,17 @@
 
 **Development tool. Delete this folder before packaging the distribution zip.**
 
+`AI_Sass_Template.md` in this folder is the original build blueprint, kept
+here for reference. It is not buyer-facing and must not ship.
+
 The template ships as plain static HTML: no runtime includes, no server, no
 build step beyond Tailwind. Every page therefore carries its own physical copy
-of the header and footer — roughly 250 lines duplicated ten times over.
+of the header and footer — roughly 250 lines duplicated 23 times over.
 
 That is what a buyer expects to receive, but it is a poor thing to maintain by
-hand: changing one nav link means editing ten files identically, and the tenth
-one is where the typo lives. This generator assembles the pages from shared
-partials so the duplicated markup cannot drift.
+hand: changing one nav link means editing 23 files identically, and the
+twenty-third is where the typo lives. This generator assembles the pages from
+shared partials so the duplicated markup cannot drift.
 
 The output is still ordinary static HTML with everything inlined. Nothing here
 runs in the browser, and nothing here is needed to use the template.
@@ -27,7 +30,7 @@ npm run build                           # recompile Tailwind afterwards
 
 `--check` exits non-zero and prints `STALE` for any page whose file on disk
 differs from what the sources would produce. It is the useful one to run before
-committing, and it currently passes for all ten pages — including `index.html`,
+committing, and it currently passes for all 23 pages — including `index.html`,
 which round-trips byte for byte.
 
 Convenience wrappers exist in `package.json`:
@@ -42,6 +45,7 @@ npm run pages:check
 ```
 tools/
   build.py                assembly logic
+  make-sitemap.py         regenerates sitemap.xml from pages.py
   pages.py                page registry — titles, meta, nav state
   partials/
     head.html             <head>, with __TITLE__ / __DESC__ / __OGDESC__ slots

@@ -4,18 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WaveNode — AI-Powered Video &amp; Audio Streaming API Platform</title>
-  <meta name="description" content="WaveNode is the AI-powered video and audio streaming platform for creators, developers and enterprises. Go live in minutes with a global low-latency network, AI captions, monetization tools and a developer-first API.">
+  <meta name="description" content="WaveNode is the AI-powered video and audio streaming platform for creators, developers and enterprises. Go live in minutes with a global low-latency network, AI captions, monetisation tools and a developer-first API.">
   <meta name="author" content="WaveNode">
+
+  <!-- Canonical URL — change SITE_URL in tools/build.py to your own domain -->
+  <link rel="canonical" href="https://wavenode.io/">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WaveNode">
   <meta property="og:title" content="WaveNode — AI-Powered Video &amp; Audio Streaming API Platform">
-  <meta property="og:description" content="Go live in minutes with a global low-latency network, AI captions, monetization tools and a developer-first API.">
+  <meta property="og:description" content="Go live in minutes with a global low-latency network, AI captions, monetisation tools and a developer-first API.">
+  <meta property="og:url" content="https://wavenode.io/">
+  <meta property="og:image" content="https://wavenode.io/assets/images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WaveNode — AI-powered video and audio streaming infrastructure">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://wavenode.io/assets/images/og-preview.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="theme-color" content="#030712">
+
+  <!-- Browser chrome colour, per theme -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)">
 
   <!-- Styles (self-hosted fonts + compiled Tailwind CSS) -->
   <link rel="stylesheet" href="assets/css/fonts.css">
@@ -112,7 +125,7 @@
     </div>
 
     <!-- Mobile menu drawer -->
-    <div id="mobile-menu" class="glass hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t lg:hidden" data-mobile-menu>
+    <nav id="mobile-menu" class="glass hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t lg:hidden" aria-label="Mobile navigation" data-mobile-menu>
       <div class="container flex flex-col gap-1 py-5">
         <a href="features.html" class="nav-link py-3 text-base">Features</a>
         <a href="pricing.html" class="nav-link py-3 text-base">Pricing</a>
@@ -124,7 +137,7 @@
           <a href="register.html" class="btn-primary w-full">Start Building Free</a>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
   <!-- Header / Navbar End -->
 
@@ -145,7 +158,7 @@
             <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/>
             </svg>
-            New: AI captions in 30+ languages
+            New: AI captions in 42 languages
           </p>
 
           <h1 id="hero-heading" class="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl" data-reveal>
@@ -166,7 +179,7 @@
             <a href="docs.html" class="btn-secondary w-full px-7 py-3.5 text-base sm:w-auto">View Documentation</a>
           </div>
 
-          <p class="mt-5 text-sm text-slate-500" data-reveal data-reveal-delay="3">Free tier forever &middot; No credit card required &middot; Deploy in under 5 minutes</p>
+          <p class="mt-5 text-sm text-slate-500 dark:text-slate-400" data-reveal data-reveal-delay="3">Free tier forever &middot; No credit card required &middot; Deploy in minutes</p>
         </div>
 
         <!-- Dashboard mockup -->
@@ -229,7 +242,7 @@
 
               <!-- Live chat sidebar -->
               <div class="hidden flex-col rounded-xl border border-slate-200 dark:border-slate-800 lg:flex">
-                <p class="border-b border-slate-200 px-3.5 py-2.5 text-xs font-bold uppercase tracking-wider text-slate-500 dark:border-slate-800">Live chat</p>
+                <p class="border-b border-slate-200 px-3.5 py-2.5 text-xs font-bold uppercase tracking-wider text-slate-500 dark:border-slate-800 dark:text-slate-400">Live chat</p>
                 <ul class="flex-1 space-y-3 overflow-hidden p-3.5 text-xs">
                   <li>
                     <p><span class="font-bold text-primary-500">mira_dev</span> <span class="text-slate-600 dark:text-slate-300">the captions are switching languages instantly 🤯</span></p>
@@ -253,7 +266,7 @@
               </div>
               <div>
                 <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Median latency</p>
-                <p class="mt-0.5 text-lg font-bold text-slate-900 dark:text-white">42ms</p>
+                <p class="mt-0.5 text-lg font-bold text-slate-900 dark:text-white">47ms</p>
               </div>
               <div>
                 <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Stream health</p>
@@ -271,7 +284,7 @@
     ================================================================ -->
     <section class="border-y border-slate-200 py-12 dark:border-slate-800/70" aria-label="Trusted by leading teams">
       <div class="container">
-        <p class="text-center text-sm font-medium text-slate-500" data-reveal>Trusted by 4,000+ product teams, studios and creators worldwide</p>
+        <p class="text-center text-sm font-medium text-slate-500 dark:text-slate-400" data-reveal>Trusted by 4,000+ product teams, studios and creators worldwide</p>
         <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0" data-reveal>
           <li class="flex items-center gap-2 text-lg font-bold text-slate-700 dark:text-slate-300">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l10 10-10 10L2 12 12 2z"/></svg>
@@ -328,17 +341,17 @@
             <p class="mt-3 max-w-lg leading-relaxed">Deliver live video and audio through 210+ edge locations on six continents, with adaptive bitrate baked in. Your viewers get sub-50ms glass-to-glass latency whether they join from Berlin, Dhaka or São Paulo.</p>
             <!-- Latency bars visual -->
             <div class="mt-6 space-y-2.5 max-w-md" aria-hidden="true">
-              <div class="flex items-center gap-3 text-xs font-medium text-slate-500">
+              <div class="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400">
                 <span class="w-24 shrink-0">Frankfurt</span>
                 <span class="h-2 w-[22%] rounded-full bg-gradient-to-r from-primary-500 to-accent-400"></span>
                 <span>31ms</span>
               </div>
-              <div class="flex items-center gap-3 text-xs font-medium text-slate-500">
+              <div class="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400">
                 <span class="w-24 shrink-0">Singapore</span>
                 <span class="h-2 w-[30%] rounded-full bg-gradient-to-r from-primary-500 to-accent-400"></span>
                 <span>38ms</span>
               </div>
-              <div class="flex items-center gap-3 text-xs font-medium text-slate-500">
+              <div class="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400">
                 <span class="w-24 shrink-0">São Paulo</span>
                 <span class="h-2 w-[36%] rounded-full bg-gradient-to-r from-primary-500 to-accent-400"></span>
                 <span>44ms</span>
@@ -355,10 +368,10 @@
               </svg>
             </span>
             <h3 class="mt-5 text-xl font-bold text-slate-900 dark:text-white">AI captions &amp; highlights</h3>
-            <p class="mt-3 leading-relaxed">Real-time transcription in 30+ languages, automatic highlight clips and smart chapter markers. Every stream becomes searchable, accessible content the moment it ends.</p>
+            <p class="mt-3 leading-relaxed">Real-time transcription in 42 languages, automatic highlight clips and smart chapter markers. Every stream becomes searchable, accessible content the moment it ends.</p>
           </article>
 
-          <!-- Bento card: Monetization -->
+          <!-- Bento card: Monetisation -->
           <article class="card card-hover p-7" data-reveal>
             <span class="icon-tile">
               <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -367,8 +380,8 @@
                 <path d="M15 9.5c0-1.2-1.3-2-3-2s-3 .8-3 2 1.2 1.8 3 2 3 1 3 2.2-1.3 2-3 2-3-.8-3-2"/>
               </svg>
             </span>
-            <h3 class="mt-5 text-xl font-bold text-slate-900 dark:text-white">Creator monetization</h3>
-            <p class="mt-3 leading-relaxed">Tips, paid subscriptions, pay-per-view events and instant payouts in 40+ currencies. Keep up to 95% of your revenue with transparent, flat-rate pricing.</p>
+            <h3 class="mt-5 text-xl font-bold text-slate-900 dark:text-white">Creator monetisation</h3>
+            <p class="mt-3 leading-relaxed">Tips, paid subscriptions, pay-per-view events and payouts in 38 currencies, settling within two business days. A flat 3% platform fee, with no revenue share beyond it.</p>
           </article>
 
           <!-- Bento card: Enterprise meetings -->
@@ -395,7 +408,7 @@
               </svg>
             </span>
             <h3 class="mt-5 text-xl font-bold text-slate-900 dark:text-white">Developer-first API</h3>
-            <p class="mt-3 leading-relaxed">REST API, real-time webhooks and SDKs for JavaScript, iOS, Android and Flutter. Spin up a production-ready video room with ten lines of code.</p>
+            <p class="mt-3 leading-relaxed">REST API, real-time webhooks and SDKs for JavaScript, Python, Swift and Kotlin. Spin up a production-ready video room with ten lines of code.</p>
           </article>
         </div>
       </div>
@@ -425,7 +438,7 @@
                 </span>
                 <div>
                   <h3 class="font-bold text-slate-900 dark:text-white">Live captions &amp; translation</h3>
-                  <p class="mt-1 text-sm leading-relaxed">Word-accurate captions in 30+ languages with speaker labels, delivered under 300ms behind live audio.</p>
+                  <p class="mt-1 text-sm leading-relaxed">Word-accurate captions in 42 languages with speaker labels, delivered under 300ms behind live audio.</p>
                 </div>
               </li>
               <li class="flex gap-4" data-reveal data-reveal-delay="1">
@@ -483,9 +496,9 @@
                   </div>
                 </div>
                 <div class="flex gap-3">
-                  <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-primary-500 text-xs font-bold text-white" aria-hidden="true">DO</span>
+                  <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-primary-500 text-xs font-bold text-white" aria-hidden="true">YD</span>
                   <div>
-                    <p class="text-xs font-bold text-slate-900 dark:text-white">Daniel Okafor <span class="ml-1 font-normal text-slate-400">00:14:36</span></p>
+                    <p class="text-xs font-bold text-slate-900 dark:text-white">Yusuf Demir <span class="ml-1 font-normal text-slate-400">00:14:36</span></p>
                     <p class="mt-1 leading-relaxed">Latency just dropped to 38 milliseconds — chat, are you seeing this?</p>
                   </div>
                 </div>
@@ -538,14 +551,14 @@
                   </span>
                   <span class="font-mono text-xs text-slate-400">create-room.js</span>
                 </div>
-                <button type="button" class="rounded-md border border-slate-700 px-2.5 py-1 font-mono text-xs text-slate-400 transition hover:border-slate-500 hover:text-white" data-copy data-copy-target="#hero-code-snippet">Copy</button>
+                <button type="button" class="rounded-md border border-slate-700 px-2.5 py-1 font-mono text-xs text-slate-400 transition hover:border-slate-500 hover:text-white" data-copy aria-label="Copy the create-room.js snippet" data-copy-target="#hero-code-snippet">Copy</button>
               </div>
               <!-- Syntax-highlighted snippet -->
               <pre id="hero-code-snippet" class="scrollbar-slim overflow-x-auto p-5 font-mono text-[13px] leading-relaxed text-slate-300"><code><span class="text-violet-400">import</span> { WaveNode } <span class="text-violet-400">from</span> <span class="text-emerald-400">'@wavenode/sdk'</span>;
 
-<span class="text-violet-400">const</span> <span class="text-sky-300">wavenode</span> = <span class="text-violet-400">new</span> <span class="text-amber-300">WaveNode</span>({ <span class="text-sky-300">apiKey</span>: process.env.<span class="text-sky-300">WAVENODE_API_KEY</span> });
+<span class="text-violet-400">const</span> <span class="text-sky-300">wavenode</span> = <span class="text-violet-400">new</span> <span class="text-amber-300">WaveNode</span>(process.env.<span class="text-sky-300">WAVENODE_SECRET_KEY</span>);
 
-<span class="text-slate-500">// Create a low-latency video room with AI captions</span>
+<span class="text-slate-500 dark:text-slate-400">// Create a low-latency video room with AI captions</span>
 <span class="text-violet-400">const</span> <span class="text-sky-300">room</span> = <span class="text-violet-400">await</span> wavenode.rooms.<span class="text-amber-300">create</span>({
   <span class="text-sky-300">name</span>: <span class="text-emerald-400">'product-launch-live'</span>,
   <span class="text-sky-300">region</span>: <span class="text-emerald-400">'auto'</span>,
@@ -553,7 +566,7 @@
   <span class="text-sky-300">features</span>: { <span class="text-sky-300">recording</span>: <span class="text-orange-300">true</span>, <span class="text-sky-300">aiCaptions</span>: <span class="text-orange-300">true</span> },
 });
 
-<span class="text-slate-500">// Invite the host with a signed access token</span>
+<span class="text-slate-500 dark:text-slate-400">// Invite the host with a signed access token</span>
 <span class="text-violet-400">const</span> <span class="text-sky-300">token</span> = <span class="text-violet-400">await</span> wavenode.tokens.<span class="text-amber-300">sign</span>({ <span class="text-sky-300">roomId</span>: room.id, <span class="text-sky-300">role</span>: <span class="text-emerald-400">'host'</span> });
 
 console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`Room live at ${room.joinUrl}`</span>);</code></pre>
@@ -569,7 +582,7 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
             <ul class="mt-8 space-y-4 text-slate-700 dark:text-slate-300">
               <li class="flex items-center gap-3" data-reveal>
                 <svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
-                SDKs for JavaScript, React, iOS, Android and Flutter
+                SDKs for JavaScript, Python, Swift and Kotlin
               </li>
               <li class="flex items-center gap-3" data-reveal data-reveal-delay="1">
                 <svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
@@ -604,20 +617,20 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
       <div class="container">
         <dl class="grid grid-cols-2 gap-10 text-center lg:grid-cols-4">
           <div data-reveal>
-            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500">Uptime SLA</dt>
+            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500 dark:text-slate-400">Uptime SLA</dt>
             <dd class="order-1 text-4xl font-extrabold tracking-tight text-gradient sm:text-5xl">99.99%</dd>
           </div>
           <div data-reveal data-reveal-delay="1">
-            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500">Median global latency</dt>
-            <dd class="order-1 text-4xl font-extrabold tracking-tight text-gradient sm:text-5xl">42ms</dd>
+            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500 dark:text-slate-400">Median global latency</dt>
+            <dd class="order-1 text-4xl font-extrabold tracking-tight text-gradient sm:text-5xl">47ms</dd>
           </div>
           <div data-reveal data-reveal-delay="2">
-            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500">Edge locations</dt>
+            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500 dark:text-slate-400">Edge locations</dt>
             <dd class="order-1 text-4xl font-extrabold tracking-tight text-gradient sm:text-5xl">210+</dd>
           </div>
           <div data-reveal data-reveal-delay="3">
-            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500">Minutes streamed monthly</dt>
-            <dd class="order-1 text-4xl font-extrabold tracking-tight text-gradient sm:text-5xl">4B+</dd>
+            <dt class="order-2 mt-2 block text-sm font-medium text-slate-500 dark:text-slate-400">Minutes streamed monthly</dt>
+            <dd class="order-1 text-4xl font-extrabold tracking-tight text-gradient sm:text-5xl">1.2B</dd>
           </div>
         </dl>
       </div>
@@ -651,7 +664,7 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
               <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-violet-500 text-sm font-bold text-white" aria-hidden="true">MC</span>
               <div>
                 <p class="text-sm font-bold text-slate-900 dark:text-white">Maya Chen</p>
-                <p class="text-xs text-slate-500">Head of Engineering, Vertexa</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Head of Engineering, Vertexa</p>
               </div>
             </figcaption>
           </figure>
@@ -669,10 +682,10 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
               <p>&ldquo;The auto-highlight clips doubled my short-form output overnight. I stream once and WaveNode turns it into a week of content — captions, dubs and all.&rdquo;</p>
             </blockquote>
             <figcaption class="mt-6 flex items-center gap-3">
-              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-primary-500 text-sm font-bold text-white" aria-hidden="true">DO</span>
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-accent-500 to-primary-500 text-sm font-bold text-white" aria-hidden="true">YD</span>
               <div>
-                <p class="text-sm font-bold text-slate-900 dark:text-white">Daniel Okafor</p>
-                <p class="text-xs text-slate-500">Creator, 1.2M subscribers</p>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Yusuf Demir</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Creator, 1.2M subscribers</p>
               </div>
             </figcaption>
           </figure>
@@ -690,10 +703,10 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
               <p>&ldquo;Ten thousand employees across 14 countries on our quarterly all-hands, zero dropped streams. The compliance and SSO story finally satisfied our security team.&rdquo;</p>
             </blockquote>
             <figcaption class="mt-6 flex items-center gap-3">
-              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-accent-500 text-sm font-bold text-white" aria-hidden="true">SM</span>
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-accent-500 text-sm font-bold text-white" aria-hidden="true">CR</span>
               <div>
-                <p class="text-sm font-bold text-slate-900 dark:text-white">Sofia Martínez</p>
-                <p class="text-xs text-slate-500">VP of Product, Nimbusly</p>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Camila Rossi</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">VP of Product, Nimbusly</p>
               </div>
             </figcaption>
           </figure>
@@ -733,7 +746,7 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
             <p class="mt-1.5 text-sm">For hobbyists and side projects.</p>
             <p class="mt-6">
               <span class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">$0</span>
-              <span class="text-sm font-medium text-slate-500">/month, forever</span>
+              <span class="text-sm font-medium text-slate-500 dark:text-slate-400">/month, forever</span>
             </p>
             <a href="register.html" class="btn-secondary mt-7 w-full">Start for free</a>
             <ul class="mt-7 space-y-3 text-sm">
@@ -752,16 +765,16 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
             <p class="mt-1.5 text-sm">For streamers, podcasters and influencers.</p>
             <p class="mt-6">
               <span class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                <span data-price-monthly>$29</span><span data-price-annual class="hidden">$24</span>
+                <span data-price-monthly class="hidden">$29</span><span data-price-annual>$24</span>
               </span>
-              <span class="text-sm font-medium text-slate-500">
-                <span data-price-monthly>/month</span><span data-price-annual class="hidden">/month, billed annually</span>
+              <span class="text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span data-price-monthly class="hidden">/month</span><span data-price-annual>/month, billed annually</span>
               </span>
             </p>
             <a href="register.html" class="btn-primary mt-7 w-full">Start 14-day trial</a>
             <ul class="mt-7 space-y-3 text-sm">
-              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>10,000 streaming minutes / month</li>
-              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>1080p60 adaptive streaming</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>20,000 streaming minutes / month</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>4K streaming and recording</li>
               <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>AI captions, highlights &amp; dubbing</li>
               <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Tips, subscriptions &amp; pay-per-view</li>
               <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Custom branding &amp; priority support</li>
@@ -774,16 +787,16 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
             <p class="mt-1.5 text-sm">For products and enterprises at scale.</p>
             <p class="mt-6">
               <span class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                <span data-price-monthly>$99</span><span data-price-annual class="hidden">$79</span>
+                <span data-price-monthly class="hidden">$249</span><span data-price-annual>$199</span>
               </span>
-              <span class="text-sm font-medium text-slate-500">
-                <span data-price-monthly>/month</span><span data-price-annual class="hidden">/month, billed annually</span>
+              <span class="text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span data-price-monthly class="hidden">/month</span><span data-price-annual>/month, billed annually</span>
               </span>
             </p>
             <a href="contact.html" class="btn-secondary mt-7 w-full">Talk to sales</a>
             <ul class="mt-7 space-y-3 text-sm">
-              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>100,000 streaming minutes / month</li>
-              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>4K streaming &amp; 10,000-seat rooms</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Unlimited streaming minutes</li>
+              <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>4K HDR &amp; 10,000-seat rooms</li>
               <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>SSO / SAML &amp; audit logs</li>
               <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>99.99% uptime SLA &amp; SOC 2</li>
               <li class="flex gap-2.5"><svg class="h-5 w-5 shrink-0 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>Dedicated success engineer</li>
@@ -791,7 +804,7 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
           </article>
         </div>
 
-        <p class="mt-10 text-center text-sm text-slate-500" data-reveal>Need custom volume, HIPAA or on-premise deployment? <a href="contact.html" class="font-semibold text-primary-600 hover:underline dark:text-primary-400">Contact our sales team</a> &middot; Full details on the <a href="pricing.html" class="font-semibold text-primary-600 hover:underline dark:text-primary-400">pricing page</a></p>
+        <p class="mt-10 text-center text-sm text-slate-500 dark:text-slate-400" data-reveal>Need custom volume, HIPAA or on-premise deployment? <a href="contact.html" class="font-semibold text-primary-600 hover:underline dark:text-primary-400">Contact our sales team</a> &middot; Full details on the <a href="pricing.html" class="font-semibold text-primary-600 hover:underline dark:text-primary-400">pricing page</a></p>
       </div>
     </section>
     <!-- Pricing Section End -->
@@ -847,9 +860,10 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
 
           <!-- Newsletter -->
           <form class="mt-7" action="#" method="post">
-            <label for="newsletter-email" class="text-sm font-semibold text-slate-900 dark:text-white">Product updates, monthly</label>
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">Product updates, monthly</p>
+            <label for="newsletter-email" class="sr-only">Email address</label>
             <div class="mt-3 flex max-w-sm gap-2">
-              <input type="email" id="newsletter-email" name="email" required placeholder="you@company.com" autocomplete="email" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+              <input type="email" id="newsletter-email" name="email" required placeholder="you@company.com" autocomplete="email" class="w-full rounded-xl border border-slate-400 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
               <button type="submit" class="btn-primary shrink-0 !px-4">Subscribe</button>
             </div>
           </form>
@@ -857,22 +871,22 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
           <!-- Social links -->
           <ul class="mt-7 flex gap-3">
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on X (Twitter)">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on X (Twitter)">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.1 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.8H5.7L17.8 20z"/></svg>
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on GitHub">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on GitHub">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on LinkedIn">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on LinkedIn">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.5H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1v7.8h-4.6v-6.9c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7v7H7.8V8z"/></svg>
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on YouTube">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on YouTube">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.5A3 3 0 0 0 .5 6.6 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2C4.5 20 12 20 12 20s7.5 0 9.4-.5a3 3 0 0 0 2.1-2A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
               </a>
             </li>
@@ -930,8 +944,8 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
 
     <!-- Bottom bar -->
     <div class="border-t border-slate-200 py-6 dark:border-slate-800/70">
-      <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row">
-        <p>&copy; <span data-year>2026</span> WaveNode Inc. All rights reserved.</p>
+      <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row dark:text-slate-400">
+        <p>&copy; <span data-year>2026</span> WaveNode GmbH All rights reserved.</p>
         <p class="flex items-center gap-1.5">
           <span class="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
           All systems operational
@@ -945,6 +959,9 @@ console.<span class="text-amber-300">log</span>(<span class="text-emerald-400">`
   <button type="button" class="pointer-events-none fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-600 text-white opacity-0 shadow-glow-sm transition-opacity duration-300 hover:bg-primary-500" data-back-to-top aria-label="Back to top">
     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
   </button>
+
+  <!-- Live region: copy-to-clipboard confirmations (see main.js) -->
+  <span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

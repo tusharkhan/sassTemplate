@@ -9,14 +9,14 @@
 register(
     'index.html',
     'WaveNode — AI-Powered Video &amp; Audio Streaming API Platform',
-    'WaveNode is the AI-powered video and audio streaming platform for creators, developers and enterprises. Go live in minutes with a global low-latency network, AI captions, monetization tools and a developer-first API.',
-    'Go live in minutes with a global low-latency network, AI captions, monetization tools and a developer-first API.',
+    'WaveNode is the AI-powered video and audio streaming platform for creators, developers and enterprises. Go live in minutes with a global low-latency network, AI captions, monetisation tools and a developer-first API.',
+    'Go live in minutes with a global low-latency network, AI captions, monetisation tools and a developer-first API.',
 )
 
 register(
     'features.html',
     'Features — WaveNode AI Video &amp; Audio Streaming Platform',
-    'Explore every WaveNode capability: global low-latency streaming, audio rooms, meetings, AI captions and translation, automatic highlight clips, monetization, recordings and real-time analytics.',
+    'Explore every WaveNode capability: global low-latency streaming, audio rooms, meetings, AI captions and translation, automatic highlight clips, monetisation, recordings and real-time analytics.',
     'Live streaming, audio rooms, meetings and an AI toolkit — all behind one developer-first API.',
     active='features.html',
 )
@@ -92,7 +92,7 @@ register(
 
 register(
     'index-creator.html',
-    'For Creators — WaveNode Live Streaming, Clips &amp; Monetization',
+    'For Creators — WaveNode Live Streaming, Clips &amp; Monetisation',
     'WaveNode for creators and influencers: 4K live streaming, automatic vertical highlight clips, AI captions in 42 languages, and subscriptions, tickets and tips with payouts in 38 currencies.',
     'Go live, get clips, get paid — a flat 3% platform fee and payouts in two business days.',
 )
@@ -108,7 +108,7 @@ register(
     'integrations.html',
     'Integrations — WaveNode Streaming Platform',
     'Connect WaveNode to the stack you already run: Datadog, Grafana, PagerDuty, Amazon S3, Cloudflare R2, Stripe, Adyen, Okta, Microsoft Entra ID, Slack, Zapier and more.',
-    'Thirty-one first-party integrations, all configured from the dashboard without glue code.',
+    'Twenty-one first-party integrations, all configured from the dashboard without glue code.',
 )
 
 register(
@@ -166,5 +166,25 @@ register(
     'Privacy Policy — WaveNode',
     'What WaveNode collects, why, where it is stored, how long it is kept and what you can ask us to do with it — including our position on AI processing and model training.',
     'What we collect, why, where it lives and what you can ask us to do with it.',
+    cta=False,
+)
+
+# ---------------------------------------------------------------------------
+# Utility and app-UI pages
+# ---------------------------------------------------------------------------
+
+register(
+    '404.html',
+    'Page not found — WaveNode',
+    'The page you requested could not be found. Browse the WaveNode help center, documentation or feature pages instead.',
+    'This frame never arrived — the page you asked for is not here.',
+    cta=False,
+)
+
+register(
+    'user-dashboard.html',
+    'Dashboard — WaveNode',
+    'The WaveNode project dashboard: active streams, total viewers, median latency, generated clips, recent broadcasts and webhook delivery status.',
+    'Active streams, viewers, latency and recent broadcasts at a glance.',
     cta=False,
 )

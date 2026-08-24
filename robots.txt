@@ -1,0 +1,13 @@
+# WaveNode — robots.txt
+# Replace the Sitemap host with your own domain before deploying.
+
+User-agent: *
+Allow: /
+
+# Signed-in and transactional pages have no search value
+Disallow: /user-dashboard.html
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /forgot-password.html
+
+Sitemap: https://wavenode.io/sitemap.xml

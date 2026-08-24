@@ -7,15 +7,28 @@
   <meta name="description" content="__DESC__">
   <meta name="author" content="WaveNode">
 
+  <!-- Canonical URL — change SITE_URL in tools/build.py to your own domain -->
+  <link rel="canonical" href="__CANONICAL__">
+
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WaveNode">
   <meta property="og:title" content="__TITLE__">
   <meta property="og:description" content="__OGDESC__">
+  <meta property="og:url" content="__CANONICAL__">
+  <meta property="og:image" content="__OGIMAGE__">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WaveNode — AI-powered video and audio streaming infrastructure">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="__OGIMAGE__">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="theme-color" content="#030712">
+
+  <!-- Browser chrome colour, per theme -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)">
 
   <!-- Styles (self-hosted fonts + compiled Tailwind CSS) -->
   <link rel="stylesheet" href="assets/css/fonts.css">

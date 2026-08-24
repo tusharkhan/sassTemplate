@@ -7,15 +7,28 @@
   <meta name="description" content="WaveNode is 84 people across Berlin, Singapore and Austin building low-latency streaming infrastructure. Our story, how we work, and the team accountable for the network.">
   <meta name="author" content="WaveNode">
 
+  <!-- Canonical URL — change SITE_URL in tools/build.py to your own domain -->
+  <link rel="canonical" href="https://wavenode.io/about.html">
+
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WaveNode">
   <meta property="og:title" content="About — WaveNode AI Video &amp; Audio Streaming Platform">
   <meta property="og:description" content="Building the future of real-time communication — because latency is a product decision.">
+  <meta property="og:url" content="https://wavenode.io/about.html">
+  <meta property="og:image" content="https://wavenode.io/assets/images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WaveNode — AI-powered video and audio streaming infrastructure">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://wavenode.io/assets/images/og-preview.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="theme-color" content="#030712">
+
+  <!-- Browser chrome colour, per theme -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)">
 
   <!-- Styles (self-hosted fonts + compiled Tailwind CSS) -->
   <link rel="stylesheet" href="assets/css/fonts.css">
@@ -112,7 +125,7 @@
     </div>
 
     <!-- Mobile menu drawer -->
-    <div id="mobile-menu" class="glass hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t lg:hidden" data-mobile-menu>
+    <nav id="mobile-menu" class="glass hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t lg:hidden" aria-label="Mobile navigation" data-mobile-menu>
       <div class="container flex flex-col gap-1 py-5">
         <a href="features.html" class="nav-link py-3 text-base">Features</a>
         <a href="pricing.html" class="nav-link py-3 text-base">Pricing</a>
@@ -124,7 +137,7 @@
           <a href="register.html" class="btn-primary w-full">Start Building Free</a>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
   <!-- Header / Navbar End -->
 
@@ -141,10 +154,10 @@
       <div class="container relative">
         <!-- Breadcrumb -->
         <nav class="flex justify-center" aria-label="Breadcrumb">
-          <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
             <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
             <li aria-hidden="true">/</li>
-            <li><span class="font-medium text-slate-700 dark:text-slate-300">About</span></li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300" aria-current="page">About</span></li>
           </ol>
         </nav>
 
@@ -177,19 +190,19 @@
             <div class="bg-glow pointer-events-none absolute -right-16 -top-16 h-72 w-72" aria-hidden="true"></div>
             <dl class="relative grid gap-5 sm:grid-cols-2">
               <div class="card p-6">
-                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">Founded</dt>
+                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Founded</dt>
                 <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">2017</dd>
               </div>
               <div class="card p-6">
-                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">People</dt>
+                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">People</dt>
                 <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">84</dd>
               </div>
               <div class="card p-6">
-                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">Minutes / month</dt>
+                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Minutes / month</dt>
                 <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">1.2B</dd>
               </div>
               <div class="card p-6">
-                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">Edge locations</dt>
+                <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Edge locations</dt>
                 <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">210+</dd>
               </div>
             </dl>
@@ -310,16 +323,16 @@
           <article class="card card-hover p-6 text-center" data-reveal>
             <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-400 text-xl font-bold text-white" aria-hidden="true">RN</span>
             <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Rina Nakamura</h3>
-            <p class="mt-1 text-xs text-slate-500">Co-founder &amp; CTO</p>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Co-founder &amp; CTO</p>
             <p class="mt-3 text-sm leading-relaxed">Wrote the first jitter buffer. Still reviews the media pipeline.</p>
             <ul class="mt-5 flex justify-center gap-2">
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Rina Nakamura on X (Twitter)">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Rina Nakamura on X (Twitter)">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.1 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.8H5.7L17.8 20z"/></svg>
                 </a>
               </li>
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Rina Nakamura on LinkedIn">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Rina Nakamura on LinkedIn">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.5H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1v7.8h-4.6v-6.9c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7v7H7.8V8z"/></svg>
                 </a>
               </li>
@@ -330,16 +343,16 @@
           <article class="card card-hover p-6 text-center" data-reveal data-reveal-delay="1">
             <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-primary-500 text-xl font-bold text-white" aria-hidden="true">TO</span>
             <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Tomás Oliveira</h3>
-            <p class="mt-1 text-xs text-slate-500">Co-founder &amp; CEO</p>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Co-founder &amp; CEO</p>
             <p class="mt-3 text-sm leading-relaxed">Handles the parts of the business that are not code. Takes support shifts anyway.</p>
             <ul class="mt-5 flex justify-center gap-2">
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Tomás Oliveira on X (Twitter)">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Tomás Oliveira on X (Twitter)">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.1 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.8H5.7L17.8 20z"/></svg>
                 </a>
               </li>
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Tomás Oliveira on LinkedIn">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Tomás Oliveira on LinkedIn">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.5H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1v7.8h-4.6v-6.9c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7v7H7.8V8z"/></svg>
                 </a>
               </li>
@@ -350,16 +363,16 @@
           <article class="card card-hover p-6 text-center" data-reveal data-reveal-delay="2">
             <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-accent-400 to-violet-500 text-xl font-bold text-white" aria-hidden="true">AK</span>
             <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Amara Kone</h3>
-            <p class="mt-1 text-xs text-slate-500">VP Infrastructure</p>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">VP Infrastructure</p>
             <p class="mt-3 text-sm leading-relaxed">Owns the edge network. Has opinions about BGP you will hear unprompted.</p>
             <ul class="mt-5 flex justify-center gap-2">
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Amara Kone on GitHub">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Amara Kone on GitHub">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
                 </a>
               </li>
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Amara Kone on LinkedIn">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Amara Kone on LinkedIn">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.5H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1v7.8h-4.6v-6.9c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7v7H7.8V8z"/></svg>
                 </a>
               </li>
@@ -368,18 +381,18 @@
 
           <!-- Team member 4 -->
           <article class="card card-hover p-6 text-center" data-reveal>
-            <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-violet-500 text-xl font-bold text-white" aria-hidden="true">DA</span>
-            <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Daniel Abara</h3>
-            <p class="mt-1 text-xs text-slate-500">Head of Developer Experience</p>
+            <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-violet-500 text-xl font-bold text-white" aria-hidden="true">TL</span>
+            <h3 class="mt-5 text-base font-bold text-slate-900 dark:text-white">Tobias Lang</h3>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Head of Developer Experience</p>
             <p class="mt-3 text-sm leading-relaxed">Rewrites the docs until the quickstart fits on one screen. It fits.</p>
             <ul class="mt-5 flex justify-center gap-2">
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Daniel Abara on GitHub">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Tobias Lang on GitHub">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
                 </a>
               </li>
               <li>
-                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="Daniel Abara on LinkedIn">
+                <a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="Tobias Lang on LinkedIn">
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.5H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1v7.8h-4.6v-6.9c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7v7H7.8V8z"/></svg>
                 </a>
               </li>
@@ -446,9 +459,10 @@
 
           <!-- Newsletter -->
           <form class="mt-7" action="#" method="post">
-            <label for="newsletter-email" class="text-sm font-semibold text-slate-900 dark:text-white">Product updates, monthly</label>
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">Product updates, monthly</p>
+            <label for="newsletter-email" class="sr-only">Email address</label>
             <div class="mt-3 flex max-w-sm gap-2">
-              <input type="email" id="newsletter-email" name="email" required placeholder="you@company.com" autocomplete="email" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+              <input type="email" id="newsletter-email" name="email" required placeholder="you@company.com" autocomplete="email" class="w-full rounded-xl border border-slate-400 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
               <button type="submit" class="btn-primary shrink-0 !px-4">Subscribe</button>
             </div>
           </form>
@@ -456,22 +470,22 @@
           <!-- Social links -->
           <ul class="mt-7 flex gap-3">
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on X (Twitter)">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on X (Twitter)">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.1 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.8H5.7L17.8 20z"/></svg>
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on GitHub">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on GitHub">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on LinkedIn">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on LinkedIn">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.2 8h4.6v14.5H.2V8zm7.6 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1v7.8h-4.6v-6.9c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7v7H7.8V8z"/></svg>
               </a>
             </li>
             <li>
-              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700" aria-label="WaveNode on YouTube">
+              <a href="#" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-500 transition hover:border-primary-500 hover:text-primary-500 dark:border-slate-700 dark:text-slate-400" aria-label="WaveNode on YouTube">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.5A3 3 0 0 0 .5 6.6 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2C4.5 20 12 20 12 20s7.5 0 9.4-.5a3 3 0 0 0 2.1-2A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
               </a>
             </li>
@@ -529,8 +543,8 @@
 
     <!-- Bottom bar -->
     <div class="border-t border-slate-200 py-6 dark:border-slate-800/70">
-      <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row">
-        <p>&copy; <span data-year>2026</span> WaveNode Inc. All rights reserved.</p>
+      <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row dark:text-slate-400">
+        <p>&copy; <span data-year>2026</span> WaveNode GmbH All rights reserved.</p>
         <p class="flex items-center gap-1.5">
           <span class="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
           All systems operational
@@ -544,6 +558,9 @@
   <button type="button" class="pointer-events-none fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-600 text-white opacity-0 shadow-glow-sm transition-opacity duration-300 hover:bg-primary-500" data-back-to-top aria-label="Back to top">
     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
   </button>
+
+  <!-- Live region: copy-to-clipboard confirmations (see main.js) -->
+  <span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

@@ -5,7 +5,7 @@ WaveNode — static page generator (development tool, not part of the template).
 The template ships as plain, self-contained HTML files: no runtime includes,
 no server, no build step beyond Tailwind. That means the header and footer
 markup is physically duplicated into every page — which is what a buyer
-expects, but it also means a nav change is a ten-file edit that quietly
+expects, but it also means a nav change is a 23-file edit that quietly
 drifts out of sync.
 
 This script removes that risk. Each page is assembled from:
@@ -46,6 +46,13 @@ TOOLS = pathlib.Path(__file__).resolve().parent
 ROOT = TOOLS.parent
 PARTIALS = TOOLS / 'partials'
 CONTENT = TOOLS / 'content'
+
+# Public base URL, used for <link rel="canonical"> and og:url.
+# Buyers: set this to your own domain (no trailing slash) and rebuild.
+SITE_URL = 'https://wavenode.io'
+
+# Absolute URL of the social-share image (1200x630).
+OG_IMAGE = SITE_URL + '/assets/images/og-preview.png'
 
 # Classes added to the nav link matching the current page.
 ACTIVE_CLASSES = ' !text-slate-900 dark:!text-white'
@@ -96,11 +103,15 @@ def register(filename, title, description, og_description,
 # Assembly
 # ---------------------------------------------------------------------------
 
-def build_head(page):
+def build_head(page, filename):
+    # index.html canonicalises to the bare directory URL.
+    slug = '' if filename == 'index.html' else filename
     return (PARTS['head']
             .replace('__TITLE__', page['title'])
             .replace('__DESC__', page['description'])
-            .replace('__OGDESC__', page['og_description']))
+            .replace('__OGDESC__', page['og_description'])
+            .replace('__CANONICAL__', SITE_URL + '/' + slug)
+            .replace('__OGIMAGE__', OG_IMAGE))
 
 
 def mark_active(header, active):
@@ -127,13 +138,13 @@ def render(filename):
     content = read(CONTENT / filename)
 
     if page['shell'] == 'auth':
-        return (build_head(page)
+        return (build_head(page, filename)
                 + PARTS['auth-header'] + '\n'
                 + content + '\n'
                 + PARTS['auth-footer'])
 
     footer = PARTS['footer'] if page['cta'] else strip_cta(PARTS['footer'])
-    return (build_head(page)
+    return (build_head(page, filename)
             + mark_active(PARTS['header'], page['active']) + '\n'
             + content + '\n'
             + footer)

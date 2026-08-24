@@ -10,10 +10,10 @@
       <div class="container relative">
         <!-- Breadcrumb -->
         <nav aria-label="Breadcrumb">
-          <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
             <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
             <li aria-hidden="true">/</li>
-            <li><span class="font-medium text-slate-700 dark:text-slate-300">Documentation</span></li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300" aria-current="page">Documentation</span></li>
           </ol>
         </nav>
 
@@ -40,30 +40,30 @@
             <div class="lg:sticky lg:top-28">
               <h2 id="docs-nav-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Reference</h2>
 
-              <nav class="mt-5" aria-labelledby="docs-nav-heading">
+              <nav class="mt-5" aria-labelledby="docs-nav-heading" data-toc>
                 <ul class="space-y-6">
                   <li>
-                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Getting started</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Getting started</p>
                     <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
-                      <li><a href="#quickstart" class="-ml-px block border-l-2 border-primary-500 py-1.5 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400" aria-current="true">Quickstart</a></li>
-                      <li><a href="#authentication" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Authentication</a></li>
-                      <li><a href="#sdks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Client SDKs</a></li>
+                      <li><a href="#quickstart" class="-ml-px block border-l-2 border-primary-500 py-1.5 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400">Quickstart</a></li>
+                      <li><a href="#authentication" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Authentication</a></li>
+                      <li><a href="#sdks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Client SDKs</a></li>
                     </ul>
                   </li>
                   <li>
-                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Core API</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Core API</p>
                     <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
-                      <li><a href="#rooms" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Rooms</a></li>
-                      <li><a href="#tracks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Tracks</a></li>
-                      <li><a href="#recordings" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Recordings</a></li>
-                      <li><a href="#webhooks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Webhooks</a></li>
+                      <li><a href="#rooms" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Rooms</a></li>
+                      <li><a href="#tracks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Tracks</a></li>
+                      <li><a href="#recordings" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Recordings</a></li>
+                      <li><a href="#webhooks" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Webhooks</a></li>
                     </ul>
                   </li>
                   <li>
-                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Operations</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Operations</p>
                     <ul class="mt-3 space-y-1 border-l border-slate-200 dark:border-slate-800">
-                      <li><a href="#errors" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Errors</a></li>
-                      <li><a href="#rate-limits" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Rate limits</a></li>
+                      <li><a href="#errors" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Errors</a></li>
+                      <li><a href="#rate-limits" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Rate limits</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -90,24 +90,24 @@
               <div class="card mt-7 overflow-hidden bg-slate-950 dark:bg-slate-950">
                 <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
                   <p class="font-mono text-xs text-slate-400">Terminal</p>
-                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-install">Copy</button>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the Terminal snippet" data-copy-target="#snippet-install">Copy</button>
                 </div>
-                <div class="scrollbar-slim overflow-x-auto p-5">
-<pre id="snippet-install" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-emerald-400">$</span> npm install @wavenode/sdk</code></pre>
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><span class="select-none text-emerald-400" aria-hidden="true">$ </span><code id="snippet-install">npm install @wavenode/sdk</code></pre>
                 </div>
               </div>
 
               <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
                 <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
                   <p class="font-mono text-xs text-slate-400">server/create-room.js</p>
-                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-room">Copy</button>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the server/create-room.js snippet" data-copy-target="#snippet-room">Copy</button>
                 </div>
-                <div class="scrollbar-slim overflow-x-auto p-5">
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
 <pre id="snippet-room" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-violet-400">import</span> { <span class="text-accent-300">WaveNode</span> } <span class="text-violet-400">from</span> <span class="text-emerald-300">'@wavenode/sdk'</span>;
 
 <span class="text-violet-400">const</span> <span class="text-accent-300">wave</span> = <span class="text-violet-400">new</span> <span class="text-primary-300">WaveNode</span>(<span class="text-accent-300">process</span>.<span class="text-accent-300">env</span>.<span class="text-accent-300">WAVENODE_SECRET_KEY</span>);
 
-<span class="text-slate-500">// Rooms are cheap — create one per broadcast.</span>
+<span class="text-slate-500 dark:text-slate-400">// Rooms are cheap — create one per broadcast.</span>
 <span class="text-violet-400">const</span> <span class="text-accent-300">room</span> = <span class="text-violet-400">await</span> <span class="text-accent-300">wave</span>.<span class="text-accent-300">rooms</span>.<span class="text-primary-300">create</span>({
   <span class="text-accent-300">name</span>: <span class="text-emerald-300">'launch-event-2026'</span>,
   <span class="text-accent-300">mode</span>: <span class="text-emerald-300">'broadcast'</span>,
@@ -116,7 +116,7 @@
   <span class="text-accent-300">recording</span>: { <span class="text-accent-300">enabled</span>: <span class="text-violet-400">true</span>, <span class="text-accent-300">layout</span>: <span class="text-emerald-300">'active-speaker'</span> }
 });
 
-<span class="text-slate-500">// Hand this token to the browser. It expires in 60 minutes.</span>
+<span class="text-slate-500 dark:text-slate-400">// Hand this token to the browser. It expires in 60 minutes.</span>
 <span class="text-violet-400">const</span> <span class="text-accent-300">token</span> = <span class="text-violet-400">await</span> <span class="text-accent-300">wave</span>.<span class="text-accent-300">tokens</span>.<span class="text-primary-300">publisher</span>(<span class="text-accent-300">room</span>.<span class="text-accent-300">id</span>, {
   <span class="text-accent-300">identity</span>: <span class="text-emerald-300">'host-rina'</span>,
   <span class="text-accent-300">ttlSeconds</span>: <span class="text-amber-300">3600</span>
@@ -127,9 +127,9 @@
               <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
                 <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
                   <p class="font-mono text-xs text-slate-400">client/join.js</p>
-                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-join">Copy</button>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the client/join.js snippet" data-copy-target="#snippet-join">Copy</button>
                 </div>
-                <div class="scrollbar-slim overflow-x-auto p-5">
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
 <pre id="snippet-join" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-violet-400">import</span> { <span class="text-primary-300">joinRoom</span> } <span class="text-violet-400">from</span> <span class="text-emerald-300">'@wavenode/sdk/web'</span>;
 
 <span class="text-violet-400">const</span> <span class="text-accent-300">session</span> = <span class="text-violet-400">await</span> <span class="text-primary-300">joinRoom</span>({ <span class="text-accent-300">token</span> });
@@ -159,10 +159,10 @@
               <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
                 <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
                   <p class="font-mono text-xs text-slate-400">cURL</p>
-                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-auth">Copy</button>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the cURL snippet" data-copy-target="#snippet-auth">Copy</button>
                 </div>
-                <div class="scrollbar-slim overflow-x-auto p-5">
-<pre id="snippet-auth" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-emerald-400">$</span> curl https://api.wavenode.io/v3/rooms \
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><span class="select-none text-emerald-400" aria-hidden="true">$ </span><code id="snippet-auth">curl https://api.wavenode.io/v3/rooms \
     -H <span class="text-emerald-300">"Authorization: Bearer $WAVENODE_SECRET_KEY"</span> \
     -H <span class="text-emerald-300">"Content-Type: application/json"</span> \
     -d <span class="text-emerald-300">'{"name":"launch-event-2026","mode":"broadcast"}'</span></code></pre>
@@ -205,34 +205,34 @@
                 <li class="card flex flex-wrap items-center gap-3 p-4">
                   <span class="rounded-md bg-emerald-500/10 px-2.5 py-1 font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">POST</span>
                   <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms</code>
-                  <span class="text-xs text-slate-500">Create a room</span>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Create a room</span>
                 </li>
                 <li class="card flex flex-wrap items-center gap-3 p-4">
                   <span class="rounded-md bg-primary-500/10 px-2.5 py-1 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">GET</span>
                   <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
-                  <span class="text-xs text-slate-500">Fetch a room and its participants</span>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Fetch a room and its participants</span>
                 </li>
                 <li class="card flex flex-wrap items-center gap-3 p-4">
                   <span class="rounded-md bg-amber-500/10 px-2.5 py-1 font-mono text-xs font-bold text-amber-600 dark:text-amber-400">PATCH</span>
                   <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
-                  <span class="text-xs text-slate-500">Update AI or recording settings mid-session</span>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Update AI or recording settings mid-session</span>
                 </li>
                 <li class="card flex flex-wrap items-center gap-3 p-4">
                   <span class="rounded-md bg-rose-500/10 px-2.5 py-1 font-mono text-xs font-bold text-rose-600 dark:text-rose-400">DELETE</span>
                   <code class="font-mono text-sm text-slate-900 dark:text-white">/v3/rooms/:id</code>
-                  <span class="text-xs text-slate-500">End the session and disconnect everyone</span>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">End the session and disconnect everyone</span>
                 </li>
               </ul>
 
               <h3 class="mt-10 text-lg font-bold text-slate-900 dark:text-white">Request parameters</h3>
-              <div class="scrollbar-slim mt-5 overflow-x-auto">
+              <div class="scrollbar-slim mt-5 overflow-x-auto" tabindex="0">
                 <table class="w-full min-w-[34rem] border-collapse text-left text-sm">
                   <caption class="sr-only">Parameters accepted when creating a room</caption>
                   <thead>
                     <tr class="border-b border-slate-200 dark:border-slate-800">
-                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500">Field</th>
-                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Type</th>
-                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Description</th>
+                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Field</th>
+                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Type</th>
+                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Description</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
@@ -288,9 +288,9 @@
               <div class="card mt-7 overflow-hidden bg-slate-950 dark:bg-slate-950">
                 <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
                   <p class="font-mono text-xs text-slate-400">recording.ready</p>
-                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-webhook">Copy</button>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the recording.ready snippet" data-copy-target="#snippet-webhook">Copy</button>
                 </div>
-                <div class="scrollbar-slim overflow-x-auto p-5">
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
 <pre id="snippet-webhook" class="font-mono text-xs leading-relaxed text-slate-300"><code>{
   <span class="text-primary-300">"event"</span>: <span class="text-emerald-300">"recording.ready"</span>,
   <span class="text-primary-300">"roomId"</span>: <span class="text-emerald-300">"rm_8Kd2mQ4xLp"</span>,
@@ -310,14 +310,14 @@
               <h2 id="errors-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Errors</h2>
               <p class="mt-4 leading-relaxed">Errors use conventional HTTP status codes and always include a machine-readable <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[length:0.9em] text-primary-600 dark:bg-slate-800 dark:text-primary-400">code</code> alongside the message.</p>
 
-              <div class="scrollbar-slim mt-7 overflow-x-auto">
+              <div class="scrollbar-slim mt-7 overflow-x-auto" tabindex="0">
                 <table class="w-full min-w-[30rem] border-collapse text-left text-sm">
                   <caption class="sr-only">Common API error codes</caption>
                   <thead>
                     <tr class="border-b border-slate-200 dark:border-slate-800">
-                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500">Status</th>
-                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Code</th>
-                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500">Meaning</th>
+                      <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Status</th>
+                      <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Code</th>
+                      <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Meaning</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-slate-200 dark:divide-slate-800">

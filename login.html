@@ -7,15 +7,28 @@
   <meta name="description" content="Sign in to your WaveNode dashboard to manage streams, rooms, recordings and API keys.">
   <meta name="author" content="WaveNode">
 
+  <!-- Canonical URL — change SITE_URL in tools/build.py to your own domain -->
+  <link rel="canonical" href="https://wavenode.io/login.html">
+
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WaveNode">
   <meta property="og:title" content="Sign in — WaveNode">
   <meta property="og:description" content="Sign in to your WaveNode dashboard.">
+  <meta property="og:url" content="https://wavenode.io/login.html">
+  <meta property="og:image" content="https://wavenode.io/assets/images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WaveNode — AI-powered video and audio streaming infrastructure">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://wavenode.io/assets/images/og-preview.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="theme-color" content="#030712">
+
+  <!-- Browser chrome colour, per theme -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)">
 
   <!-- Styles (self-hosted fonts + compiled Tailwind CSS) -->
   <link rel="stylesheet" href="assets/css/fonts.css">
@@ -96,25 +109,25 @@
 
         <!-- Social sign-in -->
         <div class="mt-9 grid gap-3 sm:grid-cols-2">
-          <a href="#" class="btn-secondary w-full">
+          <button type="button" class="btn-secondary w-full">
             <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"/>
               <path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8H1.3v3.1A12 12 0 0 0 12 24z"/>
               <path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/>
               <path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.5-3.5A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"/>
             </svg>
-            Google
-          </a>
-          <a href="#" class="btn-secondary w-full">
+            <span class="sr-only">Sign in with </span>Google
+          </button>
+          <button type="button" class="btn-secondary w-full">
             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.7-1.4-2.3-.3-4.8-1.2-4.8-5.2 0-1.1.4-2.1 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.7 1.1 1.7 1.1 2.8 0 4-2.5 4.9-4.8 5.2.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
-            GitHub
-          </a>
+            <span class="sr-only">Sign in with </span>GitHub
+          </button>
         </div>
 
         <!-- Divider -->
         <div class="my-8 flex items-center gap-4">
           <span class="h-px flex-1 bg-slate-200 dark:bg-slate-800" aria-hidden="true"></span>
-          <span class="text-xs font-medium uppercase tracking-wider text-slate-500">or use your email</span>
+          <span class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">or use your email</span>
           <span class="h-px flex-1 bg-slate-200 dark:bg-slate-800" aria-hidden="true"></span>
         </div>
 
@@ -124,7 +137,7 @@
             <!-- Email -->
             <div>
               <label for="login-email" class="block text-sm font-semibold text-slate-900 dark:text-white">Email address</label>
-              <input type="email" id="login-email" name="email" required autocomplete="email" placeholder="you@company.com" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+              <input type="email" id="login-email" name="email" required autocomplete="email" placeholder="you@company.com" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
             </div>
 
             <!-- Password -->
@@ -133,12 +146,12 @@
                 <label for="login-password" class="block text-sm font-semibold text-slate-900 dark:text-white">Password</label>
                 <a href="forgot-password.html" class="text-xs font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">Forgot password?</a>
               </div>
-              <input type="password" id="login-password" name="password" required autocomplete="current-password" placeholder="At least 12 characters" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+              <input type="password" id="login-password" name="password" required autocomplete="current-password" placeholder="At least 12 characters" class="mt-2 w-full rounded-xl border border-slate-400 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400">
             </div>
 
             <!-- Remember me -->
             <div class="flex gap-3">
-              <input type="checkbox" id="login-remember" name="remember" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
+              <input type="checkbox" id="login-remember" name="remember" class="mt-0.5 h-4 w-4 rounded border-slate-400 text-primary-600 dark:border-slate-600 dark:bg-slate-900">
               <label for="login-remember" class="text-sm">Keep me signed in on this device</label>
             </div>
           </div>
@@ -146,7 +159,7 @@
           <button type="submit" class="btn-primary mt-8 w-full py-3.5 text-base">Sign in</button>
         </form>
 
-        <p class="mt-8 text-center text-xs leading-relaxed text-slate-500">
+        <p class="mt-8 text-center text-xs leading-relaxed text-slate-500 dark:text-slate-400">
           Protected by device fingerprinting and optional TOTP.
           <a href="contact.html" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">Need SSO?</a>
         </p>
@@ -168,19 +181,19 @@
         <!-- Stat cards -->
         <dl class="mt-10 grid gap-4 sm:grid-cols-2">
           <div class="card p-5">
-            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">Active streams</dt>
+            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Active streams</dt>
             <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">14</dd>
           </div>
           <div class="card p-5">
-            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">Peak viewers</dt>
+            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Peak viewers</dt>
             <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">28,401</dd>
           </div>
           <div class="card p-5">
-            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">Median latency</dt>
-            <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">47<span class="text-lg font-bold text-slate-500">ms</span></dd>
+            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Median latency</dt>
+            <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">47<span class="text-lg font-bold text-slate-500 dark:text-slate-400">ms</span></dd>
           </div>
           <div class="card p-5">
-            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500">Clips generated</dt>
+            <dt class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Clips generated</dt>
             <dd class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">312</dd>
           </div>
         </dl>
@@ -192,7 +205,7 @@
             <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-400 text-xs font-bold text-white" aria-hidden="true">DA</span>
             <div>
               <p class="text-sm font-semibold text-slate-900 dark:text-white">Daniel Abara</p>
-              <p class="text-xs text-slate-500">VP Engineering, Kettle Live</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">VP Engineering, Kettle Live</p>
             </div>
           </footer>
         </blockquote>
@@ -206,8 +219,8 @@
        Minimal Auth Footer Start
   ================================================================ -->
   <footer class="border-t border-slate-200 py-6 dark:border-slate-800/70">
-    <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row">
-      <p>&copy; <span data-year>2026</span> WaveNode Inc. All rights reserved.</p>
+    <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row dark:text-slate-400">
+      <p>&copy; <span data-year>2026</span> WaveNode GmbH All rights reserved.</p>
       <nav aria-label="Legal links">
         <ul class="flex gap-6">
           <li><a href="terms.html" class="footer-link">Terms</a></li>
@@ -218,6 +231,9 @@
     </div>
   </footer>
   <!-- Minimal Auth Footer End -->
+
+  <!-- Live region: copy-to-clipboard confirmations (see main.js) -->
+  <span class="sr-only" role="status" aria-live="polite" data-copy-status></span>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

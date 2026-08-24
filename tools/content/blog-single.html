@@ -11,12 +11,12 @@
         <div class="container relative">
           <!-- Breadcrumb -->
           <nav aria-label="Breadcrumb">
-            <ol class="mx-auto flex max-w-3xl items-center gap-2 text-sm text-slate-500">
+            <ol class="mx-auto flex max-w-3xl items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
               <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
               <li aria-hidden="true">/</li>
               <li><a href="blog.html" class="transition-colors hover:text-primary-500">Blog</a></li>
               <li aria-hidden="true">/</li>
-              <li><span class="font-medium text-slate-700 dark:text-slate-300">Engineering</span></li>
+              <li><span class="font-medium text-slate-700 dark:text-slate-300" aria-current="page">Engineering</span></li>
             </ol>
           </nav>
 
@@ -27,12 +27,12 @@
 
             <!-- Byline -->
             <div class="mt-9 flex flex-wrap items-center gap-4 border-t border-slate-200 pt-7 dark:border-slate-800" data-reveal data-reveal-delay="2">
-              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-400 text-sm font-bold text-white" aria-hidden="true">RN</span>
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-400 text-sm font-bold text-white" aria-hidden="true">PR</span>
               <div class="mr-auto">
-                <p class="text-sm font-semibold text-slate-900 dark:text-white">Rina Nakamura</p>
-                <p class="text-xs text-slate-500">Principal Engineer, Media Pipeline</p>
+                <p class="text-sm font-semibold text-slate-900 dark:text-white">Priya Raman</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Principal Engineer, Media Pipeline</p>
               </div>
-              <p class="text-sm text-slate-500">
+              <p class="text-sm text-slate-500 dark:text-slate-400">
                 <time datetime="2026-08-11">11 August 2026</time>
                 <span aria-hidden="true">&middot;</span>
                 12 min read
@@ -62,11 +62,11 @@
             <div class="min-w-0 max-w-3xl">
               <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300" data-reveal>When we published our first latency number in 2024 it was 210 milliseconds, measured from the moment light hit a camera sensor to the moment the matching frame lit up a viewer&rsquo;s screen. That was competitive at the time. It was also, we discovered, mostly buffer.</p>
 
-              <h2 class="mt-12 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Measure the whole path, not your own service</h2>
+              <h2 id="measure-the-path" class="mt-12 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Measure the whole path, not your own service</h2>
               <p class="mt-5 leading-relaxed" data-reveal>Our dashboards tracked the time a frame spent inside our SFU. That number was excellent — a median of 9ms — and it told us almost nothing, because it excluded capture, encode, the first network hop, the jitter buffer and the decoder. The first real fix was instrumentation: a synthetic publisher in every region that stamps frames on capture and a synthetic subscriber that reads the stamp back off the decoded surface.</p>
-              <p class="mt-5 leading-relaxed" data-reveal>Once we could see the whole path, the breakdown was uncomfortable. Only 12% of the delay was ours in the sense we had been measuring. The jitter buffer alone accounted for 78ms.</p>
+              <p class="mt-5 leading-relaxed" data-reveal>Once we could see the whole path, the breakdown was uncomfortable. Only 9ms of the 210 &mdash; a little over 4% &mdash; was inside the SFU, the one place we had been measuring. The jitter buffer alone accounted for 78ms.</p>
 
-              <h3 class="mt-10 text-xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Where the 163ms went</h3>
+              <h3 id="where-it-went" class="mt-10 text-xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Where the 163ms went</h3>
               <ul class="mt-5 space-y-3" data-reveal>
                 <li class="flex gap-3">
                   <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden="true"></span>
@@ -86,17 +86,17 @@
                 </li>
               </ul>
 
-              <h2 class="mt-12 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Make the jitter buffer adaptive, then honest</h2>
+              <h2 id="adaptive-buffer" class="mt-12 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Make the jitter buffer adaptive, then honest</h2>
               <p class="mt-5 leading-relaxed" data-reveal>A jitter buffer trades latency for smoothness, and a fixed one makes that trade on behalf of every connection at once. We replaced ours with a controller that tracks the 99th percentile of inter-arrival delay over a sliding ten-second window and targets one frame of headroom above it.</p>
 
               <!-- Code sample -->
               <div class="card mt-8 overflow-hidden bg-slate-950 dark:bg-slate-950" data-reveal>
                 <div class="flex items-center justify-between border-b border-slate-800 px-5 py-3">
                   <p class="font-mono text-xs text-slate-400">jitter-controller.js</p>
-                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy data-copy-target="#snippet-jitter">Copy</button>
+                  <button type="button" class="rounded-lg px-2.5 py-1 font-mono text-xs text-slate-400 transition-colors hover:bg-slate-800 hover:text-white" data-copy aria-label="Copy the jitter-controller.js snippet" data-copy-target="#snippet-jitter">Copy</button>
                 </div>
-                <div class="scrollbar-slim overflow-x-auto p-5">
-<pre id="snippet-jitter" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-slate-500">// Target one frame of headroom above observed p99 jitter.</span>
+                <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0">
+<pre id="snippet-jitter" class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-slate-500 dark:text-slate-400">// Target one frame of headroom above observed p99 jitter.</span>
 <span class="text-violet-400">const</span> <span class="text-accent-300">target</span> = <span class="text-accent-300">Math</span>.<span class="text-primary-300">max</span>(
   <span class="text-accent-300">MIN_BUFFER_MS</span>,
   <span class="text-accent-300">jitter</span>.<span class="text-primary-300">percentile</span>(<span class="text-amber-300">99</span>) + <span class="text-amber-300">1000</span> / <span class="text-accent-300">stream</span>.<span class="text-accent-300">fps</span>
@@ -114,21 +114,21 @@
                 <p class="text-lg italic leading-relaxed text-slate-700 dark:text-slate-300">Every millisecond we removed came from a default that was correct for a different product. None of it came from writing faster code.</p>
               </blockquote>
 
-              <h2 class="mt-12 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Results</h2>
+              <h2 id="results" class="mt-12 text-2xl font-bold tracking-tight text-slate-900 dark:text-white" data-reveal>Results</h2>
               <p class="mt-5 leading-relaxed" data-reveal>Across four releases the median landed at 47ms, with the 95th percentile at 91ms. Rebuffer ratio — the metric we actually care about — improved by 0.4 percentage points rather than regressing, because the adaptive buffer is larger than the old fixed one on genuinely bad connections.</p>
 
               <div class="mt-8 grid gap-4 sm:grid-cols-3" data-reveal>
                 <div class="card p-5 text-center">
                   <p class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">47ms</p>
-                  <p class="mt-1.5 text-xs font-medium uppercase tracking-wider text-slate-500">Median latency</p>
+                  <p class="mt-1.5 text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Median latency</p>
                 </div>
                 <div class="card p-5 text-center">
                   <p class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">91ms</p>
-                  <p class="mt-1.5 text-xs font-medium uppercase tracking-wider text-slate-500">95th percentile</p>
+                  <p class="mt-1.5 text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">95th percentile</p>
                 </div>
                 <div class="card p-5 text-center">
                   <p class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">-0.4pp</p>
-                  <p class="mt-1.5 text-xs font-medium uppercase tracking-wider text-slate-500">Rebuffer ratio</p>
+                  <p class="mt-1.5 text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Rebuffer ratio</p>
                 </div>
               </div>
 
@@ -146,12 +146,12 @@
             <aside class="hidden lg:block" aria-labelledby="toc-heading">
               <div class="sticky top-28">
                 <h2 id="toc-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">On this page</h2>
-                <nav class="mt-5" aria-labelledby="toc-heading">
+                <nav class="mt-5" aria-labelledby="toc-heading" data-toc>
                   <ul class="space-y-3 border-l border-slate-200 dark:border-slate-800">
-                    <li><a href="#main-content" class="-ml-px block border-l-2 border-primary-500 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400">Measure the whole path</a></li>
-                    <li><a href="#main-content" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Where the 163ms went</a></li>
-                    <li><a href="#main-content" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Adaptive jitter buffer</a></li>
-                    <li><a href="#main-content" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white">Results</a></li>
+                    <li><a href="#measure-the-path" class="-ml-px block border-l-2 border-primary-500 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400">Measure the whole path</a></li>
+                    <li><a href="#where-it-went" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Where the 163ms went</a></li>
+                    <li><a href="#adaptive-buffer" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Adaptive jitter buffer</a></li>
+                    <li><a href="#results" class="-ml-px block border-l-2 border-transparent pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:hover:text-white dark:text-slate-400">Results</a></li>
                   </ul>
                 </nav>
 
@@ -180,7 +180,7 @@
             <article class="card card-hover p-6" data-reveal>
               <div class="flex items-center gap-3 text-xs">
                 <span class="rounded-full bg-primary-500/10 px-2.5 py-1 font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">Engineering</span>
-                <time datetime="2026-08-04" class="text-slate-500">4 Aug 2026</time>
+                <time datetime="2026-08-04" class="text-slate-500 dark:text-slate-400">4 Aug 2026</time>
               </div>
               <h3 class="mt-4 text-lg font-bold leading-snug text-slate-900 dark:text-white">
                 <a href="blog-single.html" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">Why we moved ingest to anycast</a>
@@ -191,7 +191,7 @@
             <article class="card card-hover p-6" data-reveal data-reveal-delay="1">
               <div class="flex items-center gap-3 text-xs">
                 <span class="rounded-full bg-accent-500/10 px-2.5 py-1 font-semibold uppercase tracking-wider text-accent-600 dark:text-accent-400">AI &amp; ML</span>
-                <time datetime="2026-07-28" class="text-slate-500">28 Jul 2026</time>
+                <time datetime="2026-07-28" class="text-slate-500 dark:text-slate-400">28 Jul 2026</time>
               </div>
               <h3 class="mt-4 text-lg font-bold leading-snug text-slate-900 dark:text-white">
                 <a href="blog-single.html" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">Streaming captions at 300ms</a>
@@ -202,7 +202,7 @@
             <article class="card card-hover p-6" data-reveal data-reveal-delay="2">
               <div class="flex items-center gap-3 text-xs">
                 <span class="rounded-full bg-accent-500/10 px-2.5 py-1 font-semibold uppercase tracking-wider text-accent-600 dark:text-accent-400">Engineering</span>
-                <time datetime="2026-07-02" class="text-slate-500">2 Jul 2026</time>
+                <time datetime="2026-07-02" class="text-slate-500 dark:text-slate-400">2 Jul 2026</time>
               </div>
               <h3 class="mt-4 text-lg font-bold leading-snug text-slate-900 dark:text-white">
                 <a href="blog-single.html" class="transition-colors hover:text-primary-600 dark:hover:text-primary-400">Post-mortem: EU ingest degradation</a>

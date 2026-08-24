@@ -11,10 +11,10 @@
       <div class="container relative">
         <!-- Breadcrumb -->
         <nav class="flex justify-center" aria-label="Breadcrumb">
-          <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
             <li><a href="index.html" class="transition-colors hover:text-primary-500">Home</a></li>
             <li aria-hidden="true">/</li>
-            <li><span class="font-medium text-slate-700 dark:text-slate-300">Features</span></li>
+            <li><span class="font-medium text-slate-700 dark:text-slate-300" aria-current="page">Features</span></li>
           </ol>
         </nav>
 
@@ -100,14 +100,14 @@
             <p class="mt-3 text-sm leading-relaxed">Our models watch for laughter, applause, chat spikes and topic changes, then cut vertical clips sized for Shorts, Reels and TikTok. A three-hour stream yields shareable clips in about four minutes.</p>
           </article>
 
-          <!-- Capability: Monetization -->
+          <!-- Capability: Monetisation -->
           <article class="card card-hover p-7" data-reveal data-reveal-delay="2">
             <span class="icon-tile">
               <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 2v20M17 5.5A4 4 0 0 0 13 3h-2a3.5 3.5 0 0 0 0 7h2.5a3.5 3.5 0 0 1 0 7H11a4 4 0 0 1-4-2.5"/>
               </svg>
             </span>
-            <h3 class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Monetization built in</h3>
+            <h3 class="mt-5 text-lg font-bold text-slate-900 dark:text-white">Monetisation built in</h3>
             <p class="mt-3 text-sm leading-relaxed">Sell subscriptions, pay-per-view tickets and tips without wiring up a payment stack. Payouts run in 38 currencies and tax handling is managed for you in every market we support.</p>
           </article>
 
@@ -160,7 +160,7 @@
           <div data-reveal>
             <p class="section-badge">Global delivery</p>
             <h2 id="network-heading" class="section-title mt-5">210+ edge locations, one endpoint</h2>
-            <p class="section-lead mt-5">You publish to <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-base text-primary-600 dark:bg-slate-800 dark:text-primary-400">ingest.wavenode.io</code> and we route the stream to the closest healthy point of presence. Viewers pull from the edge nearest to them, so a stream produced in Dhaka reaches São Paulo in under 50ms.</p>
+            <p class="section-lead mt-5">You publish to <code class="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-base text-primary-600 dark:bg-slate-800 dark:text-primary-400">ingest.wavenode.io</code> and we route the stream to the closest healthy point of presence. Viewers pull from the edge nearest to them, so a stream produced in Dhaka reaches São Paulo without a perceptible pause.</p>
 
             <ul class="mt-8 space-y-4">
               <li class="flex gap-3">
@@ -193,7 +193,7 @@
               <table class="mt-6 w-full text-left text-sm">
                 <caption class="sr-only">Glass-to-glass latency by edge region</caption>
                 <thead>
-                  <tr class="text-xs uppercase tracking-wider text-slate-500">
+                  <tr class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     <th scope="col" class="pb-3 font-semibold">Region</th>
                     <th scope="col" class="pb-3 font-semibold">Latency</th>
                     <th scope="col" class="pb-3 text-right font-semibold">Load</th>
@@ -203,27 +203,27 @@
                   <tr>
                     <th scope="row" class="py-3 font-medium text-slate-700 dark:text-slate-300">Frankfurt</th>
                     <td class="py-3 font-mono text-xs text-accent-500">31 ms</td>
-                    <td class="py-3 text-right text-slate-500">24%</td>
+                    <td class="py-3 text-right text-slate-500 dark:text-slate-400">24%</td>
                   </tr>
                   <tr>
                     <th scope="row" class="py-3 font-medium text-slate-700 dark:text-slate-300">Singapore</th>
                     <td class="py-3 font-mono text-xs text-accent-500">38 ms</td>
-                    <td class="py-3 text-right text-slate-500">41%</td>
+                    <td class="py-3 text-right text-slate-500 dark:text-slate-400">41%</td>
                   </tr>
                   <tr>
                     <th scope="row" class="py-3 font-medium text-slate-700 dark:text-slate-300">Ashburn</th>
                     <td class="py-3 font-mono text-xs text-accent-500">27 ms</td>
-                    <td class="py-3 text-right text-slate-500">36%</td>
+                    <td class="py-3 text-right text-slate-500 dark:text-slate-400">36%</td>
                   </tr>
                   <tr>
                     <th scope="row" class="py-3 font-medium text-slate-700 dark:text-slate-300">São Paulo</th>
                     <td class="py-3 font-mono text-xs text-accent-500">44 ms</td>
-                    <td class="py-3 text-right text-slate-500">18%</td>
+                    <td class="py-3 text-right text-slate-500 dark:text-slate-400">18%</td>
                   </tr>
                   <tr>
                     <th scope="row" class="py-3 font-medium text-slate-700 dark:text-slate-300">Mumbai</th>
                     <td class="py-3 font-mono text-xs text-accent-500">35 ms</td>
-                    <td class="py-3 text-right text-slate-500">52%</td>
+                    <td class="py-3 text-right text-slate-500 dark:text-slate-400">52%</td>
                   </tr>
                 </tbody>
               </table>
@@ -246,7 +246,7 @@
             <div class="card relative overflow-hidden bg-slate-950 p-6 dark:bg-slate-950">
               <div class="flex items-center justify-between">
                 <p class="text-sm font-bold text-white">Episode 142 — post-production</p>
-                <p class="font-mono text-xs text-slate-500">01:12:40</p>
+                <p class="font-mono text-xs text-slate-500 dark:text-slate-400">01:12:40</p>
               </div>
 
               <!-- Waveform / equalizer visual -->
@@ -269,7 +269,7 @@
               <ul class="mt-6 space-y-2.5">
                 <li class="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2.5">
                   <span class="text-xs font-medium text-slate-300">Cold open — listener question</span>
-                  <span class="font-mono text-xs text-slate-500">00:00</span>
+                  <span class="font-mono text-xs text-slate-500 dark:text-slate-400">00:00</span>
                 </li>
                 <li class="flex items-center justify-between rounded-lg border border-primary-500/40 bg-primary-500/10 px-3 py-2.5">
                   <span class="text-xs font-medium text-white">Highlight detected — big laugh</span>
@@ -277,7 +277,7 @@
                 </li>
                 <li class="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2.5">
                   <span class="text-xs font-medium text-slate-300">Sponsor read</span>
-                  <span class="font-mono text-xs text-slate-500">41:07</span>
+                  <span class="font-mono text-xs text-slate-500 dark:text-slate-400">41:07</span>
                 </li>
               </ul>
             </div>
@@ -325,12 +325,12 @@
         </div>
 
         <!-- Horizontal scroll keeps the table usable on small screens -->
-        <div class="scrollbar-slim mt-12 overflow-x-auto" data-reveal>
+        <div class="scrollbar-slim mt-12 overflow-x-auto" data-reveal tabindex="0">
           <table class="w-full min-w-[46rem] border-collapse text-left text-sm">
             <caption class="sr-only">Feature availability by WaveNode plan</caption>
             <thead>
               <tr class="border-b border-slate-200 dark:border-slate-800">
-                <th scope="col" class="py-4 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500">Capability</th>
+                <th scope="col" class="py-4 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Capability</th>
                 <th scope="col" class="px-4 py-4 text-center font-bold text-slate-900 dark:text-white">Starter</th>
                 <th scope="col" class="px-4 py-4 text-center font-bold text-primary-600 dark:text-primary-400">Creator</th>
                 <th scope="col" class="px-4 py-4 text-center font-bold text-slate-900 dark:text-white">Business</th>
@@ -357,30 +357,30 @@
               </tr>
               <tr>
                 <th scope="row" class="py-4 pr-4 font-medium text-slate-700 dark:text-slate-300">Automatic highlight clips</th>
-                <td class="px-4 py-4 text-center text-slate-400" aria-label="Not included">&mdash;</td>
+                <td class="px-4 py-4 text-center text-slate-400"><span class="sr-only">Not included</span><span aria-hidden="true">&mdash;</span></td>
                 <td class="px-4 py-4 text-center">
-                  <svg class="mx-auto h-5 w-5 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
+                  <svg class="mx-auto h-5 w-5 text-accent-600 dark:text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
                 </td>
                 <td class="px-4 py-4 text-center">
-                  <svg class="mx-auto h-5 w-5 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
+                  <svg class="mx-auto h-5 w-5 text-accent-600 dark:text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="py-4 pr-4 font-medium text-slate-700 dark:text-slate-300">Monetization &amp; payouts</th>
-                <td class="px-4 py-4 text-center text-slate-400" aria-label="Not included">&mdash;</td>
+                <th scope="row" class="py-4 pr-4 font-medium text-slate-700 dark:text-slate-300">Monetisation &amp; payouts</th>
+                <td class="px-4 py-4 text-center text-slate-400"><span class="sr-only">Not included</span><span aria-hidden="true">&mdash;</span></td>
                 <td class="px-4 py-4 text-center">
-                  <svg class="mx-auto h-5 w-5 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
+                  <svg class="mx-auto h-5 w-5 text-accent-600 dark:text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
                 </td>
                 <td class="px-4 py-4 text-center">
-                  <svg class="mx-auto h-5 w-5 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
+                  <svg class="mx-auto h-5 w-5 text-accent-600 dark:text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="py-4 pr-4 font-medium text-slate-700 dark:text-slate-300">SSO, SCIM &amp; audit logs</th>
-                <td class="px-4 py-4 text-center text-slate-400" aria-label="Not included">&mdash;</td>
-                <td class="px-4 py-4 text-center text-slate-400" aria-label="Not included">&mdash;</td>
+                <td class="px-4 py-4 text-center text-slate-400"><span class="sr-only">Not included</span><span aria-hidden="true">&mdash;</span></td>
+                <td class="px-4 py-4 text-center text-slate-400"><span class="sr-only">Not included</span><span aria-hidden="true">&mdash;</span></td>
                 <td class="px-4 py-4 text-center">
-                  <svg class="mx-auto h-5 w-5 text-accent-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
+                  <svg class="mx-auto h-5 w-5 text-accent-600 dark:text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Included"><path d="M5 13l4 4L19 7"/></svg>
                 </td>
               </tr>
               <tr>

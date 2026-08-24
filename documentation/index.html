@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — WaveNode HTML Template</title>
+  <meta name="description" content="Installation, customisation and credits for the WaveNode HTML template.">
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)">
+
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('wavenode-theme') === 'light') {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch (err) { /* localStorage unavailable — keep default dark theme */ }
+  </script>
+</head>
+
+<body class="overflow-x-hidden">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-primary-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to main content</a>
+
+  <!-- ================================================================
+       Header Start
+  ================================================================ -->
+  <header class="border-b border-slate-200 dark:border-slate-800">
+    <div class="container">
+      <div class="flex h-20 items-center justify-between gap-4">
+        <div class="flex items-center gap-2.5">
+          <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="logo-grad-docs" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366F1"/>
+                <stop offset="0.55" stop-color="#8B5CF6"/>
+                <stop offset="1" stop-color="#06B6D4"/>
+              </linearGradient>
+            </defs>
+            <rect width="32" height="32" rx="9" fill="url(#logo-grad-docs)"/>
+            <rect x="7" y="13" width="3" height="6" rx="1.5" fill="white"/>
+            <rect x="12" y="9" width="3" height="14" rx="1.5" fill="white"/>
+            <rect x="17" y="5" width="3" height="22" rx="1.5" fill="white"/>
+            <rect x="22" y="11" width="3" height="10" rx="1.5" fill="white"/>
+          </svg>
+          <div>
+            <p class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">WaveNode</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Template documentation &middot; v1.0.0</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" class="btn-ghost !p-2.5" data-theme-toggle aria-pressed="true" aria-label="Toggle dark mode">
+            <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+            </svg>
+            <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+            </svg>
+          </button>
+          <a href="../index.html" class="btn-secondary">View template</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <div class="py-12 sm:py-16">
+    <div class="container">
+      <div class="grid gap-10 lg:grid-cols-[16rem_1fr] lg:gap-14">
+
+        <!-- ============================================================
+             Sidebar
+        ============================================================ -->
+        <aside aria-labelledby="doc-nav-heading">
+          <div class="lg:sticky lg:top-10">
+            <h2 id="doc-nav-heading" class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Contents</h2>
+            <nav class="mt-5" aria-label="Documentation sections">
+              <ul class="space-y-1 border-l border-slate-200 dark:border-slate-800">
+                <li><a href="#getting-started" class="-ml-px block border-l-2 border-primary-500 py-1.5 pl-4 text-sm font-medium text-primary-600 dark:text-primary-400">1. Getting started</a></li>
+                <li><a href="#files" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">2. File structure</a></li>
+                <li><a href="#pages" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">3. Page list</a></li>
+                <li><a href="#tailwind" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">4. Recompiling CSS</a></li>
+                <li><a href="#branding" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">5. Colours &amp; fonts</a></li>
+                <li><a href="#javascript" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">6. JavaScript reference</a></li>
+                <li><a href="#components" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">7. Component classes</a></li>
+                <li><a href="#generator" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">8. Editing shared markup</a></li>
+                <li><a href="#launch" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">9. Launch checklist</a></li>
+                <li><a href="#credits" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">10. Credits &amp; licences</a></li>
+                <li><a href="#support" class="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">11. Support</a></li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- ============================================================
+             Content
+        ============================================================ -->
+        <main id="main-content" class="min-w-0 max-w-3xl">
+
+          <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">WaveNode template documentation</h1>
+          <p class="section-lead mt-5">Thank you for buying WaveNode. This file covers everything needed to get the template running, rebrand it and put it live. No prior build-tool experience is assumed &mdash; if you only want to change text and colours, you never need to run a command at all.</p>
+
+          <!-- 1 -->
+          <section id="getting-started" class="mt-14" aria-labelledby="getting-started-heading">
+            <h2 id="getting-started-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">1. Getting started</h2>
+            <p class="mt-4 leading-relaxed">The template is plain HTML, CSS and JavaScript. There is no framework, no server and no build step required to view or edit it.</p>
+
+            <div class="card mt-6 border-primary-500/30 p-5">
+              <p class="text-sm font-bold text-slate-900 dark:text-white">The fastest possible start</p>
+              <p class="mt-2 text-sm leading-relaxed">Unzip the download and double-click <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">index.html</code>. It opens in your browser and works immediately, offline. Edit any <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">.html</code> file in a text editor and refresh.</p>
+            </div>
+
+            <p class="mt-6 leading-relaxed">To upload it, copy everything except the <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tools/</code>, <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">documentation/</code>, <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">src/</code> and <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">node_modules/</code> folders to your web root. Those four are for development only; the site itself needs just the HTML files and the <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">assets/</code> folder.</p>
+
+            <h3 class="mt-8 text-lg font-bold text-slate-900 dark:text-white">Recommended editors</h3>
+            <p class="mt-3 leading-relaxed">Any text editor works. Visual Studio Code with the <em>Tailwind CSS IntelliSense</em> extension gives you autocomplete for the utility classes, which makes editing considerably faster.</p>
+          </section>
+
+          <!-- 2 -->
+          <section id="files" class="mt-14" aria-labelledby="files-heading">
+            <h2 id="files-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">2. File structure</h2>
+
+            <div class="card mt-6 overflow-hidden bg-slate-950 dark:bg-slate-950">
+              <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0" role="region" aria-label="File structure listing">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><code>wavenode/
+├── index.html                 <span class="text-slate-500">← main landing page</span>
+├── features.html  pricing.html  blog.html  blog-single.html
+├── docs.html      contact.html  about.html  careers.html
+├── testimonials.html  integrations.html  changelog.html
+├── help-center.html   faq.html   terms.html   privacy.html
+├── index-creator.html  index-enterprise.html
+├── login.html  register.html  forgot-password.html
+├── user-dashboard.html  404.html
+├── robots.txt  sitemap.xml
+│
+├── assets/
+│   ├── css/
+│   │   ├── style.css          <span class="text-slate-500">← compiled Tailwind (do not edit)</span>
+│   │   └── fonts.css          <span class="text-slate-500">← @font-face declarations</span>
+│   ├── js/
+│   │   └── main.js            <span class="text-slate-500">← all interactivity, no dependencies</span>
+│   ├── fonts/                 <span class="text-slate-500">← 4 woff2 files + OFL.txt licence</span>
+│   └── images/
+│       ├── logo.svg  favicon.svg
+│       └── og-preview.png     <span class="text-slate-500">← social share card, 1200×630</span>
+│
+├── src/
+│   └── input.css              <span class="text-slate-500">← Tailwind source; edit this, not style.css</span>
+├── tailwind.config.js         <span class="text-slate-500">← brand colours, fonts, animations</span>
+├── package.json
+│
+├── tools/                     <span class="text-slate-500">← DEV ONLY — safe to delete</span>
+│   ├── build.py  pages.py  make-sitemap.py
+│   ├── partials/              <span class="text-slate-500">← shared head/header/footer</span>
+│   └── content/               <span class="text-slate-500">← per-page &lt;main&gt; content</span>
+│
+└── documentation/
+    └── index.html             <span class="text-slate-500">← this file</span></code></pre>
+              </div>
+            </div>
+
+            <p class="mt-6 leading-relaxed"><strong class="font-semibold text-slate-900 dark:text-white">Important:</strong> never edit <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">assets/css/style.css</code> directly. It is generated from <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">src/input.css</code> and will be overwritten the next time it is rebuilt.</p>
+          </section>
+
+          <!-- 3 -->
+          <section id="pages" class="mt-14" aria-labelledby="pages-heading">
+            <h2 id="pages-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">3. Page list</h2>
+            <p class="mt-4 leading-relaxed">Twenty-three pages, all sharing one header and footer.</p>
+
+            <div class="scrollbar-slim mt-6 overflow-x-auto" tabindex="0" role="region" aria-label="Page list table">
+              <table class="w-full min-w-[34rem] text-left text-sm">
+                <caption class="sr-only">All pages included in the template</caption>
+                <thead>
+                  <tr class="border-b border-slate-200 dark:border-slate-800">
+                    <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">File</th>
+                    <th scope="col" class="py-3 pl-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Purpose</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">index.html</th><td class="py-3 pl-4 text-xs">Main landing page</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">index-creator.html</th><td class="py-3 pl-4 text-xs">Landing page aimed at creators</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">index-enterprise.html</th><td class="py-3 pl-4 text-xs">Landing page aimed at business buyers</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">features.html</th><td class="py-3 pl-4 text-xs">Capability grid, deep dives, comparison table</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">pricing.html</th><td class="py-3 pl-4 text-xs">Three tiers, billing toggle, FAQ accordion</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">integrations.html</th><td class="py-3 pl-4 text-xs">Integration directory in five categories</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">changelog.html</th><td class="py-3 pl-4 text-xs">Release timeline</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">docs.html</th><td class="py-3 pl-4 text-xs">API documentation layout with code blocks</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">blog.html</th><td class="py-3 pl-4 text-xs">Article grid with pagination</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">blog-single.html</th><td class="py-3 pl-4 text-xs">Article reading view with sticky TOC</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">about.html</th><td class="py-3 pl-4 text-xs">Mission, timeline, values, team grid</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">careers.html</th><td class="py-3 pl-4 text-xs">Benefits, open roles, hiring process</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">testimonials.html</th><td class="py-3 pl-4 text-xs">Case study, quote grid, logo wall</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">help-center.html</th><td class="py-3 pl-4 text-xs">Knowledge-base home with search field</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">faq.html</th><td class="py-3 pl-4 text-xs">Twenty questions in five accordion groups</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">contact.html</th><td class="py-3 pl-4 text-xs">Contact form, offices, FAQ</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">terms.html</th><td class="py-3 pl-4 text-xs">Terms of service layout</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">privacy.html</th><td class="py-3 pl-4 text-xs">Privacy policy layout</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">login.html</th><td class="py-3 pl-4 text-xs">Split-screen sign in</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">register.html</th><td class="py-3 pl-4 text-xs">Split-screen sign up</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">forgot-password.html</th><td class="py-3 pl-4 text-xs">Password reset request</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">user-dashboard.html</th><td class="py-3 pl-4 text-xs">Signed-in app UI: stats, chart, data table</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">404.html</th><td class="py-3 pl-4 text-xs">Not-found page</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 4 -->
+          <section id="tailwind" class="mt-14" aria-labelledby="tailwind-heading">
+            <h2 id="tailwind-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">4. Recompiling the CSS</h2>
+            <p class="mt-4 leading-relaxed">The stylesheet ships pre-compiled, so <strong class="font-semibold text-slate-900 dark:text-white">you only need this section if you add new Tailwind utility classes or change <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tailwind.config.js</code></strong>. Editing existing text, swapping images or rearranging markup with classes already in use needs no rebuild.</p>
+
+            <p class="mt-6 leading-relaxed">Install <a href="https://nodejs.org" class="font-semibold text-primary-600 transition-colors hover:text-primary-500 dark:text-primary-400">Node.js</a> 18 or newer, then from the template folder:</p>
+
+            <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+              <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0" role="region" aria-label="Build commands">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-slate-500"># install the one dev dependency (Tailwind CSS)</span>
+<span class="text-emerald-400">$</span> npm install
+
+<span class="text-slate-500"># rebuild the minified stylesheet once</span>
+<span class="text-emerald-400">$</span> npm run build
+
+<span class="text-slate-500"># or watch for changes while you work</span>
+<span class="text-emerald-400">$</span> npm run dev</code></pre>
+              </div>
+            </div>
+
+            <div class="card mt-6 border-amber-500/40 bg-amber-500/5 p-5 dark:border-amber-500/30">
+              <p class="flex gap-3 text-sm leading-relaxed">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                <span>Tailwind removes any class it cannot find in your files. If a style disappears after a rebuild, check that the <code class="rounded bg-white/60 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">content</code> array in <code class="rounded bg-white/60 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">tailwind.config.js</code> covers the file you added.</span>
+              </p>
+            </div>
+          </section>
+
+          <!-- 5 -->
+          <section id="branding" class="mt-14" aria-labelledby="branding-heading">
+            <h2 id="branding-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">5. Colours and fonts</h2>
+
+            <h3 class="mt-6 text-lg font-bold text-slate-900 dark:text-white">Re-skinning in two lines</h3>
+            <p class="mt-3 leading-relaxed">The whole palette derives from two Tailwind colour scales. Change these in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tailwind.config.js</code> and rebuild:</p>
+
+            <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+              <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0" role="region" aria-label="Colour configuration">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-accent-300">colors</span>: {
+  <span class="text-accent-300">primary</span>: <span class="text-accent-300">colors</span>.<span class="text-primary-300">indigo</span>,   <span class="text-slate-500">// try emerald, rose, violet…</span>
+  <span class="text-accent-300">accent</span>:  <span class="text-accent-300">colors</span>.<span class="text-primary-300">cyan</span>,
+}</code></pre>
+              </div>
+            </div>
+
+            <p class="mt-5 leading-relaxed">Two things are <em>not</em> driven by that config and need a manual pass if you change the brand hues: the <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">glow</code> shadows and <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">.bg-glow</code> gradients, which use literal RGB values in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tailwind.config.js</code> and <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">src/input.css</code>; and the inline logo gradient, which appears in every page's header and footer.</p>
+
+            <h3 class="mt-8 text-lg font-bold text-slate-900 dark:text-white">Dark and light themes</h3>
+            <p class="mt-3 leading-relaxed">Dark is the default. The theme is a <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">dark</code> class on <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">&lt;html&gt;</code>, applied before first paint by a small inline script in every <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">&lt;head&gt;</code> so there is no flash of the wrong theme. The choice is remembered in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">localStorage</code> under the key <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">wavenode-theme</code>.</p>
+            <p class="mt-4 leading-relaxed">To make <em>light</em> the default, remove <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">class="dark"</code> from the <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">&lt;html&gt;</code> tag on every page and invert the check in that inline script. To respect the visitor's operating-system preference instead, replace the condition with <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">window.matchMedia('(prefers-color-scheme: dark)')</code>.</p>
+
+            <h3 class="mt-8 text-lg font-bold text-slate-900 dark:text-white">Swapping the fonts</h3>
+            <p class="mt-3 leading-relaxed">Two self-hosted variable fonts are included: Plus Jakarta Sans for body text and JetBrains Mono for code. They are declared in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">assets/css/fonts.css</code> and mapped in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tailwind.config.js</code> under <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">fontFamily</code>. Because both are variable fonts, one file per family covers every weight from 200 to 800.</p>
+            <p class="mt-4 leading-relaxed">Neither font is loaded from a CDN, so the template works fully offline and sends no requests to third parties.</p>
+          </section>
+
+          <!-- 6 -->
+          <section id="javascript" class="mt-14" aria-labelledby="javascript-heading">
+            <h2 id="javascript-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">6. JavaScript reference</h2>
+            <p class="mt-4 leading-relaxed">All behaviour lives in one dependency-free file, <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">assets/js/main.js</code>. Every module is driven by <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">data-</code> attributes and exits quietly if its markup is absent, so you can delete any section of any page without causing an error.</p>
+
+            <div class="scrollbar-slim mt-6 overflow-x-auto" tabindex="0" role="region" aria-label="JavaScript attribute reference">
+              <table class="w-full min-w-[38rem] text-left text-sm">
+                <caption class="sr-only">Data attributes recognised by main.js</caption>
+                <thead>
+                  <tr class="border-b border-slate-200 dark:border-slate-800">
+                    <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Attribute</th>
+                    <th scope="col" class="py-3 pl-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Behaviour</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-theme-toggle</th><td class="py-3 pl-4 text-xs">Switches dark/light and saves the choice</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-header</th><td class="py-3 pl-4 text-xs">Adds a frosted background once the page scrolls past 24px</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-menu-toggle<br>data-mobile-menu</th><td class="py-3 pl-4 text-xs">Mobile drawer. Closes on link click, Escape, or resize to desktop</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-reveal<br>data-reveal-delay="1|2|3"</th><td class="py-3 pl-4 text-xs">Fade-and-rise on scroll, with optional stagger</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-accordion<br>data-accordion-trigger<br>data-accordion-panel<br>data-accordion-group</th><td class="py-3 pl-4 text-xs">Accordion. Wrap several in a <code class="font-mono">group</code> to allow only one open at a time</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-billing-toggle<br>data-price-monthly<br>data-price-annual</th><td class="py-3 pl-4 text-xs">Pricing switch. Defaults to annual</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-copy<br>data-copy-target="#id"</th><td class="py-3 pl-4 text-xs">Copies the target's text to the clipboard</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-back-to-top</th><td class="py-3 pl-4 text-xs">Appears past 600px; scrolls to top</td></tr>
+                  <tr><th scope="row" class="py-3 pr-4 font-mono text-xs text-slate-900 dark:text-white">data-year</th><td class="py-3 pl-4 text-xs">Fills in the current year (footer copyright)</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="mt-8 text-lg font-bold text-slate-900 dark:text-white">Adding an accordion</h3>
+            <div class="card mt-4 overflow-hidden bg-slate-950 dark:bg-slate-950">
+              <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0" role="region" aria-label="Accordion markup example">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-slate-500">&lt;!-- one open at a time --&gt;</span>
+&lt;<span class="text-primary-300">div</span> <span class="text-accent-300">data-accordion-group</span>&gt;
+  &lt;<span class="text-primary-300">div</span> <span class="text-accent-300">class</span>=<span class="text-emerald-300">"card"</span> <span class="text-accent-300">data-accordion</span>&gt;
+    &lt;<span class="text-primary-300">h3</span>&gt;
+      &lt;<span class="text-primary-300">button</span> <span class="text-accent-300">type</span>=<span class="text-emerald-300">"button"</span> <span class="text-accent-300">data-accordion-trigger</span>
+              <span class="text-accent-300">aria-expanded</span>=<span class="text-emerald-300">"false"</span> <span class="text-accent-300">aria-controls</span>=<span class="text-emerald-300">"p1"</span>&gt;
+        Your question
+      &lt;/<span class="text-primary-300">button</span>&gt;
+    &lt;/<span class="text-primary-300">h3</span>&gt;
+    &lt;<span class="text-primary-300">div</span> <span class="text-accent-300">id</span>=<span class="text-emerald-300">"p1"</span> <span class="text-accent-300">class</span>=<span class="text-emerald-300">"accordion-panel"</span> <span class="text-accent-300">data-accordion-panel</span>&gt;
+      &lt;<span class="text-primary-300">div</span>&gt;&lt;<span class="text-primary-300">p</span> <span class="text-accent-300">class</span>=<span class="text-emerald-300">"px-6 pb-6"</span>&gt;Your answer&lt;/<span class="text-primary-300">p</span>&gt;&lt;/<span class="text-primary-300">div</span>&gt;
+    &lt;/<span class="text-primary-300">div</span>&gt;
+  &lt;/<span class="text-primary-300">div</span>&gt;
+&lt;/<span class="text-primary-300">div</span>&gt;</code></pre>
+              </div>
+            </div>
+            <p class="mt-4 leading-relaxed">The inner <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">&lt;div&gt;</code> inside the panel is required &mdash; the open/close animation uses it.</p>
+          </section>
+
+          <!-- 7 -->
+          <section id="components" class="mt-14" aria-labelledby="components-heading">
+            <h2 id="components-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">7. Component classes</h2>
+            <p class="mt-4 leading-relaxed">These shortcuts are defined in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">src/input.css</code>. Use them instead of repeating long utility strings, and edit them there to restyle every instance at once.</p>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.btn-primary .btn-secondary .btn-ghost</p>
+                <p class="mt-2 text-xs leading-relaxed">The three button styles. All include padding, radius and transitions.</p>
+              </div>
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.card .card-hover</p>
+                <p class="mt-2 text-xs leading-relaxed">Bordered surface; add <code class="font-mono">card-hover</code> for the lift-and-glow effect.</p>
+              </div>
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.section-badge .section-title .section-lead</p>
+                <p class="mt-2 text-xs leading-relaxed">The standard three-part section heading used across every page.</p>
+              </div>
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.icon-tile</p>
+                <p class="mt-2 text-xs leading-relaxed">The 48px tinted square behind feature icons.</p>
+              </div>
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.text-gradient</p>
+                <p class="mt-2 text-xs leading-relaxed">Brand gradient clipped to text, for emphasis inside a headline.</p>
+              </div>
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.bg-grid .bg-glow .bg-glow-accent</p>
+                <p class="mt-2 text-xs leading-relaxed">Blueprint grid and radial glows. Position glows with <code class="font-mono">absolute</code>.</p>
+              </div>
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.glass</p>
+                <p class="mt-2 text-xs leading-relaxed">Frosted translucent surface, used by the scrolled header and drawer.</p>
+              </div>
+              <div class="card p-5">
+                <p class="font-mono text-xs font-semibold text-slate-900 dark:text-white">.scrollbar-slim</p>
+                <p class="mt-2 text-xs leading-relaxed">Thin scrollbars for code blocks and inner scroll areas.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8 -->
+          <section id="generator" class="mt-14" aria-labelledby="generator-heading">
+            <h2 id="generator-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">8. Editing shared markup</h2>
+            <p class="mt-4 leading-relaxed">The header and footer are physically duplicated into all 23 pages, which is what makes the template work with no server. The trade-off is that changing a navigation link by hand means editing 23 files identically.</p>
+            <p class="mt-4 leading-relaxed">The optional <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tools/</code> folder solves that. It is a small Python script (no packages needed) that assembles each page from shared parts:</p>
+
+            <div class="card mt-5 overflow-hidden bg-slate-950 dark:bg-slate-950">
+              <div class="scrollbar-slim overflow-x-auto p-5" tabindex="0" role="region" aria-label="Generator commands">
+<pre class="font-mono text-xs leading-relaxed text-slate-300"><code><span class="text-slate-500"># edit tools/partials/header.html once, then:</span>
+<span class="text-emerald-400">$</span> python3 tools/build.py       <span class="text-slate-500"># rewrite all 23 pages</span>
+<span class="text-emerald-400">$</span> npm run build               <span class="text-slate-500"># recompile the CSS</span>
+
+<span class="text-slate-500"># check nothing has drifted out of sync</span>
+<span class="text-emerald-400">$</span> python3 tools/build.py --check
+
+<span class="text-slate-500"># regenerate sitemap.xml from the page list</span>
+<span class="text-emerald-400">$</span> python3 tools/make-sitemap.py</code></pre>
+              </div>
+            </div>
+
+            <p class="mt-5 leading-relaxed">Page titles, meta descriptions and the canonical domain live in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tools/pages.py</code> and <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tools/build.py</code> (<code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">SITE_URL</code>). See <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tools/README.md</code> for the full explanation.</p>
+
+            <div class="card mt-6 p-5">
+              <p class="text-sm leading-relaxed"><strong class="font-semibold text-slate-900 dark:text-white">Prefer to work by hand?</strong> Delete <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">tools/</code> entirely and edit the HTML files directly. Nothing in the shipped site depends on it.</p>
+            </div>
+          </section>
+
+          <!-- 9 -->
+          <section id="launch" class="mt-14" aria-labelledby="launch-heading">
+            <h2 id="launch-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">9. Launch checklist</h2>
+            <p class="mt-4 leading-relaxed">The template ships with realistic placeholder content for a fictional company. Work through this list before going live &mdash; the first four items are the ones most often missed.</p>
+
+            <ol class="mt-6 space-y-4">
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">1</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Wire up the forms</p>
+                  <p class="mt-1.5 text-sm leading-relaxed">Every <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">&lt;form&gt;</code> uses <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">action="#"</code>, which silently discards submissions. There are four: the footer newsletter (on every page), the contact form, the three auth forms, and the help-centre search. Point each at your own handler.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">2</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Replace the legal pages</p>
+                  <p class="mt-1.5 text-sm leading-relaxed"><code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">terms.html</code> and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">privacy.html</code> are layout demonstrations, not legal advice. Both carry a visible amber warning &mdash; <strong class="font-semibold text-slate-900 dark:text-white">delete that warning block</strong> once a lawyer has supplied your real text.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">3</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Remove the other template notices</p>
+                  <p class="mt-1.5 text-sm leading-relaxed">Three more visible notes are written for you, not your visitors: the demo-form note on <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">contact.html</code>, the demo-search note on <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">help-center.html</code>, and the placeholder-avatar note on <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">about.html</code>.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">4</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Set your domain</p>
+                  <p class="mt-1.5 text-sm leading-relaxed">Every page has <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">rel="canonical"</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">og:url</code> and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">og:image</code> pointing at <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">wavenode.io</code>. Change <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">SITE_URL</code> in <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">tools/build.py</code> and rebuild, or find-and-replace across the HTML. Update <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">robots.txt</code> and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">sitemap.xml</code> too.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">5</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Replace the placeholder identity</p>
+                  <p class="mt-1.5 text-sm leading-relaxed">Swap the logo (inline SVG in each page's header and footer, plus <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">assets/images/logo.svg</code> and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">favicon.svg</code>), the social card at <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">assets/images/og-preview.png</code>, and the 72 footer social links, which are all <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">href="#"</code>.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">6</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Replace the fictional contact details</p>
+                  <p class="mt-1.5 text-sm leading-relaxed">Search for <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">@wavenode.io</code> (seven addresses, including twelve <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">mailto:</code> links on the careers page) and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">wavenode.io</code> for the API hostnames. The three office addresses on <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">contact.html</code> are invented, as are all people and customer names.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">7</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Configure your 404</p>
+                  <p class="mt-1.5 text-sm leading-relaxed"><code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">404.html</code> exists but your server must be told to serve it. On Apache add <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">ErrorDocument 404 /404.html</code> to <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">.htaccess</code>; on Nginx use <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">error_page 404 /404.html;</code>.</p>
+                </div>
+              </li>
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-500/10 font-mono text-xs font-bold text-primary-600 dark:text-primary-400">8</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">Delete what you do not ship</p>
+                  <p class="mt-1.5 text-sm leading-relaxed">Upload the HTML files and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">assets/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">robots.txt</code> and <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">sitemap.xml</code>. Leave <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">tools/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">src/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">documentation/</code>, <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">node_modules/</code> and the config files behind. Keep <code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">assets/fonts/OFL.txt</code> &mdash; the font licence requires it.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <!-- 10 -->
+          <section id="credits" class="mt-14" aria-labelledby="credits-heading">
+            <h2 id="credits-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">10. Credits and licences</h2>
+            <p class="mt-4 leading-relaxed">Everything bundled here is either original to the template or open-source with a permissive licence. No item requires a subscription or attribution on your site.</p>
+
+            <div class="scrollbar-slim mt-6 overflow-x-auto" tabindex="0" role="region" aria-label="Credits table">
+              <table class="w-full min-w-[38rem] text-left text-sm">
+                <caption class="sr-only">Third-party assets and their licences</caption>
+                <thead>
+                  <tr class="border-b border-slate-200 dark:border-slate-800">
+                    <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Asset</th>
+                    <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Licence</th>
+                    <th scope="col" class="pl-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Source</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tr>
+                    <th scope="row" class="py-3 pr-4 text-xs font-medium text-slate-900 dark:text-white">Tailwind CSS 3.4</th>
+                    <td class="px-4 py-3 text-xs">MIT</td>
+                    <td class="pl-4 py-3 text-xs"><a href="https://tailwindcss.com" class="text-primary-600 hover:text-primary-500 dark:text-primary-400">tailwindcss.com</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-3 pr-4 text-xs font-medium text-slate-900 dark:text-white">Plus Jakarta Sans</th>
+                    <td class="px-4 py-3 text-xs">SIL OFL 1.1</td>
+                    <td class="pl-4 py-3 text-xs"><a href="https://fonts.google.com/specimen/Plus+Jakarta+Sans" class="text-primary-600 hover:text-primary-500 dark:text-primary-400">Google Fonts</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-3 pr-4 text-xs font-medium text-slate-900 dark:text-white">JetBrains Mono</th>
+                    <td class="px-4 py-3 text-xs">SIL OFL 1.1</td>
+                    <td class="pl-4 py-3 text-xs"><a href="https://www.jetbrains.com/lp/mono/" class="text-primary-600 hover:text-primary-500 dark:text-primary-400">jetbrains.com/mono</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-3 pr-4 text-xs font-medium text-slate-900 dark:text-white">All icons and illustrations</th>
+                    <td class="px-4 py-3 text-xs">Original, included</td>
+                    <td class="pl-4 py-3 text-xs">Hand-written inline SVG</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-3 pr-4 text-xs font-medium text-slate-900 dark:text-white">All copy and data</th>
+                    <td class="px-4 py-3 text-xs">Original, fictional</td>
+                    <td class="pl-4 py-3 text-xs">Written for this template</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="mt-6 leading-relaxed">The full SIL Open Font License text and both copyright notices are in <code class="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs text-primary-600 dark:bg-slate-800 dark:text-primary-400">assets/fonts/OFL.txt</code>. That file must stay with the fonts if you redistribute the template.</p>
+
+            <div class="card mt-6 border-primary-500/30 p-5">
+              <p class="text-sm leading-relaxed"><strong class="font-semibold text-slate-900 dark:text-white">No photography is included.</strong> Every visual is inline SVG or a CSS gradient, so there are no image licences to worry about. Where a photo would normally sit &mdash; team avatars, blog covers, customer logos &mdash; there is a styled placeholder. If you add photography, <a href="https://unsplash.com" class="font-semibold text-primary-600 hover:text-primary-500 dark:text-primary-400">Unsplash</a> and <a href="https://www.pexels.com" class="font-semibold text-primary-600 hover:text-primary-500 dark:text-primary-400">Pexels</a> are good free sources.</p>
+            </div>
+          </section>
+
+          <!-- 11 -->
+          <section id="support" class="mt-14" aria-labelledby="support-heading">
+            <h2 id="support-heading" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">11. Support</h2>
+            <p class="mt-4 leading-relaxed">If something in the template does not behave as documented, please get in touch through the item's comments section on the marketplace. Including the page, the browser and a screenshot resolves almost everything on the first reply.</p>
+            <p class="mt-4 leading-relaxed">Support covers defects in the template and questions about how to use what is documented here. Customisation work, third-party integrations and bugs in your own modifications fall outside it &mdash; though we will usually point you in the right direction.</p>
+
+            <div class="card mt-6 p-6 text-center">
+              <p class="text-base font-bold text-slate-900 dark:text-white">Thank you for choosing WaveNode</p>
+              <p class="mx-auto mt-2 max-w-lg text-sm leading-relaxed">If the template saved you time, a rating on the item page genuinely helps. Enjoy building.</p>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       Footer Start
+  ================================================================ -->
+  <footer class="border-t border-slate-200 py-8 dark:border-slate-800">
+    <div class="container flex flex-col items-center justify-between gap-3 text-sm text-slate-500 dark:text-slate-400 sm:flex-row">
+      <p>WaveNode HTML Template &middot; documentation v1.0.0</p>
+      <p>&copy; <span data-year>2026</span> &mdash; template documentation</p>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

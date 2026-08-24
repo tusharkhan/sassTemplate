@@ -24,6 +24,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Clear the fixed header so in-page anchors do not land underneath it. */
+    scroll-padding-top: 6rem;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -174,10 +176,24 @@
 
 .accordion-panel > div {
   overflow: hidden;
+  /* visibility:hidden also removes collapsed content from the accessibility
+     tree and the tab order — grid-template-rows:0fr alone does not, which
+     left links inside closed panels reachable by Tab. */
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.accordion-panel.is-open > div {
+  visibility: visible;
 }
 
 .accordion-panel.is-open {
   grid-template-rows: 1fr;
+}
+
+/* Flip the trigger's chevron to reflect the panel state */
+[data-accordion-trigger][aria-expanded='true'] svg {
+  transform: rotate(180deg);
 }
 
 /* ------------------------------------------------------------------
